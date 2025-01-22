@@ -164,40 +164,100 @@ class CycleAnalysisBacktest:
             return
             
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        plt.figure(figsize=(15, 12))
         
         try:
+            # Convert dates from strings back to datetime for plotting
+            dates = [pd.to_datetime(d) for d in results['dates']]
+            
+            # Create figure with subplots
+            fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(15, 15))
+            
             # Price prediction plot
-            plt.subplot(3, 1, 1)
-            plt.plot(range(len(results['actuals'])), results['actuals'], label='Actual', color='blue')
-            plt.plot(range(len(results['predictions'])), results['predictions'], label='Predicted', color='red', linestyle='--')
-            plt.title(f'Cycle Predictions vs Actuals - {currency}')
-            plt.legend()
+            ax1.plot(dates, results['actuals'], label='Actual', color='blue', linewidth=2)
+            ax1.plot(dates, results['predictions'], label='Predicted', color='red', linestyle='--', linewidth=2)
+            
+            # Add confidence bands
+            predictions = np.array(results['predictions'])
+            confidences = np.array(results['confidences'])
+            ax1.fill_between(dates, 
+                           predictions * (1 - 0.5 * (1 - confidences)),
+                           predictions * (1 + 0.5 * (1 - confidences)),
+                           color='red', alpha=0.2)
+            
+            ax1.set_title(f'Cycle Predictions vs Actuals - {currency}')
+            ax1.legend()
+            ax1.grid(True)
+            
+            # Format x-axis dates
+            ax1.xaxis.set_major_formatter(plt.DateFormatter('%Y-%m-%d'))
+            plt.setp(ax1.xaxis.get_majorticklabels(), rotation=45)
+            
+            # Add price labels on y-axis
+            ax1.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${x:,.2f}'))
             
             # Prediction error plot
-            plt.subplot(3, 1, 2)
             errors = np.array([(p - a) / a * 100 for p, a in zip(results['predictions'], results['actuals'])])
-            plt.hist(errors, bins=50)
-            plt.title('Prediction Error Distribution (%)')
-            plt.xlabel('Prediction Error %')
-            plt.ylabel('Frequency')
+            ax2.hist(errors, bins=30, color='blue', alpha=0.6)
+            ax2.axvline(x=0, color='red', linestyle='--')
+            ax2.set_title('Prediction Error Distribution (%)')
+            ax2.set_xlabel('Prediction Error %')
+            ax2.set_ylabel('Frequency')
+            ax2.grid(True)
             
-            # Confidence vs Error plot
-            plt.subplot(3, 1, 3)
-            plt.scatter(results['confidences'], abs(errors), alpha=0.5)
-            plt.title('Prediction Confidence vs Error')
-            plt.xlabel('Confidence Score')
-            plt.ylabel('Absolute Error %')
+            # Scatter plot: Error vs Confidence
+            ax3.scatter(dates, errors, c=confidences, cmap='viridis', 
+                       alpha=0.6, s=50)
+            ax3.set_title('Prediction Errors Over Time (colored by confidence)')
+            ax3.set_ylabel('Prediction Error %')
+            plt.setp(ax3.xaxis.get_majorticklabels(), rotation=45)
+            ax3.grid(True)
             
+            # Add colorbar
+            sc = ax3.scatter(dates, errors, c=confidences, cmap='viridis')
+            plt.colorbar(sc, ax=ax3, label='Confidence Score')
+            
+            # Adjust layout and save
             plt.tight_layout()
             save_path = os.path.join(self.plots_dir, f'{currency}_backtest_{timestamp}.png')
-            plt.savefig(save_path)
+            plt.savefig(save_path, dpi=300, bbox_inches='tight')
             plt.close()
-            print(f"Plot saved to: {save_path}")
+            
+            # Create additional plot for confidence analysis
+            fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 10))
+            
+            # Confidence over time
+            ax1.plot(dates, confidences, color='green', linewidth=2)
+            ax1.set_title(f'Prediction Confidence Over Time - {currency}')
+            ax1.set_ylabel('Confidence Score')
+            ax1.grid(True)
+            plt.setp(ax1.xaxis.get_majorticklabels(), rotation=45)
+            
+            # Accuracy vs Confidence scatter
+            abs_errors = np.abs(errors)
+            ax2.scatter(confidences, abs_errors, alpha=0.6)
+            ax2.set_title('Prediction Accuracy vs Confidence')
+            ax2.set_xlabel('Confidence Score')
+            ax2.set_ylabel('Absolute Error %')
+            ax2.grid(True)
+            
+            # Add trend line
+            z = np.polyfit(confidences, abs_errors, 1)
+            p = np.poly1d(z)
+            ax2.plot(confidences, p(confidences), "r--", alpha=0.8, 
+                    label=f'Trend: {z[0]:.2f}x + {z[1]:.2f}')
+            ax2.legend()
+            
+            # Save confidence analysis plot
+            plt.tight_layout()
+            confidence_path = os.path.join(self.plots_dir, f'{currency}_confidence_analysis_{timestamp}.png')
+            plt.savefig(confidence_path, dpi=300, bbox_inches='tight')
+            plt.close()
+            
+            print(f"Plots saved to: {save_path} and {confidence_path}")
             
         except Exception as e:
             print(f"Error plotting results for {currency}: {str(e)}")
-            plt.close()
+            plt.close('all')
     
     def generate_summary_report(self, currency: str, results: Dict) -> str:
         """
