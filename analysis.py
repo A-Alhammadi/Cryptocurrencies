@@ -179,26 +179,124 @@ def calculate_phase_relationships(returns_dict):
             }
     
     return phase_relationships
-
-def generate_cycle_forecast(df, dominant_cycles):
+# Fix in determine_optimal_window
+def determine_optimal_window(df: pd.DataFrame, test_windows=[30, 60, 90]) -> Tuple[int, Dict]:
     """
-    Generate price forecasts based on detected cycles
+    Determine optimal prediction window based on price characteristics
+    """
+    window_results = {}
+    price_data = df['price_usd'].values
+    
+    for window in test_windows:
+        # Skip if we don't have enough data
+        if len(price_data) < window * 2:
+            continue
+            
+        # Test predictions for this window
+        predictions = []
+        actuals = []
+        
+        for i in range(len(price_data) - window):
+            train_data = price_data[i:i+window]
+            actual = price_data[i+window]
+            
+            cycles = detect_cycles(train_data)
+            if cycles:
+                forecast, confidence = generate_cycle_forecast(train_data, cycles)  # Now properly unpacking tuple
+                if len(forecast) > 0:
+                    predictions.append(forecast[-1])
+                    actuals.append(actual)
+        
+        if predictions and actuals:
+            # Calculate metrics
+            mape = np.mean(np.abs((np.array(predictions) - np.array(actuals)) / np.array(actuals)))
+            window_results[window] = {
+                'mape': mape,
+                'n_predictions': len(predictions)
+            }
+    
+    if not window_results:
+        return test_windows[0], {'mape': float('inf'), 'n_predictions': 0}
+    
+    # Choose window with lowest MAPE
+    optimal_window = min(window_results.items(), key=lambda x: x[1]['mape'])[0]
+    return optimal_window, window_results[optimal_window]
+
+# Improve the cycle forecast generation
+def generate_cycle_forecast(df, dominant_cycles, confidence_threshold=0.3):
+    """
+    Generate price forecasts based on detected cycles with confidence score
     """
     if isinstance(df, pd.DataFrame):
         prices = df['price_usd'].values
     else:
         prices = df
         
+    # Calculate prediction confidence
+    confidence = calculate_prediction_confidence(prices, dominant_cycles)
+    
+    # Only generate forecast if confidence is above threshold
+    if confidence < confidence_threshold:
+        return [], 0.0
+        
     forecast = np.zeros(30)  # 30-day forecast
     
+    # Add trend first
+    trend = np.polyfit(np.arange(len(prices)), prices, 1)
+    trend_dampening = np.exp(-0.05 * np.arange(30))  # Gentle dampening of trend over time
+    forecast_trend = np.poly1d(trend)(np.arange(len(prices), len(prices) + 30)) * trend_dampening
+    
+    # Add cycles with progressive dampening for longer forecasts
     for period, strength in dominant_cycles.items():
-        # Create sine wave for each cycle
         t = np.arange(30)
-        cycle = strength * np.sin(2 * np.pi * t / period)
+        dampening = np.exp(-0.02 * t)  # Reduce cycle impact over time
+        cycle = strength * np.sin(2 * np.pi * t / period) * dampening
         forecast += cycle
     
-    # Add trend
-    trend = np.polyfit(np.arange(len(prices)), prices, 1)
-    forecast_trend = np.poly1d(trend)(np.arange(len(prices), len(prices) + 30))
+    final_forecast = forecast + forecast_trend
     
-    return forecast + forecast_trend
+    # Scale forecast to avoid extreme values
+    mean_price = np.mean(prices[-30:])  # Use recent mean for scaling
+    max_deviation = 0.3  # Maximum 30% deviation from mean
+    forecast_bounds = np.clip(
+        final_forecast, 
+        mean_price * (1 - max_deviation),
+        mean_price * (1 + max_deviation)
+    )
+    
+    return forecast_bounds, confidence
+
+# Improve confidence calculation
+def calculate_prediction_confidence(price_data, cycles, window_size=30):
+    """
+    Calculate prediction confidence with improved factors
+    """
+    if not cycles:
+        return 0.0
+    
+    # Cycle strength and consistency
+    cycle_strength = min(1.0, sum(cycles.values()) / (max(cycles.values()) * len(cycles)))
+    cycle_consistency = len(cycles) / 5  # We look for max 5 cycles
+    
+    # Price stability
+    returns = np.diff(price_data) / price_data[:-1]
+    volatility = np.std(returns) * np.sqrt(252)
+    stability = 1 / (1 + volatility)
+    
+    # Trend analysis
+    trend_coef = np.polyfit(np.arange(len(price_data)), price_data, 1)[0]
+    trend_strength = abs(trend_coef) / np.mean(price_data)
+    trend_score = np.exp(-2 * trend_strength)  # Lower confidence for stronger trends
+    
+    # Recent performance
+    recent_volatility = np.std(returns[-window_size:]) * np.sqrt(252)
+    recent_stability = 1 / (1 + recent_volatility)
+    
+    # Combined confidence score with adjusted weights
+    confidence = (0.3 * stability + 
+                 0.2 * cycle_strength +
+                 0.2 * cycle_consistency +
+                 0.15 * trend_score +
+                 0.15 * recent_stability)
+    
+    return min(0.95, max(0.05, confidence))  # Bound between 5% and 95%

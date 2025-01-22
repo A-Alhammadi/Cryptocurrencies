@@ -1,0 +1,350 @@
+Cryptocurrency Cycle Analysis Backtest Results
+==========================================
+
+
+Cycle Analysis Backtest Results for BTC-USD
+============================================
+
+Prediction Settings:
+------------------
+Optimal Window: 30 days
+Window Selection MAPE: 31.40%
+Number of Test Predictions: 281
+
+Prediction Accuracy:
+------------------
+MAPE: 33.44%
+Directional Accuracy: 20.00%
+Average Confidence Score: 77.49%
+
+Price Statistics:
+---------------
+Average Actual Price: $31828.04
+Average Predicted Price: $20639.33
+Max Error: 47.92%
+Min Error: 18.50%
+
+Recent Predictions:
+----------------
+Date: 2023-12-17 Predicted: $24218.08 Actual: $41364.66 Confidence: 78.92%
+Date: 2023-11-17 Predicted: $19060.03 Actual: $36596.68 Confidence: 77.78%
+Date: 2023-10-18 Predicted: $18322.16 Actual: $28328.34 Confidence: 77.12%
+Date: 2023-09-18 Predicted: $20328.13 Actual: $26754.28 Confidence: 76.48%
+Date: 2023-08-19 Predicted: $21268.27 Actual: $26096.21 Confidence: 77.14%
+
+==================================================
+
+Cycle Analysis Backtest Results for ETH-USD
+============================================
+
+Prediction Settings:
+------------------
+Optimal Window: 90 days
+Window Selection MAPE: 30.51%
+Number of Test Predictions: 254
+
+Prediction Accuracy:
+------------------
+MAPE: 15.05%
+Directional Accuracy: 100.00%
+Average Confidence Score: 79.43%
+
+Price Statistics:
+---------------
+Average Actual Price: $1563.75
+Average Predicted Price: $1328.36
+Max Error: 15.05%
+Min Error: 15.05%
+
+Recent Predictions:
+----------------
+Date: 2023-10-18 Predicted: $1328.36 Actual: $1563.75 Confidence: 79.43%
+
+==================================================
+
+Cycle Analysis Backtest Results for BNB-USD
+============================================
+
+Prediction Settings:
+------------------
+Optimal Window: 90 days
+Window Selection MAPE: 29.18%
+Number of Test Predictions: 249
+
+Prediction Accuracy:
+------------------
+MAPE: 19.59%
+Directional Accuracy: 100.00%
+Average Confidence Score: 78.03%
+
+Price Statistics:
+---------------
+Average Actual Price: $210.50
+Average Predicted Price: $169.26
+Max Error: 19.59%
+Min Error: 19.59%
+
+Recent Predictions:
+----------------
+Date: 2023-10-18 Predicted: $169.26 Actual: $210.50 Confidence: 78.03%
+
+==================================================
+
+Cycle Analysis Backtest Results for SOL-USD
+============================================
+
+Prediction Settings:
+------------------
+Optimal Window: 30 days
+Window Selection MAPE: 33.62%
+Number of Test Predictions: 279
+
+Prediction Accuracy:
+------------------
+MAPE: 44.42%
+Directional Accuracy: 40.00%
+Average Confidence Score: 70.90%
+
+Price Statistics:
+---------------
+Average Actual Price: $38.88
+Average Predicted Price: $17.88
+Max Error: 74.09%
+Min Error: 15.13%
+
+Recent Predictions:
+----------------
+Date: 2023-12-17 Predicted: $29.06 Actual: $71.00 Confidence: 68.23%
+Date: 2023-11-17 Predicted: $15.13 Actual: $58.42 Confidence: 71.01%
+Date: 2023-10-18 Predicted: $13.89 Actual: $23.43 Confidence: 71.89%
+Date: 2023-09-18 Predicted: $16.68 Actual: $19.66 Confidence: 72.37%
+Date: 2023-08-19 Predicted: $14.64 Actual: $21.88 Confidence: 71.00%
+
+==================================================
+
+Cycle Analysis Backtest Results for XRP-USD
+============================================
+
+Prediction Settings:
+------------------
+Optimal Window: 30 days
+Window Selection MAPE: 30.15%
+Number of Test Predictions: 283
+
+Prediction Accuracy:
+------------------
+MAPE: 26.75%
+Directional Accuracy: 80.00%
+Average Confidence Score: 68.81%
+
+Price Statistics:
+---------------
+Average Actual Price: $0.55
+Average Predicted Price: $0.40
+Max Error: 42.10%
+Min Error: 8.89%
+
+Recent Predictions:
+----------------
+Date: 2023-12-17 Predicted: $0.42 Actual: $0.61 Confidence: 68.56%
+Date: 2023-11-17 Predicted: $0.36 Actual: $0.61 Confidence: 72.58%
+Date: 2023-10-18 Predicted: $0.36 Actual: $0.49 Confidence: 68.98%
+Date: 2023-09-18 Predicted: $0.46 Actual: $0.50 Confidence: 67.21%
+Date: 2023-08-19 Predicted: $0.39 Actual: $0.52 Confidence: 66.73%
+
+==================================================
+
+Cycle Analysis Backtest Results for RAY-USD
+============================================
+
+Prediction Settings:
+------------------
+Optimal Window: 30 days
+Window Selection MAPE: 32.74%
+Number of Test Predictions: 306
+
+Prediction Accuracy:
+------------------
+MAPE: 42.00%
+Directional Accuracy: 60.00%
+Average Confidence Score: 71.28%
+
+Price Statistics:
+---------------
+Average Actual Price: $0.35
+Average Predicted Price: $0.14
+Max Error: 78.35%
+Min Error: 15.43%
+
+Recent Predictions:
+----------------
+Date: 2023-12-17 Predicted: $0.19 Actual: $0.87 Confidence: 65.25%
+Date: 2023-11-17 Predicted: $0.12 Actual: $0.37 Confidence: 73.97%
+Date: 2023-10-18 Predicted: $0.12 Actual: $0.16 Confidence: 73.27%
+Date: 2023-09-18 Predicted: $0.15 Actual: $0.17 Confidence: 73.75%
+Date: 2023-08-19 Predicted: $0.15 Actual: $0.20 Confidence: 70.14%
+
+==================================================
+
+Cycle Analysis Backtest Results for TRX-USD
+============================================
+
+Prediction Settings:
+------------------
+Optimal Window: 30 days
+Window Selection MAPE: 31.31%
+Number of Test Predictions: 294
+
+Prediction Accuracy:
+------------------
+MAPE: 34.94%
+Directional Accuracy: 40.00%
+Average Confidence Score: 78.72%
+
+Price Statistics:
+---------------
+Average Actual Price: $0.09
+Average Predicted Price: $0.06
+Max Error: 41.52%
+Min Error: 27.26%
+
+Recent Predictions:
+----------------
+Date: 2023-12-17 Predicted: $0.07 Actual: $0.10 Confidence: 76.77%
+Date: 2023-11-17 Predicted: $0.06 Actual: $0.10 Confidence: 78.24%
+Date: 2023-10-18 Predicted: $0.05 Actual: $0.09 Confidence: 78.80%
+Date: 2023-09-18 Predicted: $0.05 Actual: $0.08 Confidence: 79.80%
+Date: 2023-08-19 Predicted: $0.05 Actual: $0.07 Confidence: 79.98%
+
+==================================================
+
+Cycle Analysis Backtest Results for DOGE-USD
+============================================
+
+Prediction Settings:
+------------------
+Optimal Window: 30 days
+Window Selection MAPE: 29.99%
+Number of Test Predictions: 301
+
+Prediction Accuracy:
+------------------
+MAPE: 33.04%
+Directional Accuracy: 60.00%
+Average Confidence Score: 73.62%
+
+Price Statistics:
+---------------
+Average Actual Price: $0.07
+Average Predicted Price: $0.05
+Max Error: 50.77%
+Min Error: 16.57%
+
+Recent Predictions:
+----------------
+Date: 2023-12-17 Predicted: $0.05 Actual: $0.09 Confidence: 71.96%
+Date: 2023-11-17 Predicted: $0.04 Actual: $0.09 Confidence: 76.38%
+Date: 2023-10-18 Predicted: $0.04 Actual: $0.06 Confidence: 75.82%
+Date: 2023-09-18 Predicted: $0.05 Actual: $0.06 Confidence: 71.54%
+Date: 2023-08-19 Predicted: $0.05 Actual: $0.06 Confidence: 72.40%
+
+==================================================
+
+Cycle Analysis Backtest Results for ADA-USD
+============================================
+
+Prediction Settings:
+------------------
+Optimal Window: 90 days
+Window Selection MAPE: 30.62%
+Number of Test Predictions: 251
+
+Prediction Accuracy:
+------------------
+MAPE: 14.64%
+Directional Accuracy: 100.00%
+Average Confidence Score: 72.96%
+
+Price Statistics:
+---------------
+Average Actual Price: $0.24
+Average Predicted Price: $0.21
+Max Error: 14.64%
+Min Error: 14.64%
+
+Recent Predictions:
+----------------
+Date: 2023-10-18 Predicted: $0.21 Actual: $0.24 Confidence: 72.96%
+
+==================================================
+
+Cycle Analysis Backtest Results for DOT-USD
+============================================
+
+Prediction Settings:
+------------------
+Optimal Window: 30 days
+Window Selection MAPE: 30.05%
+Number of Test Predictions: 292
+
+Prediction Accuracy:
+------------------
+MAPE: 30.09%
+Directional Accuracy: 60.00%
+Average Confidence Score: 76.45%
+
+Price Statistics:
+---------------
+Average Actual Price: $4.86
+Average Predicted Price: $3.24
+Max Error: 51.67%
+Min Error: 14.21%
+
+Recent Predictions:
+----------------
+Date: 2023-12-17 Predicted: $3.28 Actual: $6.79 Confidence: 72.89%
+Date: 2023-11-17 Predicted: $2.77 Actual: $5.24 Confidence: 77.33%
+Date: 2023-10-18 Predicted: $3.01 Actual: $3.66 Confidence: 76.72%
+Date: 2023-09-18 Predicted: $3.52 Actual: $4.11 Confidence: 77.29%
+Date: 2023-08-19 Predicted: $3.63 Actual: $4.52 Confidence: 78.01%
+
+==================================================
+
+Cycle Analysis Backtest Results for LTC-USD
+============================================
+
+Prediction Settings:
+------------------
+Optimal Window: 30 days
+Window Selection MAPE: 28.47%
+Number of Test Predictions: 305
+
+Prediction Accuracy:
+------------------
+MAPE: 21.40%
+Directional Accuracy: 40.00%
+Average Confidence Score: 74.62%
+
+Price Statistics:
+---------------
+Average Actual Price: $66.34
+Average Predicted Price: $52.92
+Max Error: 36.05%
+Min Error: 3.97%
+
+Recent Predictions:
+----------------
+Date: 2023-12-17 Predicted: $48.99 Actual: $71.23 Confidence: 73.25%
+Date: 2023-11-17 Predicted: $44.88 Actual: $70.18 Confidence: 75.94%
+Date: 2023-10-18 Predicted: $44.92 Actual: $60.28 Confidence: 74.90%
+Date: 2023-09-18 Predicted: $59.14 Actual: $65.89 Confidence: 77.44%
+Date: 2023-08-19 Predicted: $66.65 Actual: $64.10 Confidence: 71.54%
+
+==================================================
+
+Overall Summary
+==============
+Successfully tested currencies: 11
+Average MAPE: 28.67%
+Average Directional Accuracy: 63.64%
+Average Confidence Score: 74.75%
