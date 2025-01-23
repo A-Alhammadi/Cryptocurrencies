@@ -9,33 +9,138 @@ warnings.filterwarnings('ignore')
 
 def detect_cycles(price_series, sampling_period=1):
     """
-    Detect dominant cycles using FFT and spectral analysis
+    Enhanced cycle detection with multiple timeframe analysis
     """
-    # Detrend the series
-    detrended = signal.detrend(price_series)
+    def get_timeframe_cycles(data, period):
+        # Detrend the series
+        detrended = signal.detrend(data)
+        
+        # Compute FFT
+        n = len(data)
+        yf = fft(detrended)
+        xf = fftfreq(n, period)
+        
+        # Get positive frequencies
+        pos_mask = xf > 0
+        frequencies = xf[pos_mask]
+        amplitudes = 2.0/n * np.abs(yf[pos_mask])
+        
+        # Find peaks with dynamic threshold
+        threshold = np.mean(amplitudes) + np.std(amplitudes)
+        peaks, _ = signal.find_peaks(amplitudes, height=threshold)
+        
+        return [(1/frequencies[peak], amplitudes[peak]) for peak in peaks]
+
+    # Analyze multiple timeframes
+    timeframes = {
+        'short': price_series[-30:],    # Last month
+        'medium': price_series[-90:],   # Last quarter
+        'long': price_series[-365:],    # Last year
+    }
     
-    # Compute FFT
-    n = len(price_series)
-    yf = fft(detrended)
-    xf = fftfreq(n, sampling_period)
+    # Get cycles for each timeframe
+    all_cycles = {}
+    for timeframe_name, data in timeframes.items():
+        if len(data) > 10:  # Minimum data requirement
+            cycles = get_timeframe_cycles(data, sampling_period)
+            for period, strength in cycles:
+                if 2 <= period <= 365:  # Filter valid periods
+                    if period not in all_cycles:
+                        all_cycles[period] = {
+                            'strength': strength,
+                            'timeframes': [timeframe_name]
+                        }
+                    else:
+                        all_cycles[period]['strength'] += strength
+                        all_cycles[period]['timeframes'].append(timeframe_name)
+
+    # Score cycles based on presence across timeframes
+    final_cycles = {}
+    for period, info in all_cycles.items():
+        # Boost strength if cycle appears in multiple timeframes
+        timeframe_boost = len(info['timeframes']) / len(timeframes)
+        final_cycles[period] = info['strength'] * (1 + timeframe_boost)
+
+    return dict(sorted(final_cycles.items(), key=lambda x: x[1], reverse=True)[:5])
+
+def detect_market_regime(price_data, volume_data, window=30):
+    """
+    Detect market regime using multiple indicators
+    """
+    def calculate_hurst_exponent(prices, lags=range(2, 100)):
+        # Calculate Hurst exponent to determine trend strength
+        tau = []
+        lagvec = []
+        
+        for lag in lags:
+            prices_lag = np.log(prices[lag:]) - np.log(prices[:-lag])
+            m = np.mean(np.abs(prices_lag))
+            v = np.std(prices_lag)
+            tau.append([np.log(lag), np.log(m)])
+            lagvec.append(v)
+            
+        tau = np.array(tau)
+        reg = np.polyfit(tau[:, 0], tau[:, 1], 1)
+        return reg[0]  # Hurst exponent
     
-    # Get positive frequencies only
-    pos_mask = xf > 0
-    frequencies = xf[pos_mask]
-    amplitudes = 2.0/n * np.abs(yf[pos_mask])
+    # Convert numpy arrays to pandas Series for diff operation
+    price_series = pd.Series(price_data)
+    volume_series = pd.Series(volume_data)
     
-    # Find peaks
-    peaks, _ = signal.find_peaks(amplitudes, height=np.mean(amplitudes))
+    # Calculate various regime indicators
+    returns = price_series.pct_change().values[1:]  # Changed from diff
+    log_returns = np.log(price_series).diff().values[1:]
     
-    # Convert to periods and strengths
-    cycles = {}
-    for peak in peaks:
-        period = 1/frequencies[peak]
-        strength = amplitudes[peak]
-        if 2 <= period <= 365:  # Only include cycles between 2 days and 1 year
-            cycles[period] = strength
+    # Volatility regime
+    rolling_vol = pd.Series(returns).rolling(window).std() * np.sqrt(252)
+    vol_regime = rolling_vol > rolling_vol.rolling(window*2).mean()
     
-    return dict(sorted(cycles.items(), key=lambda x: x[1], reverse=True)[:5])
+    # Trend regime using Hurst exponent
+    hurst = calculate_hurst_exponent(price_data[-min(len(price_data), 1000):])
+    trend_strength = (hurst - 0.5) * 2  # Scale to -1 to 1
+    
+    # Volume regime
+    volume_ma = volume_series.rolling(window).mean()
+    volume_regime = volume_series > volume_ma
+    
+    # Momentum regime
+    momentum = pd.Series(returns).rolling(window).mean()
+    mom_regime = momentum > momentum.rolling(window*2).mean()
+    
+    # Combine indicators into regime score
+    regime_scores = {
+        'volatility': 1 if vol_regime.iloc[-1] else -1,
+        'trend': np.sign(trend_strength),
+        'volume': 1 if volume_regime.iloc[-1] else -1,
+        'momentum': 1 if mom_regime.iloc[-1] else -1
+    }
+    
+    # Calculate overall regime
+    weights = {
+        'volatility': 0.3,
+        'trend': 0.3,
+        'volume': 0.2,
+        'momentum': 0.2
+    }
+    
+    regime_score = sum(score * weights[key] for key, score in regime_scores.items())
+    
+    regimes = {
+        'strong_bull': regime_score > 0.6,
+        'bull': regime_score > 0.2,
+        'neutral': abs(regime_score) <= 0.2,
+        'bear': regime_score < -0.2,
+        'strong_bear': regime_score < -0.6
+    }
+    
+    current_regime = next(name for name, condition in regimes.items() if condition)
+    
+    return {
+        'regime': current_regime,
+        'score': regime_score,
+        'indicators': regime_scores,
+        'hurst': hurst
+    }
 
 def identify_support_resistance(prices, window=21):
     """
@@ -223,17 +328,26 @@ def determine_optimal_window(df: pd.DataFrame, test_windows=[30, 60, 90]) -> Tup
     return optimal_window, window_results[optimal_window]
 
 # Improve the cycle forecast generation
-def generate_cycle_forecast(df, dominant_cycles, confidence_threshold=0.3):
+def generate_cycle_forecast(df, dominant_cycles, market_data=None, confidence_threshold=0.3):
     """
-    Generate price forecasts based on detected cycles with confidence score
+    Generate price forecasts based on detected cycles with market regime awareness
     """
     if isinstance(df, pd.DataFrame):
         prices = df['price_usd'].values
+        volumes = df['volume_usd'].values if 'volume_usd' in df else None
     else:
         prices = df
-        
-    # Calculate prediction confidence
-    confidence = calculate_prediction_confidence(prices, dominant_cycles)
+        volumes = None
+    
+    # Get market regime if not provided in market_data
+    if market_data is None:
+        market_data = {
+            'volume_trend': 0,
+            'market_breadth': 0.5
+        }
+    
+    # Calculate prediction confidence with market data
+    confidence = calculate_prediction_confidence(prices, dominant_cycles, market_data)
     
     # Only generate forecast if confidence is above threshold
     if confidence < confidence_threshold:
@@ -241,23 +355,52 @@ def generate_cycle_forecast(df, dominant_cycles, confidence_threshold=0.3):
         
     forecast = np.zeros(30)  # 30-day forecast
     
-    # Add trend first
+    # Add trend with market-based adjustment
     trend = np.polyfit(np.arange(len(prices)), prices, 1)
-    trend_dampening = np.exp(-0.05 * np.arange(30))  # Gentle dampening of trend over time
-    forecast_trend = np.poly1d(trend)(np.arange(len(prices), len(prices) + 30)) * trend_dampening
+    trend_multiplier = 1.0
     
-    # Add cycles with progressive dampening for longer forecasts
+    # Adjust trend based on market breadth
+    if market_data['market_breadth'] > 0.7:
+        trend_multiplier = 1.2  # Strengthen trend in strong market
+    elif market_data['market_breadth'] < 0.3:
+        trend_multiplier = 0.8  # Weaken trend in weak market
+    
+    trend_dampening = np.exp(-0.05 * np.arange(30))
+    forecast_trend = np.poly1d(trend)(np.arange(len(prices), len(prices) + 30))
+    forecast_trend *= trend_dampening * trend_multiplier
+    
+    # Add cycles with market-aware adjustments
     for period, strength in dominant_cycles.items():
         t = np.arange(30)
-        dampening = np.exp(-0.02 * t)  # Reduce cycle impact over time
+        dampening = np.exp(-0.02 * t)
+        
+        # Adjust cycle strength based on market conditions
+        if market_data['market_breadth'] > 0.7:
+            strength *= 1.2  # Amplify cycles in strong market
+        elif market_data['market_breadth'] < 0.3:
+            strength *= 0.8  # Dampen cycles in weak market
+        
         cycle = strength * np.sin(2 * np.pi * t / period) * dampening
         forecast += cycle
     
     final_forecast = forecast + forecast_trend
     
-    # Scale forecast to avoid extreme values
-    mean_price = np.mean(prices[-30:])  # Use recent mean for scaling
-    max_deviation = 0.3  # Maximum 30% deviation from mean
+    # Scale forecast with market-aware bounds
+    mean_price = np.mean(prices[-30:])
+    
+    # Adjust max deviation based on market conditions
+    base_deviation = 0.3  # Base 30% deviation
+    if market_data['market_breadth'] > 0.7:
+        max_deviation = base_deviation * 1.2  # Allow larger moves in strong market
+    elif market_data['market_breadth'] < 0.3:
+        max_deviation = base_deviation * 0.8  # Restrict moves in weak market
+    else:
+        max_deviation = base_deviation
+    
+    # Volume trend can further modify bounds
+    if market_data['volume_trend'] > 0:
+        max_deviation *= 1.1  # More room for movement on rising volume
+    
     forecast_bounds = np.clip(
         final_forecast, 
         mean_price * (1 - max_deviation),
@@ -267,36 +410,48 @@ def generate_cycle_forecast(df, dominant_cycles, confidence_threshold=0.3):
     return forecast_bounds, confidence
 
 # Improve confidence calculation
-def calculate_prediction_confidence(price_data, cycles, window_size=30):
+def calculate_prediction_confidence(price_data, cycles, market_data=None):
     """
-    Calculate prediction confidence with improved factors
+    Enhanced confidence calculation incorporating market conditions
     """
     if not cycles:
         return 0.0
     
-    # Cycle strength and consistency
+    # Basic cycle metrics
     cycle_strength = min(1.0, sum(cycles.values()) / (max(cycles.values()) * len(cycles)))
-    cycle_consistency = len(cycles) / 5  # We look for max 5 cycles
+    cycle_consistency = len(cycles) / 5
     
-    # Price stability
+    # Volatility analysis
     returns = np.diff(price_data) / price_data[:-1]
     volatility = np.std(returns) * np.sqrt(252)
-    stability = 1 / (1 + volatility)
+    recent_volatility = np.std(returns[-30:]) * np.sqrt(252)
+    vol_ratio = recent_volatility / volatility if volatility != 0 else 1
     
-    # Trend analysis
-    trend_coef = np.polyfit(np.arange(len(price_data)), price_data, 1)[0]
-    trend_strength = abs(trend_coef) / np.mean(price_data)
-    trend_score = np.exp(-2 * trend_strength)  # Lower confidence for stronger trends
+    # Market condition adjustments
+    if market_data is not None:
+        vol_trend = market_data.get('volume_trend', 0)
+        vol_score = 1 + (0.2 * vol_trend)  # ±20% adjustment based on volume trend
+        market_breadth = market_data.get('market_breadth', 0.5)
+        breadth_score = 0.5 + (market_breadth / 2)  # Scale 0-1
+    else:
+        vol_score = 1
+        breadth_score = 0.5
+
+    # Combined confidence score with weights
+    weights = {
+        'cycle_strength': 0.3,
+        'cycle_consistency': 0.2,
+        'volatility': 0.2,
+        'volume': 0.15,
+        'market_breadth': 0.15
+    }
     
-    # Recent performance
-    recent_volatility = np.std(returns[-window_size:]) * np.sqrt(252)
-    recent_stability = 1 / (1 + recent_volatility)
+    confidence = (
+        weights['cycle_strength'] * cycle_strength +
+        weights['cycle_consistency'] * cycle_consistency +
+        weights['volatility'] * (1 / (1 + vol_ratio)) +
+        weights['volume'] * vol_score +
+        weights['market_breadth'] * breadth_score
+    )
     
-    # Combined confidence score with adjusted weights
-    confidence = (0.3 * stability + 
-                 0.2 * cycle_strength +
-                 0.2 * cycle_consistency +
-                 0.15 * trend_score +
-                 0.15 * recent_stability)
-    
-    return min(0.95, max(0.05, confidence))  # Bound between 5% and 95%
+    return min(0.95, max(0.05, confidence))

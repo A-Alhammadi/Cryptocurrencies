@@ -73,6 +73,8 @@ class CycleAnalysisBacktest:
             accuracies = []
             dates = []
             confidences = []
+            regimes = []      
+            regime_scores = []
             
             # Walk forward analysis with smaller steps
             step_size = min(optimal_window // 3, 7)  # Smaller steps for more test points
@@ -90,20 +92,33 @@ class CycleAnalysisBacktest:
                         continue
                     
                     # Generate predictions
+                    # Generate predictions
                     train_price = train_data['price_usd'].values
-                    
+
                     # Add price validation
                     if not np.all(np.isfinite(train_price)):
                         continue
                         
                     if np.std(train_price) < 1e-6:  # Skip periods with no price movement
                         continue
-                    
+
+                    # Get market regime
+                    regime_info = detect_market_regime(
+                        train_price,
+                        train_data['volume_usd'].values
+                    )
+
                     cycles = detect_cycles(train_price)
                     if not cycles:
                         continue
-                        
-                    forecast, confidence = generate_cycle_forecast(train_data, cycles)
+
+                    # Generate forecast with market data
+                    market_data = {
+                        'volume_trend': np.sign(np.diff(train_data['volume_usd'].values[-30:]).mean()),
+                        'market_breadth': (regime_info['score'] + 1) / 2
+                    }
+
+                    forecast, confidence = generate_cycle_forecast(train_data, cycles, market_data=market_data)
                     if len(forecast) == 0 or not np.all(np.isfinite(forecast)):
                         continue
                     
@@ -123,6 +138,8 @@ class CycleAnalysisBacktest:
                     actuals.append(future_price)
                     dates.append(test_data.index[-1])
                     confidences.append(confidence)
+                    regimes.append(regime_info['regime'])
+                    regime_scores.append(regime_info['score'])
                     
                     # Calculate directional accuracy with minimum change threshold
                     min_change_threshold = 0.001  # 0.1% minimum change to count
@@ -158,13 +175,29 @@ class CycleAnalysisBacktest:
             actuals = actuals[valid_mask]
             confidences = confidences[valid_mask]
             dates = [dates[i] for i in range(len(valid_mask)) if valid_mask[i]]
+            regimes = [regimes[i] for i in range(len(valid_mask)) if valid_mask[i]]
+            regime_scores = [regime_scores[i] for i in range(len(valid_mask)) if valid_mask[i]]
             
             if len(predictions) < min_predictions:
                 return None
                 
             mape = np.mean(np.abs((predictions - actuals) / actuals)) * 100
             directional_accuracy = np.mean(accuracies) * 100
-            
+
+            # Calculate regime-specific accuracy
+            regime_accuracy = {}
+            for regime in set(regimes):
+                regime_mask = np.array(regimes) == regime
+                if any(regime_mask):
+                    regime_preds = predictions[regime_mask]
+                    regime_acts = actuals[regime_mask]
+                    regime_accuracy[regime] = {
+                        'count': sum(regime_mask),
+                        'mape': np.mean(np.abs((regime_preds - regime_acts) / regime_acts)) * 100,
+                        'accuracy': np.mean([accuracies[i] for i in range(len(accuracies)) 
+                                        if regime_mask[i]]) * 100
+                    }
+
             return {
                 'mape': mape,
                 'directional_accuracy': directional_accuracy,
@@ -176,7 +209,10 @@ class CycleAnalysisBacktest:
                 'window_metrics': {
                     'mape': float(window_metrics['mape']),
                     'n_predictions': int(window_metrics['n_predictions'])
-                }
+                },
+                'regimes': regimes,
+                'regime_scores': regime_scores,
+                'regime_accuracy': regime_accuracy
             }
             
         except Exception as e:
@@ -215,6 +251,25 @@ class CycleAnalysisBacktest:
             # Create figure with subplots
             fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(15, 15))
             
+            # Price prediction plot with regime background
+            if 'regimes' in results:
+                regimes = np.array(results['regimes'])
+                unique_regimes = np.unique(regimes)
+                colors = {
+                    'strong_bull': 'lightgreen',
+                    'bull': 'palegreen',
+                    'neutral': 'white',
+                    'bear': 'salmon',
+                    'strong_bear': 'lightcoral'
+                }
+                
+                # Plot regime backgrounds
+                for regime in unique_regimes:
+                    mask = regimes == regime
+                    if any(mask):
+                        regime_dates = [dates[i] for i in range(len(dates)) if mask[i]]
+                        ax1.axvspan(min(regime_dates), max(regime_dates), 
+                                alpha=0.2, color=colors.get(regime, 'white'))
             # Price prediction plot
             ax1.plot(dates, actuals, label='Actual', color='blue', linewidth=2)
             ax1.plot(dates, predictions, label='Predicted', color='red', linestyle='--', linewidth=2)
@@ -309,41 +364,53 @@ class CycleAnalysisBacktest:
             
         try:
             report = f"""
-Cycle Analysis Backtest Results for {currency}
-============================================
+    Cycle Analysis Backtest Results for {currency}
+    ============================================
 
-Prediction Settings:
-------------------
-Optimal Window: {results['optimal_window']} days
-Window Selection MAPE: {results['window_metrics']['mape']:.2%}
-Number of Test Predictions: {results['window_metrics']['n_predictions']}
+    Prediction Settings:
+    ------------------
+    Optimal Window: {results['optimal_window']} days
+    Window Selection MAPE: {results['window_metrics']['mape']:.2%}
+    Number of Test Predictions: {results['window_metrics']['n_predictions']}
 
-Prediction Accuracy:
-------------------
-MAPE: {results['mape']:.2f}%
-Directional Accuracy: {results['directional_accuracy']:.2f}%
-Average Confidence Score: {np.mean(results['confidences']):.2%}
+    Prediction Accuracy:
+    ------------------
+    MAPE: {results['mape']:.2f}%
+    Directional Accuracy: {results['directional_accuracy']:.2f}%
+    Average Confidence Score: {np.mean(results['confidences']):.2%}
 
-Price Statistics:
----------------
-Average Actual Price: ${np.mean(results['actuals']):.2f}
-Average Predicted Price: ${np.mean(results['predictions']):.2f}
-Max Error: {np.max(np.abs((np.array(results['predictions']) - np.array(results['actuals'])) / np.array(results['actuals']) * 100)):.2f}%
-Min Error: {np.min(np.abs((np.array(results['predictions']) - np.array(results['actuals'])) / np.array(results['actuals']) * 100)):.2f}%
+    Price Statistics:
+    ---------------
+    Average Actual Price: ${np.mean(results['actuals']):.2f}
+    Average Predicted Price: ${np.mean(results['predictions']):.2f}
+    Max Error: {np.max(np.abs((np.array(results['predictions']) - np.array(results['actuals'])) / np.array(results['actuals']) * 100)):.2f}%
+    Min Error: {np.min(np.abs((np.array(results['predictions']) - np.array(results['actuals'])) / np.array(results['actuals']) * 100)):.2f}%
 
-Recent Predictions:
-----------------
-"""
+    Market Regime Analysis:
+    --------------------"""
+
+            if 'regime_accuracy' in results:
+                for regime, stats in results['regime_accuracy'].items():
+                    report += f"\n{regime.upper()}:\n"
+                    report += f"  Count: {stats['count']}\n"
+                    report += f"  MAPE: {stats['mape']:.2f}%\n"
+                    report += f"  Directional Accuracy: {stats['accuracy']:.2f}%\n"
+
+            report += "\nRecent Predictions:\n----------------\n"
+
             # Add last 5 predictions
             for i in range(min(5, len(results['predictions']))):
                 idx = -(i+1)
                 report += f"Date: {results['dates'][idx]} "
                 report += f"Predicted: ${results['predictions'][idx]:.2f} "
                 report += f"Actual: ${results['actuals'][idx]:.2f} "
-                report += f"Confidence: {results['confidences'][idx]:.2%}\n"
-                
+                report += f"Confidence: {results['confidences'][idx]:.2%}"
+                if 'regimes' in results:
+                    report += f" Regime: {results['regimes'][idx].upper()}"
+                report += "\n"
+                    
             return report
-            
+                
         except Exception as e:
             print(f"Error generating report for {currency}: {str(e)}")
             return f"Error generating report for {currency}: {str(e)}\n"
@@ -449,7 +516,10 @@ Average Confidence Score: {total_confidence/successful_tests:.2%}
                         'dates': res['dates'],
                         'confidences': [float(x) for x in res['confidences']],
                         'optimal_window': int(res['optimal_window']),
-                        'window_metrics': res['window_metrics']
+                        'window_metrics': res['window_metrics'],
+                        'regimes': res['regimes'],
+                        'regime_scores': [float(x) for x in res['regime_scores']],
+                        'regime_accuracy': res['regime_accuracy']
                     }
             json.dump(json_results, f, indent=4)
         
