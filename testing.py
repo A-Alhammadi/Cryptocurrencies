@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from database import load_data_from_db
 from analysis import *
+from technical_analysis import get_technical_signals, backtest_signals
 from config import DB_CONFIG, CURRENCIES
 import matplotlib.pyplot as plt
 from datetime import datetime
@@ -67,6 +68,12 @@ class CycleAnalysisBacktest:
                 
             # Compute features
             df = compute_advanced_features(df)
+
+            # Add technical analysis signals
+            df = get_technical_signals(df)
+        
+            # Run technical analysis backtest and get updated df
+            df, technical_results = backtest_signals(df)
             
             predictions = []
             actuals = []
@@ -75,6 +82,7 @@ class CycleAnalysisBacktest:
             confidences = []
             regimes = []      
             regime_scores = []
+    
             
             # Walk forward analysis with smaller steps
             step_size = min(optimal_window // 3, 7)  # Smaller steps for more test points
@@ -212,7 +220,9 @@ class CycleAnalysisBacktest:
                 },
                 'regimes': regimes,
                 'regime_scores': regime_scores,
-                'regime_accuracy': regime_accuracy
+                'regime_accuracy': regime_accuracy,
+                'technical_analysis': (df, technical_results),
+                'data': df
             }
             
         except Exception as e:
@@ -221,7 +231,7 @@ class CycleAnalysisBacktest:
     
     def plot_results(self, currency: str, results: Dict):
         """
-        Plot validation results and save to results directory
+        Plot validation results including technical analysis and save to results directory
         """
         if results is None or len(results['predictions']) < 2:
             print(f"Insufficient data to plot results for {currency}")
@@ -230,6 +240,80 @@ class CycleAnalysisBacktest:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
         try:
+            # First, create technical analysis plots
+            if 'data' in results:
+                df = results['data']
+                
+                # Create figure with subplots for technical analysis
+                fig = plt.figure(figsize=(15, 20))
+                gs = plt.GridSpec(5, 1, height_ratios=[3, 1, 1, 1, 1])
+                
+                # Price and predictions plot with EMAs
+                ax1 = plt.subplot(gs[0])
+                ax2 = plt.subplot(gs[1])  # RSI
+                ax3 = plt.subplot(gs[2])  # MACD
+                ax4 = plt.subplot(gs[3])  # EMAs
+                ax5 = plt.subplot(gs[4])  # Portfolio Value
+                
+                # Price plot with EMAs
+                ax1.plot(df.index, df['price_usd'], label='Price', color='blue')
+                ax1.plot(df.index, df['ema_50'], label='50 EMA', color='orange', alpha=0.7)
+                ax1.plot(df.index, df['ema_200'], label='200 EMA', color='red', alpha=0.7)
+                
+                # Plot buy/sell signals
+                buy_points = df[df['buy_signal']]['price_usd']
+                sell_points = df[df['sell_signal']]['price_usd']
+                ax1.scatter(buy_points.index, buy_points, color='green', marker='^', label='Buy Signal')
+                ax1.scatter(sell_points.index, sell_points, color='red', marker='v', label='Sell Signal')
+                
+                # RSI plot
+                ax2.plot(df.index, df['rsi'], color='purple')
+                ax2.axhline(y=70, color='r', linestyle='--', alpha=0.5)
+                ax2.axhline(y=30, color='g', linestyle='--', alpha=0.5)
+                ax2.set_ylabel('RSI')
+                ax2.grid(True)
+                ax2.set_ylim(0, 100)
+                
+                # MACD plot
+                ax3.plot(df.index, df['macd'], label='MACD', color='blue')
+                ax3.plot(df.index, df['macd_signal'], label='Signal', color='orange')
+                ax3.bar(df.index, df['macd_hist'], label='Histogram', color='gray', alpha=0.3)
+                ax3.set_ylabel('MACD')
+                ax3.legend()
+                ax3.grid(True)
+                
+                # EMA Crossovers
+                ax4.plot(df.index, df['ema_50'], label='50 EMA', color='orange')
+                ax4.plot(df.index, df['ema_200'], label='200 EMA', color='red')
+                ax4.fill_between(df.index, df['ema_50'], df['ema_200'],
+                            where=df['ema_50'] >= df['ema_200'],
+                            color='green', alpha=0.1)
+                ax4.fill_between(df.index, df['ema_50'], df['ema_200'],
+                            where=df['ema_50'] < df['ema_200'],
+                            color='red', alpha=0.1)
+                ax4.set_ylabel('EMAs')
+                ax4.legend()
+                ax4.grid(True)
+                
+                # Portfolio value plot
+                ax5.plot(df.index, df['portfolio_value'], label='Portfolio Value', color='green')
+                ax5.set_ylabel('Portfolio Value ($)')
+                ax5.grid(True)
+                
+                # Formatting for all subplots
+                for ax in [ax1, ax2, ax3, ax4, ax5]:
+                    ax.xaxis.set_major_formatter(plt.DateFormatter('%Y-%m-%d'))
+                    plt.setp(ax.xaxis.get_majorticklabels(), rotation=45)
+                
+                ax1.set_title(f'Technical Analysis - {currency}')
+                ax1.legend()
+                
+                plt.tight_layout()
+                tech_path = os.path.join(self.plots_dir, f'{currency}_technical_{timestamp}.png')
+                plt.savefig(tech_path, dpi=300, bbox_inches='tight')
+                plt.close()
+            
+            # Now create the original cycle analysis plots
             # Convert dates from strings back to datetime for plotting
             dates = [pd.to_datetime(d) for d in results['dates']]
             
@@ -248,7 +332,7 @@ class CycleAnalysisBacktest:
                 print(f"Insufficient valid data points after filtering for {currency}")
                 return
             
-            # Create figure with subplots
+            # Create figure with subplots for cycle analysis
             fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(15, 15))
             
             # Price prediction plot with regime background
@@ -270,15 +354,16 @@ class CycleAnalysisBacktest:
                         regime_dates = [dates[i] for i in range(len(dates)) if mask[i]]
                         ax1.axvspan(min(regime_dates), max(regime_dates), 
                                 alpha=0.2, color=colors.get(regime, 'white'))
+                                
             # Price prediction plot
             ax1.plot(dates, actuals, label='Actual', color='blue', linewidth=2)
             ax1.plot(dates, predictions, label='Predicted', color='red', linestyle='--', linewidth=2)
             
             # Add confidence bands
             ax1.fill_between(dates, 
-                           predictions * (1 - 0.5 * (1 - confidences)),
-                           predictions * (1 + 0.5 * (1 - confidences)),
-                           color='red', alpha=0.2)
+                        predictions * (1 - 0.5 * (1 - confidences)),
+                        predictions * (1 + 0.5 * (1 - confidences)),
+                        color='red', alpha=0.2)
             
             ax1.set_title(f'Cycle Predictions vs Actuals - {currency}')
             ax1.legend()
@@ -302,7 +387,7 @@ class CycleAnalysisBacktest:
             
             # Scatter plot: Error vs Confidence
             ax3.scatter(dates, errors, c=confidences, cmap='viridis', 
-                       alpha=0.6, s=50)
+                    alpha=0.6, s=50)
             ax3.set_title('Prediction Errors Over Time (colored by confidence)')
             ax3.set_ylabel('Prediction Error %')
             plt.setp(ax3.xaxis.get_majorticklabels(), rotation=45)
@@ -314,8 +399,8 @@ class CycleAnalysisBacktest:
             
             # Adjust layout and save
             plt.tight_layout()
-            save_path = os.path.join(self.plots_dir, f'{currency}_backtest_{timestamp}.png')
-            plt.savefig(save_path, dpi=300, bbox_inches='tight')
+            cycle_path = os.path.join(self.plots_dir, f'{currency}_backtest_{timestamp}.png')
+            plt.savefig(cycle_path, dpi=300, bbox_inches='tight')
             plt.close()
             
             # Create additional plot for confidence analysis
@@ -349,7 +434,7 @@ class CycleAnalysisBacktest:
             plt.savefig(confidence_path, dpi=300, bbox_inches='tight')
             plt.close()
             
-            print(f"Plots saved to: {save_path} and {confidence_path}")
+            print(f"Plots saved to: {tech_path}, {cycle_path}, and {confidence_path}")
             
         except Exception as e:
             print(f"Error plotting results for {currency}: {str(e)}")
@@ -364,30 +449,49 @@ class CycleAnalysisBacktest:
             
         try:
             report = f"""
-    Cycle Analysis Backtest Results for {currency}
-    ============================================
+Cycle Analysis Backtest Results for {currency}
+============================================
 
-    Prediction Settings:
-    ------------------
-    Optimal Window: {results['optimal_window']} days
-    Window Selection MAPE: {results['window_metrics']['mape']:.2%}
-    Number of Test Predictions: {results['window_metrics']['n_predictions']}
+Prediction Settings:
+------------------
+Optimal Window: {results['optimal_window']} days
+Window Selection MAPE: {results['window_metrics']['mape']:.2%}
+Number of Test Predictions: {results['window_metrics']['n_predictions']}
 
-    Prediction Accuracy:
-    ------------------
-    MAPE: {results['mape']:.2f}%
-    Directional Accuracy: {results['directional_accuracy']:.2f}%
-    Average Confidence Score: {np.mean(results['confidences']):.2%}
+Prediction Accuracy:
+------------------
+MAPE: {results['mape']:.2f}%
+Directional Accuracy: {results['directional_accuracy']:.2f}%
+Average Confidence Score: {np.mean(results['confidences']):.2%}
 
-    Price Statistics:
-    ---------------
-    Average Actual Price: ${np.mean(results['actuals']):.2f}
-    Average Predicted Price: ${np.mean(results['predictions']):.2f}
-    Max Error: {np.max(np.abs((np.array(results['predictions']) - np.array(results['actuals'])) / np.array(results['actuals']) * 100)):.2f}%
-    Min Error: {np.min(np.abs((np.array(results['predictions']) - np.array(results['actuals'])) / np.array(results['actuals']) * 100)):.2f}%
+Price Statistics:
+---------------
+Average Actual Price: ${np.mean(results['actuals']):.2f}
+Average Predicted Price: ${np.mean(results['predictions']):.2f}
+Max Error: {np.max(np.abs((np.array(results['predictions']) - np.array(results['actuals'])) / np.array(results['actuals']) * 100)):.2f}%
+Min Error: {np.min(np.abs((np.array(results['predictions']) - np.array(results['actuals'])) / np.array(results['actuals']) * 100)):.2f}%"""
 
-    Market Regime Analysis:
-    --------------------"""
+            # Add Technical Analysis Results right after Price Statistics
+            if 'technical_analysis' in results:
+                # Handle the case where technical_analysis is a tuple (df, metrics)
+                tech_metrics = results['technical_analysis'][1] if isinstance(results['technical_analysis'], tuple) else results['technical_analysis']
+                
+                report += f"""
+
+Technical Analysis Results:
+------------------------
+Total Return: {tech_metrics['total_return']:.2%}
+Sharpe Ratio: {tech_metrics['sharpe_ratio']:.2f}
+Max Drawdown: {tech_metrics['max_drawdown']:.2%}
+Number of Trades: {tech_metrics['number_of_trades']}
+Win Rate: {tech_metrics['win_rate']:.2%}
+Buy Signals: {tech_metrics['buy_signals']}
+Sell Signals: {tech_metrics['sell_signals']}"""
+
+            report += """
+
+Market Regime Analysis:
+--------------------"""
 
             if 'regime_accuracy' in results:
                 for regime, stats in results['regime_accuracy'].items():
@@ -414,7 +518,7 @@ class CycleAnalysisBacktest:
         except Exception as e:
             print(f"Error generating report for {currency}: {str(e)}")
             return f"Error generating report for {currency}: {str(e)}\n"
-
+        
 def run_full_backtest():
     """
     Run complete backtest across all currencies
