@@ -15,7 +15,13 @@ def load_data_from_db(db_config: dict, currency_symbol: str, start_date=None, en
     try:
         conn = psycopg2.connect(**db_config)
         query = """
-        SELECT date::date as date, price_usd, volume_usd
+        SELECT 
+            date::date as date,
+            close_price as price_usd,
+            volume as volume_usd,
+            open_price,
+            high_price,
+            low_price
         FROM crypto_prices
         WHERE currency = %s
         """

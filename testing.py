@@ -47,6 +47,14 @@ class CycleAnalysisBacktest:
             print(f"Date range: {df.index.min()} to {df.index.max()}")
             print(f"Price range: ${df['price_usd'].min():.2f} to ${df['price_usd'].max():.2f}")
             
+            # Data validation
+            if len(df) < training_window:
+                print(f"Insufficient data for {currency}. Need at least {training_window} days.")
+                return None
+
+            # Remove any NaN values
+            df = df.dropna(subset=['price_usd', 'volume_usd'])
+            
             # Determine optimal prediction window
             optimal_window, window_metrics = determine_optimal_window(df, test_windows)
             print(f"\nOptimal prediction window for {currency}: {optimal_window} days")
@@ -66,8 +74,10 @@ class CycleAnalysisBacktest:
             dates = []
             confidences = []
             
-            # Walk forward analysis
-            step_size = optimal_window  # Move forward by optimal window size
+            # Walk forward analysis with smaller steps
+            step_size = min(optimal_window // 3, 7)  # Smaller steps for more test points
+            min_predictions = 30  # Minimum number of predictions required
+            
             for i in range(training_window, len(df)-optimal_window, step_size):
                 try:
                     # Training data
@@ -76,46 +86,63 @@ class CycleAnalysisBacktest:
                     # Test data
                     test_data = df.iloc[i:i+optimal_window].copy()
                     
-                    if train_data.empty or test_data.empty:
+                    if len(train_data) < training_window * 0.9:  # Allow for some missing data
                         continue
                     
                     # Generate predictions
                     train_price = train_data['price_usd'].values
-                    if len(train_price) < training_window:
+                    
+                    # Add price validation
+                    if not np.all(np.isfinite(train_price)):
                         continue
                         
+                    if np.std(train_price) < 1e-6:  # Skip periods with no price movement
+                        continue
+                    
                     cycles = detect_cycles(train_price)
                     if not cycles:
                         continue
                         
                     forecast, confidence = generate_cycle_forecast(train_data, cycles)
-                    if len(forecast) == 0:
+                    if len(forecast) == 0 or not np.all(np.isfinite(forecast)):
                         continue
                     
                     current_price = train_data['price_usd'].iloc[-1]
                     future_price = test_data['price_usd'].iloc[-1]
                     predicted_price = forecast[-1]
                     
+                    # Validate prices
+                    if not all(np.isfinite([current_price, future_price, predicted_price])):
+                        continue
+                        
+                    if abs((predicted_price - current_price) / current_price) > 0.5:
+                        continue  # Skip unrealistic predictions (>50% change)
+                    
                     # Record results
                     predictions.append(predicted_price)
                     actuals.append(future_price)
-                    dates.append(test_data.index[-1])  # Using index since we set date as index
+                    dates.append(test_data.index[-1])
                     confidences.append(confidence)
                     
-                    # Calculate directional accuracy
-                    pred_direction = np.sign(predicted_price - current_price)
-                    actual_direction = np.sign(future_price - current_price)
-                    accuracies.append(pred_direction == actual_direction)
+                    # Calculate directional accuracy with minimum change threshold
+                    min_change_threshold = 0.001  # 0.1% minimum change to count
+                    pred_change = (predicted_price - current_price) / current_price
+                    actual_change = (future_price - current_price) / current_price
                     
-                    print(f"Generated prediction for {currency} at {test_data.index[-1]}:")
-                    print(f"  Predicted: ${predicted_price:.2f}")
-                    print(f"  Actual: ${future_price:.2f}")
-                    print(f"  Confidence: {confidence:.2%}")
+                    if abs(actual_change) < min_change_threshold:
+                        continue  # Skip periods with minimal price change
+                        
+                    accuracies.append(np.sign(pred_change) == np.sign(actual_change))
                     
                 except Exception as e:
                     print(f"Error in prediction iteration: {str(e)}")
                     continue
             
+            # Validate minimum number of predictions
+            if len(predictions) < min_predictions:
+                print(f"Insufficient predictions for {currency}: {len(predictions)} < {min_predictions}")
+                return None
+                
             if not predictions or not actuals:
                 print(f"No valid predictions generated for {currency}")
                 return None
@@ -132,7 +159,7 @@ class CycleAnalysisBacktest:
             confidences = confidences[valid_mask]
             dates = [dates[i] for i in range(len(valid_mask)) if valid_mask[i]]
             
-            if len(predictions) == 0:
+            if len(predictions) < min_predictions:
                 return None
                 
             mape = np.mean(np.abs((predictions - actuals) / actuals)) * 100
@@ -160,7 +187,8 @@ class CycleAnalysisBacktest:
         """
         Plot validation results and save to results directory
         """
-        if results is None:
+        if results is None or len(results['predictions']) < 2:
+            print(f"Insufficient data to plot results for {currency}")
             return
             
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -169,16 +197,29 @@ class CycleAnalysisBacktest:
             # Convert dates from strings back to datetime for plotting
             dates = [pd.to_datetime(d) for d in results['dates']]
             
+            # Add min/max validation for plots
+            predictions = np.array(results['predictions'])
+            actuals = np.array(results['actuals'])
+            
+            # Remove extreme outliers
+            valid_mask = np.abs(predictions - np.median(predictions)) < 5 * np.std(predictions)
+            predictions = predictions[valid_mask]
+            actuals = actuals[valid_mask]
+            dates = [dates[i] for i in range(len(valid_mask)) if valid_mask[i]]
+            confidences = np.array(results['confidences'])[valid_mask]
+            
+            if len(predictions) < 2:
+                print(f"Insufficient valid data points after filtering for {currency}")
+                return
+            
             # Create figure with subplots
             fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(15, 15))
             
             # Price prediction plot
-            ax1.plot(dates, results['actuals'], label='Actual', color='blue', linewidth=2)
-            ax1.plot(dates, results['predictions'], label='Predicted', color='red', linestyle='--', linewidth=2)
+            ax1.plot(dates, actuals, label='Actual', color='blue', linewidth=2)
+            ax1.plot(dates, predictions, label='Predicted', color='red', linestyle='--', linewidth=2)
             
             # Add confidence bands
-            predictions = np.array(results['predictions'])
-            confidences = np.array(results['confidences'])
             ax1.fill_between(dates, 
                            predictions * (1 - 0.5 * (1 - confidences)),
                            predictions * (1 + 0.5 * (1 - confidences)),
@@ -196,7 +237,7 @@ class CycleAnalysisBacktest:
             ax1.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${x:,.2f}'))
             
             # Prediction error plot
-            errors = np.array([(p - a) / a * 100 for p, a in zip(results['predictions'], results['actuals'])])
+            errors = np.array([(p - a) / a * 100 for p, a in zip(predictions, actuals)])
             ax2.hist(errors, bins=30, color='blue', alpha=0.6)
             ax2.axvline(x=0, color='red', linestyle='--')
             ax2.set_title('Prediction Error Distribution (%)')
@@ -316,9 +357,9 @@ def run_full_backtest():
     
     backtest = CycleAnalysisBacktest(DB_CONFIG)
     
-    # Test period: 2022-2023
-    start_date = '2022-01-01'
-    end_date = '2023-12-31'
+    # Updated test period: 2023-2025
+    start_date = '2023-01-01'
+    end_date = '2025-01-01'
     
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     results_file = os.path.join(backtest.results_dir, f'backtest_results_{timestamp}.txt')
@@ -338,6 +379,7 @@ def run_full_backtest():
     with open(results_file, 'w') as f:
         f.write("Cryptocurrency Cycle Analysis Backtest Results\n")
         f.write("==========================================\n\n")
+        f.write(f"Test Period: {start_date} to {end_date}\n\n")
         
         for currency in CURRENCIES:
             print(f"\nTesting {currency}...")
@@ -349,19 +391,25 @@ def run_full_backtest():
                 )
                 
                 if results is not None:
-                    successful_tests += 1
-                    total_mape += results['mape']
-                    total_accuracy += results['directional_accuracy']
-                    total_confidence += np.mean(results['confidences'])
-                    all_results[currency] = results
+                    if len(results['predictions']) >= 30:  # Minimum predictions threshold
+                        successful_tests += 1
+                        total_mape += results['mape']
+                        total_accuracy += results['directional_accuracy']
+                        total_confidence += np.mean(results['confidences'])
+                        all_results[currency] = results
+                        print(f"✓ Successfully processed {currency} with {len(results['predictions'])} predictions")
+                    else:
+                        print(f"✗ Insufficient predictions for {currency}: {len(results['predictions'])} < 30")
+                else:
+                    print(f"✗ No valid results for {currency}")
                 
                 # Write results to file
                 report = backtest.generate_summary_report(currency, results)
                 f.write(report)
                 f.write("\n" + "="*50 + "\n")
                 
-                # Plot results
-                if results is not None:
+                # Plot results if we have enough valid predictions
+                if results is not None and len(results['predictions']) >= 30:
                     backtest.plot_results(currency, results)
                 
             except Exception as e:
@@ -373,11 +421,16 @@ def run_full_backtest():
             summary = f"""
 Overall Summary
 ==============
+Test Period: {start_date} to {end_date}
 Successfully tested currencies: {successful_tests}
 Average MAPE: {total_mape/successful_tests:.2f}%
 Average Directional Accuracy: {total_accuracy/successful_tests:.2f}%
 Average Confidence Score: {total_confidence/successful_tests:.2%}
 """
+            f.write(summary)
+            print(summary)
+        else:
+            summary = "\nNo successful tests completed.\n"
             f.write(summary)
             print(summary)
     
