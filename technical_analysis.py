@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import psycopg2
+from config import DB_CONFIG
 
 def calculate_rsi(data: pd.Series, period: int = 14) -> pd.Series:
     """
@@ -50,53 +52,184 @@ def calculate_ema(data: pd.Series, period: int) -> pd.Series:
     Calculate Exponential Moving Average (EMA)
     """
     return data.ewm(span=period, adjust=False).mean()
-
-def get_technical_signals(df: pd.DataFrame) -> pd.DataFrame:
+           
+def get_technical_signals(df: pd.DataFrame, currency: str = None) -> pd.DataFrame:
     """
     Calculate technical signals and generate buy/sell indicators
     """
     df = df.copy()
     
     # Calculate RSI
+    print("Calculating RSI...")
     df['rsi'] = calculate_rsi(df['price_usd'])
     
     # Calculate MACD
+    print("Calculating MACD...")
     df['macd'], df['macd_signal'], df['macd_hist'] = calculate_macd(df['price_usd'])
     
     # Calculate EMAs
+    print("Calculating EMAs...")
     df['ema_50'] = calculate_ema(df['price_usd'], 50)
     df['ema_200'] = calculate_ema(df['price_usd'], 200)
     
     # Generate signals
+    print("Generating trading signals...")
     
-    # RSI signals
-    df['rsi_oversold'] = df['rsi'] < 30
-    df['rsi_overbought'] = df['rsi'] > 70
+    # RSI signals - adding explicit boolean conversion
+    df['rsi_oversold'] = (df['rsi'] < 30).astype(bool)
+    df['rsi_overbought'] = (df['rsi'] > 70).astype(bool)
     
-    # MACD signals
-    df['macd_crossover'] = (df['macd'] > df['macd_signal']) & (df['macd'].shift(1) <= df['macd_signal'].shift(1))
-    df['macd_crossunder'] = (df['macd'] < df['macd_signal']) & (df['macd'].shift(1) >= df['macd_signal'].shift(1))
+    # MACD signals - adding explicit boolean conversion
+    df['macd_crossover'] = ((df['macd'] > df['macd_signal']) & 
+                           (df['macd'].shift(1) <= df['macd_signal'].shift(1))).astype(bool)
+    df['macd_crossunder'] = ((df['macd'] < df['macd_signal']) & 
+                            (df['macd'].shift(1) >= df['macd_signal'].shift(1))).astype(bool)
     
-    # EMA signals
-    df['ema_bullish'] = df['ema_50'] > df['ema_200']
-    df['ema_bearish'] = df['ema_50'] < df['ema_200']
-    df['golden_cross'] = (df['ema_50'] > df['ema_200']) & (df['ema_50'].shift(1) <= df['ema_200'].shift(1))
-    df['death_cross'] = (df['ema_50'] < df['ema_200']) & (df['ema_50'].shift(1) >= df['ema_200'].shift(1))
+    # EMA signals - adding explicit boolean conversion
+    df['ema_bullish'] = (df['ema_50'] > df['ema_200']).astype(bool)
+    df['ema_bearish'] = (df['ema_50'] < df['ema_200']).astype(bool)
+    df['golden_cross'] = ((df['ema_50'] > df['ema_200']) & 
+                         (df['ema_50'].shift(1) <= df['ema_200'].shift(1))).astype(bool)
+    df['death_cross'] = ((df['ema_50'] < df['ema_200']) & 
+                        (df['ema_50'].shift(1) >= df['ema_200'].shift(1))).astype(bool)
     
-    # Combined signals
+    # Combined signals - adding explicit boolean conversion
     df['buy_signal'] = (
         (df['macd_crossover'] & df['rsi_oversold']) |  # MACD crosses up while RSI oversold
         (df['golden_cross'] & (df['rsi'] < 60)) |      # Golden cross with reasonable RSI
         (df['rsi_oversold'] & df['ema_bullish'])       # Oversold in bullish trend
-    )
+    ).astype(bool)
     
     df['sell_signal'] = (
         (df['macd_crossunder'] & df['rsi_overbought']) |  # MACD crosses down while RSI overbought
         (df['death_cross'] & (df['rsi'] > 40)) |          # Death cross with reasonable RSI
         (df['rsi_overbought'] & df['ema_bearish'])        # Overbought in bearish trend
-    )
+    ).astype(bool)
+
+    # Add validation prints
+    print(f"Signal counts:")
+    print(f"Buy signals: {df['buy_signal'].sum()}")
+    print(f"Sell signals: {df['sell_signal'].sum()}")
+    print(f"Golden crosses: {df['golden_cross'].sum()}")
+    print(f"Death crosses: {df['death_cross'].sum()}")
+
+    # Save technical indicators to database if currency is provided
+    if currency:
+        print(f"Saving technical indicators for {currency}...")
+        save_technical_indicators(df, currency)
     
     return df
+
+def save_technical_indicators(df: pd.DataFrame, currency: str):
+    """
+    Save technical indicators to database with improved boolean handling
+    """
+    try:
+        conn = psycopg2.connect(**DB_CONFIG)
+        cur = conn.cursor()
+
+        # Create table if it doesn't exist
+        cur.execute("""
+        CREATE TABLE IF NOT EXISTS crypto_analysis (
+            id SERIAL PRIMARY KEY,
+            currency VARCHAR(20),
+            date DATE,
+            rsi NUMERIC,
+            macd NUMERIC,
+            macd_signal NUMERIC,
+            macd_hist NUMERIC,
+            ema_50 NUMERIC,
+            ema_200 NUMERIC,
+            buy_signal BOOLEAN,
+            sell_signal BOOLEAN,
+            golden_cross BOOLEAN,
+            death_cross BOOLEAN,
+            UNIQUE(currency, date)
+        )
+        """)
+
+        # Prepare data for insertion
+        records_processed = 0
+        for idx, row in df.iterrows():
+            # Convert boolean values explicitly
+            buy_signal = bool(row['buy_signal'])
+            sell_signal = bool(row['sell_signal'])
+            golden_cross = bool(row['golden_cross'])
+            death_cross = bool(row['death_cross'])
+
+            cur.execute("""
+            INSERT INTO crypto_analysis (
+                currency, date, rsi, macd, macd_signal, macd_hist,
+                ema_50, ema_200, buy_signal, sell_signal,
+                golden_cross, death_cross
+            ) VALUES (
+                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+            ) ON CONFLICT (currency, date) 
+            DO UPDATE SET 
+                rsi = EXCLUDED.rsi,
+                macd = EXCLUDED.macd,
+                macd_signal = EXCLUDED.macd_signal,
+                macd_hist = EXCLUDED.macd_hist,
+                ema_50 = EXCLUDED.ema_50,
+                ema_200 = EXCLUDED.ema_200,
+                buy_signal = EXCLUDED.buy_signal,
+                sell_signal = EXCLUDED.sell_signal,
+                golden_cross = EXCLUDED.golden_cross,
+                death_cross = EXCLUDED.death_cross
+            """, (
+                currency,
+                idx.date(),
+                float(row['rsi']) if not pd.isna(row['rsi']) else None,
+                float(row['macd']) if not pd.isna(row['macd']) else None,
+                float(row['macd_signal']) if not pd.isna(row['macd_signal']) else None,
+                float(row['macd_hist']) if not pd.isna(row['macd_hist']) else None,
+                float(row['ema_50']) if not pd.isna(row['ema_50']) else None,
+                float(row['ema_200']) if not pd.isna(row['ema_200']) else None,
+                buy_signal,
+                sell_signal,
+                golden_cross,
+                death_cross
+            ))
+            records_processed += 1
+            
+            # Commit every 100 records and print progress
+            if records_processed % 100 == 0:
+                conn.commit()
+                print(f"Processed {records_processed} records for {currency}")
+
+        conn.commit()
+        print(f"Successfully saved {records_processed} technical indicators for {currency}")
+        
+        # Validate the saved data
+        cur.execute("""
+        SELECT 
+            COUNT(*) as total,
+            SUM(CASE WHEN buy_signal THEN 1 ELSE 0 END) as buy_signals,
+            SUM(CASE WHEN sell_signal THEN 1 ELSE 0 END) as sell_signals,
+            SUM(CASE WHEN golden_cross THEN 1 ELSE 0 END) as golden_crosses,
+            SUM(CASE WHEN death_cross THEN 1 ELSE 0 END) as death_crosses
+        FROM crypto_analysis
+        WHERE currency = %s
+        """, (currency,))
+        
+        stats = cur.fetchone()
+        print("\nValidation of saved data:")
+        print(f"Total records: {stats[0]}")
+        print(f"Buy signals: {stats[1]}")
+        print(f"Sell signals: {stats[2]}")
+        print(f"Golden crosses: {stats[3]}")
+        print(f"Death crosses: {stats[4]}")
+
+    except Exception as e:
+        print(f"Error saving technical indicators: {str(e)}")
+        if conn:
+            conn.rollback()
+    finally:
+        if cur:
+            cur.close()
+        if conn:
+            conn.close()
+
 
 def backtest_signals(df: pd.DataFrame, initial_capital: float = 10000.0) -> tuple:
     """
@@ -184,4 +317,4 @@ def backtest_signals(df: pd.DataFrame, initial_capital: float = 10000.0) -> tupl
         'sell_signals': sell_signals
     }
     
-    return df, metrics  # Return both the DataFrame and the metrics
+    return df, metrics

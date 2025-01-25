@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import psycopg2
 from database import load_data_from_db
 from analysis import *
 from technical_analysis import get_technical_signals, backtest_signals
@@ -19,6 +20,45 @@ class CycleAnalysisBacktest:
         os.makedirs(self.results_dir, exist_ok=True)
         os.makedirs(self.plots_dir, exist_ok=True)
         
+    def setup_analysis_table(self):
+        """Create the crypto_analysis table if it doesn't exist"""
+        try:
+            conn = psycopg2.connect(**self.db_config)
+            cur = conn.cursor()
+            
+            # Create analysis table
+            cur.execute("""
+            CREATE TABLE IF NOT EXISTS crypto_analysis (
+                id SERIAL PRIMARY KEY,
+                currency VARCHAR(20),
+                date DATE,
+                rsi NUMERIC,
+                macd NUMERIC,
+                macd_signal NUMERIC,
+                macd_hist NUMERIC,
+                ema_50 NUMERIC,
+                ema_200 NUMERIC,
+                buy_signal BOOLEAN,
+                sell_signal BOOLEAN,
+                golden_cross BOOLEAN,
+                death_cross BOOLEAN,
+                UNIQUE(currency, date)
+            )
+            """)
+            
+            conn.commit()
+            print("Analysis table setup completed")
+            
+        except Exception as e:
+            print(f"Error setting up analysis table: {str(e)}")
+            if conn:
+                conn.rollback()
+        finally:
+            if cur:
+                cur.close()
+            if conn:
+                conn.close()
+
     def validate_cycle_prediction(self, 
                                 currency: str,
                                 start_date: str,
@@ -56,11 +96,30 @@ class CycleAnalysisBacktest:
             # Remove any NaN values
             df = df.dropna(subset=['price_usd', 'volume_usd'])
             
+            # Compute features
+            print("Computing advanced features...")
+            df = compute_advanced_features(df)
+
+            # Add technical analysis signals and save to database
+            print("Calculating and saving technical indicators...")
+            df = get_technical_signals(df, currency)  # This will save to the database
+            print("Technical analysis completed")
+        
+            # Run technical analysis backtest
+            print("Running backtest...")
+            df, technical_results = backtest_signals(df)
+            print("Backtest completed")
+
+            # Analyze signal-based trading performance
+            print("Analyzing signal-based trading performance...")
+            signal_performance = self.analyze_signal_performance(df)
+            print("Signal-based trading analysis completed")
+
             # Determine optimal prediction window
             optimal_window, window_metrics = determine_optimal_window(df, test_windows)
             print(f"\nOptimal prediction window for {currency}: {optimal_window} days")
             print(f"Window selection metrics: MAPE={window_metrics['mape']:.2%}, n_predictions={window_metrics['n_predictions']}")
-            
+
             # Ensure we have enough data
             if len(df) < training_window + optimal_window:
                 print(f"Insufficient data for {currency}. Need at least {training_window + optimal_window} days, got {len(df)} days.")
@@ -68,10 +127,13 @@ class CycleAnalysisBacktest:
                 
             # Compute features
             df = compute_advanced_features(df)
+            print("Calculating technical indicators...")
 
             # Add technical analysis signals
             df = get_technical_signals(df)
-        
+            print(f"RSI range: {df['rsi'].min():.2f} to {df['rsi'].max():.2f}")
+            print(f"MACD histogram range: {df['macd_hist'].min():.2f} to {df['macd_hist'].max():.2f}")
+
             # Run technical analysis backtest and get updated df
             df, technical_results = backtest_signals(df)
             
@@ -222,6 +284,7 @@ class CycleAnalysisBacktest:
                 'regime_scores': regime_scores,
                 'regime_accuracy': regime_accuracy,
                 'technical_analysis': (df, technical_results),
+                'signal_performance': signal_performance,
                 'data': df
             }
             
@@ -241,8 +304,8 @@ class CycleAnalysisBacktest:
         
         try:
             # First, create technical analysis plots
-            if 'data' in results:
-                df = results['data']
+            if 'technical_analysis' in results:
+                df = results['technical_analysis'][0] if isinstance(results['technical_analysis'], tuple) else results['data']
                 
                 # Create figure with subplots for technical analysis
                 fig = plt.figure(figsize=(15, 20))
@@ -256,57 +319,84 @@ class CycleAnalysisBacktest:
                 ax5 = plt.subplot(gs[4])  # Portfolio Value
                 
                 # Price plot with EMAs
-                ax1.plot(df.index, df['price_usd'], label='Price', color='blue')
-                ax1.plot(df.index, df['ema_50'], label='50 EMA', color='orange', alpha=0.7)
-                ax1.plot(df.index, df['ema_200'], label='200 EMA', color='red', alpha=0.7)
+                ax1.plot(df.index, df['price_usd'], label='Price', color='blue', linewidth=1.5)
+                ax1.plot(df.index, df['ema_50'], label='50 EMA', color='orange', alpha=0.7, linewidth=1.5)
+                ax1.plot(df.index, df['ema_200'], label='200 EMA', color='red', alpha=0.7, linewidth=1.5)
                 
                 # Plot buy/sell signals
                 buy_points = df[df['buy_signal']]['price_usd']
                 sell_points = df[df['sell_signal']]['price_usd']
-                ax1.scatter(buy_points.index, buy_points, color='green', marker='^', label='Buy Signal')
-                ax1.scatter(sell_points.index, sell_points, color='red', marker='v', label='Sell Signal')
+                ax1.scatter(buy_points.index, buy_points, color='green', marker='^', 
+                          s=100, label='Buy Signal')
+                ax1.scatter(sell_points.index, sell_points, color='red', marker='v', 
+                          s=100, label='Sell Signal')
+                ax1.set_title(f'{currency} Price and Trading Signals')
+                ax1.legend(loc='upper right')
+                ax1.grid(True, alpha=0.3)
+                ax1.set_ylabel('Price ($)')
                 
                 # RSI plot
-                ax2.plot(df.index, df['rsi'], color='purple')
-                ax2.axhline(y=70, color='r', linestyle='--', alpha=0.5)
-                ax2.axhline(y=30, color='g', linestyle='--', alpha=0.5)
+                ax2.plot(df.index, df['rsi'], color='purple', label='RSI', linewidth=1.5)
+                ax2.axhline(y=70, color='r', linestyle='--', alpha=0.5, label='Overbought (70)')
+                ax2.axhline(y=30, color='g', linestyle='--', alpha=0.5, label='Oversold (30)')
+                # Highlight overbought/oversold regions
+                ax2.fill_between(df.index, 70, 100, color='r', alpha=0.1)
+                ax2.fill_between(df.index, 0, 30, color='g', alpha=0.1)
                 ax2.set_ylabel('RSI')
-                ax2.grid(True)
+                ax2.set_title('Relative Strength Index (RSI)')
+                ax2.grid(True, alpha=0.3)
                 ax2.set_ylim(0, 100)
+                ax2.legend(loc='upper right')
                 
                 # MACD plot
-                ax3.plot(df.index, df['macd'], label='MACD', color='blue')
-                ax3.plot(df.index, df['macd_signal'], label='Signal', color='orange')
-                ax3.bar(df.index, df['macd_hist'], label='Histogram', color='gray', alpha=0.3)
+                ax3.plot(df.index, df['macd'], label='MACD Line', color='blue', linewidth=1.5)
+                ax3.plot(df.index, df['macd_signal'], label='Signal Line', color='orange', linewidth=1.5)
+                # Plot histogram with color coding
+                positive_hist = df['macd_hist'] > 0
+                ax3.bar(df.index[positive_hist], df.loc[positive_hist, 'macd_hist'], 
+                       label='Positive Histogram', color='green', alpha=0.3)
+                ax3.bar(df.index[~positive_hist], df.loc[~positive_hist, 'macd_hist'], 
+                       label='Negative Histogram', color='red', alpha=0.3)
+                ax3.axhline(y=0, color='k', linestyle='-', alpha=0.2)
                 ax3.set_ylabel('MACD')
-                ax3.legend()
-                ax3.grid(True)
+                ax3.set_title('Moving Average Convergence Divergence (MACD)')
+                ax3.legend(loc='upper right')
+                ax3.grid(True, alpha=0.3)
                 
                 # EMA Crossovers
-                ax4.plot(df.index, df['ema_50'], label='50 EMA', color='orange')
-                ax4.plot(df.index, df['ema_200'], label='200 EMA', color='red')
+                ax4.plot(df.index, df['ema_50'], label='50 EMA', color='orange', linewidth=1.5)
+                ax4.plot(df.index, df['ema_200'], label='200 EMA', color='red', linewidth=1.5)
+                # Highlight crossover regions
                 ax4.fill_between(df.index, df['ema_50'], df['ema_200'],
                             where=df['ema_50'] >= df['ema_200'],
-                            color='green', alpha=0.1)
+                            color='green', alpha=0.1, label='Bullish Trend')
                 ax4.fill_between(df.index, df['ema_50'], df['ema_200'],
                             where=df['ema_50'] < df['ema_200'],
-                            color='red', alpha=0.1)
-                ax4.set_ylabel('EMAs')
-                ax4.legend()
-                ax4.grid(True)
+                            color='red', alpha=0.1, label='Bearish Trend')
+                # Mark crossover points
+                golden_cross = df[df['golden_cross']].index
+                death_cross = df[df['death_cross']].index
+                ax4.scatter(golden_cross, df.loc[golden_cross, 'ema_50'], 
+                          color='green', marker='^', s=100, label='Golden Cross')
+                ax4.scatter(death_cross, df.loc[death_cross, 'ema_50'], 
+                          color='red', marker='v', s=100, label='Death Cross')
+                ax4.set_ylabel('Price')
+                ax4.set_title('EMA Crossovers (50 & 200)')
+                ax4.legend(loc='upper right')
+                ax4.grid(True, alpha=0.3)
                 
                 # Portfolio value plot
-                ax5.plot(df.index, df['portfolio_value'], label='Portfolio Value', color='green')
+                ax5.plot(df.index, df['portfolio_value'], label='Portfolio Value', 
+                        color='green', linewidth=1.5)
                 ax5.set_ylabel('Portfolio Value ($)')
-                ax5.grid(True)
+                ax5.set_title('Portfolio Performance')
+                ax5.grid(True, alpha=0.3)
+                ax5.legend(loc='upper left')
                 
                 # Formatting for all subplots
                 for ax in [ax1, ax2, ax3, ax4, ax5]:
                     ax.xaxis.set_major_formatter(plt.DateFormatter('%Y-%m-%d'))
                     plt.setp(ax.xaxis.get_majorticklabels(), rotation=45)
-                
-                ax1.set_title(f'Technical Analysis - {currency}')
-                ax1.legend()
                 
                 plt.tight_layout()
                 tech_path = os.path.join(self.plots_dir, f'{currency}_technical_{timestamp}.png')
@@ -439,59 +529,201 @@ class CycleAnalysisBacktest:
         except Exception as e:
             print(f"Error plotting results for {currency}: {str(e)}")
             plt.close('all')
-    
+    def analyze_signal_performance(self, df: pd.DataFrame, initial_capital: float = 10000.0) -> dict:
+        """
+        Analyze performance of trading based on buy/sell signals
+        """
+        results = {
+            'trades': [],
+            'initial_capital': initial_capital,
+            'final_capital': initial_capital,
+            'total_trades': 0,
+            'profitable_trades': 0,
+            'buy_and_hold_return': 0,
+            'signal_trading_return': 0,
+            'buy_never_sell_return': 0,
+            'buy_never_sell_final': 0,
+            'price_history': []
+        }
+        
+        # Calculate buy and hold return (first to last price)
+        start_price = df['price_usd'].iloc[0]
+        end_price = df['price_usd'].iloc[-1]
+        results['buy_and_hold_return'] = ((end_price - start_price) / start_price) * 100
+        
+        # Calculate buy and never sell scenario (if bought at first buy signal)
+        first_buy_signal_idx = df[df['buy_signal']].index[0] if any(df['buy_signal']) else df.index[0]
+        first_buy_price = df.loc[first_buy_signal_idx, 'price_usd']
+        results['buy_never_sell_return'] = ((end_price - first_buy_price) / first_buy_price) * 100
+        results['buy_never_sell_final'] = initial_capital * (1 + results['buy_never_sell_return']/100)
+        
+        # Signal-based trading simulation
+        current_position = 'cash'  # or 'invested'
+        current_capital = initial_capital
+        entry_price = 0
+        entry_date = None
+        
+        for idx, row in df.iterrows():
+            # Track price history
+            results['price_history'].append({
+                'date': idx,
+                'price': row['price_usd'],
+                'capital': current_capital
+            })
+            
+            if current_position == 'cash' and row['buy_signal']:
+                # Buy signal while we're in cash - enter position
+                entry_price = row['price_usd']
+                entry_date = idx
+                current_position = 'invested'
+                shares = current_capital / entry_price
+                
+            elif current_position == 'invested' and row['sell_signal']:
+                # Sell signal while we're invested - exit position
+                exit_price = row['price_usd']
+                exit_date = idx
+                
+                # Calculate trade profit
+                trade_return = ((exit_price - entry_price) / entry_price) * 100
+                current_capital = current_capital * (1 + trade_return/100)
+                
+                # Record trade
+                trade = {
+                    'entry_date': entry_date,
+                    'exit_date': exit_date,
+                    'entry_price': entry_price,
+                    'exit_price': exit_price,
+                    'return_pct': trade_return,
+                    'capital_after_trade': current_capital
+                }
+                results['trades'].append(trade)
+                
+                # Update metrics
+                results['total_trades'] += 1
+                if trade_return > 0:
+                    results['profitable_trades'] += 1
+                    
+                # Reset position
+                current_position = 'cash'
+        
+        # Update final results
+        results['final_capital'] = current_capital
+        results['signal_trading_return'] = ((current_capital - initial_capital) / initial_capital) * 100
+        
+        if results['total_trades'] > 0:
+            results['win_rate'] = (results['profitable_trades'] / results['total_trades']) * 100
+        else:
+            results['win_rate'] = 0
+            
+        # Calculate additional metrics
+        if results['trades']:
+            trade_returns = [t['return_pct'] for t in results['trades']]
+            results['avg_trade_return'] = np.mean(trade_returns)
+            results['max_trade_return'] = np.max(trade_returns)
+            results['min_trade_return'] = np.min(trade_returns)
+            results['trade_return_std'] = np.std(trade_returns)
+        else:
+            results['avg_trade_return'] = 0
+            results['max_trade_return'] = 0
+            results['min_trade_return'] = 0
+            results['trade_return_std'] = 0
+            
+        return results
+
+    def generate_signal_trading_report(self, currency: str, signal_results: dict) -> str:
+        """
+        Generate a detailed report of signal-based trading performance
+        """
+        report = f"\nSignal Trading Analysis for {currency}\n"
+        report += "="*40 + "\n\n"
+        
+        report += f"Performance Summary:\n"
+        report += f"------------------\n"
+        report += f"Initial Capital: ${signal_results['initial_capital']:,.2f}\n"
+        report += f"Final Capital (Signal Trading): ${signal_results['final_capital']:,.2f}\n"
+        report += f"Final Capital (Buy First Signal & Hold): ${signal_results['buy_never_sell_final']:,.2f}\n"
+        report += f"Buy & Hold Return: {signal_results['buy_and_hold_return']:,.2f}%\n"
+        report += f"Signal Trading Return: {signal_results['signal_trading_return']:,.2f}%\n"
+        report += f"Buy First Signal & Hold Return: {signal_results['buy_never_sell_return']:,.2f}%\n"
+        report += f"Signal Trading vs Buy & Hold: {signal_results['signal_trading_return'] - signal_results['buy_and_hold_return']:,.2f}%\n"
+        report += f"Signal Trading vs Buy First & Hold: {signal_results['signal_trading_return'] - signal_results['buy_never_sell_return']:,.2f}%\n\n"
+        
+        report += f"Trade Statistics:\n"
+        report += f"----------------\n"
+        report += f"Total Trades: {signal_results['total_trades']}\n"
+        report += f"Profitable Trades: {signal_results['profitable_trades']}\n"
+        report += f"Win Rate: {signal_results['win_rate']:.2f}%\n"
+        report += f"Average Trade Return: {signal_results['avg_trade_return']:.2f}%\n"
+        report += f"Best Trade: {signal_results['max_trade_return']:.2f}%\n"
+        report += f"Worst Trade: {signal_results['min_trade_return']:.2f}%\n"
+        report += f"Trade Return Std Dev: {signal_results['trade_return_std']:.2f}%\n\n"
+        
+        report += f"Detailed Trade History:\n"
+        report += f"--------------------\n"
+        for i, trade in enumerate(signal_results['trades'], 1):
+            report += f"Trade {i}:\n"
+            report += f"  Entry: {trade['entry_date'].strftime('%Y-%m-%d')} at ${trade['entry_price']:.2f}\n"
+            report += f"  Exit: {trade['exit_date'].strftime('%Y-%m-%d')} at ${trade['exit_price']:.2f}\n"
+            report += f"  Return: {trade['return_pct']:.2f}%\n"
+            report += f"  Capital After Trade: ${trade['capital_after_trade']:.2f}\n\n"
+        
+        return report
     def generate_summary_report(self, currency: str, results: Dict) -> str:
         """
         Generate a summary report of the backtesting results
         """
         if results is None:
             return f"No valid results available for {currency}\n"
-            
+                
         try:
             report = f"""
-Cycle Analysis Backtest Results for {currency}
-============================================
+    Cycle Analysis Backtest Results for {currency}
+    ============================================
 
-Prediction Settings:
-------------------
-Optimal Window: {results['optimal_window']} days
-Window Selection MAPE: {results['window_metrics']['mape']:.2%}
-Number of Test Predictions: {results['window_metrics']['n_predictions']}
+    Prediction Settings:
+    ------------------
+    Optimal Window: {results['optimal_window']} days
+    Window Selection MAPE: {results['window_metrics']['mape']:.2%}
+    Number of Test Predictions: {results['window_metrics']['n_predictions']}
 
-Prediction Accuracy:
-------------------
-MAPE: {results['mape']:.2f}%
-Directional Accuracy: {results['directional_accuracy']:.2f}%
-Average Confidence Score: {np.mean(results['confidences']):.2%}
+    Prediction Accuracy:
+    ------------------
+    MAPE: {results['mape']:.2f}%
+    Directional Accuracy: {results['directional_accuracy']:.2f}%
+    Average Confidence Score: {np.mean(results['confidences']):.2%}
 
-Price Statistics:
----------------
-Average Actual Price: ${np.mean(results['actuals']):.2f}
-Average Predicted Price: ${np.mean(results['predictions']):.2f}
-Max Error: {np.max(np.abs((np.array(results['predictions']) - np.array(results['actuals'])) / np.array(results['actuals']) * 100)):.2f}%
-Min Error: {np.min(np.abs((np.array(results['predictions']) - np.array(results['actuals'])) / np.array(results['actuals']) * 100)):.2f}%"""
+    Price Statistics:
+    ---------------
+    Average Actual Price: ${np.mean(results['actuals']):.2f}
+    Average Predicted Price: ${np.mean(results['predictions']):.2f}
+    Max Error: {np.max(np.abs((np.array(results['predictions']) - np.array(results['actuals'])) / np.array(results['actuals']) * 100)):.2f}%
+    Min Error: {np.min(np.abs((np.array(results['predictions']) - np.array(results['actuals'])) / np.array(results['actuals']) * 100)):.2f}%"""
 
-            # Add Technical Analysis Results right after Price Statistics
+            # Add Technical Analysis Results
             if 'technical_analysis' in results:
-                # Handle the case where technical_analysis is a tuple (df, metrics)
                 tech_metrics = results['technical_analysis'][1] if isinstance(results['technical_analysis'], tuple) else results['technical_analysis']
                 
                 report += f"""
 
-Technical Analysis Results:
-------------------------
-Total Return: {tech_metrics['total_return']:.2%}
-Sharpe Ratio: {tech_metrics['sharpe_ratio']:.2f}
-Max Drawdown: {tech_metrics['max_drawdown']:.2%}
-Number of Trades: {tech_metrics['number_of_trades']}
-Win Rate: {tech_metrics['win_rate']:.2%}
-Buy Signals: {tech_metrics['buy_signals']}
-Sell Signals: {tech_metrics['sell_signals']}"""
+    Technical Analysis Results:
+    ------------------------
+    Total Return: {tech_metrics['total_return']:.2%}
+    Sharpe Ratio: {tech_metrics['sharpe_ratio']:.2f}
+    Max Drawdown: {tech_metrics['max_drawdown']:.2%}
+    Number of Trades: {tech_metrics['number_of_trades']}
+    Win Rate: {tech_metrics['win_rate']:.2%}
+    Buy Signals: {tech_metrics['buy_signals']}
+    Sell Signals: {tech_metrics['sell_signals']}"""
+
+            # Add Signal Trading Analysis
+            if 'signal_performance' in results:
+                signal_report = self.generate_signal_trading_report(currency, results['signal_performance'])
+                report += "\n\n" + signal_report
 
             report += """
 
-Market Regime Analysis:
---------------------"""
+    Market Regime Analysis:
+    --------------------"""
 
             if 'regime_accuracy' in results:
                 for regime, stats in results['regime_accuracy'].items():
@@ -512,13 +744,13 @@ Market Regime Analysis:
                 if 'regimes' in results:
                     report += f" Regime: {results['regimes'][idx].upper()}"
                 report += "\n"
-                    
+                        
             return report
-                
+                    
         except Exception as e:
             print(f"Error generating report for {currency}: {str(e)}")
             return f"Error generating report for {currency}: {str(e)}\n"
-        
+            
 def run_full_backtest():
     """
     Run complete backtest across all currencies
@@ -527,6 +759,10 @@ def run_full_backtest():
     print("============================================")
     
     backtest = CycleAnalysisBacktest(DB_CONFIG)
+    
+    # Setup analysis table
+    print("\nSetting up analysis database...")
+    backtest.setup_analysis_table()
     
     # Updated test period: 2023-2025
     start_date = '2023-01-01'
@@ -553,7 +789,7 @@ def run_full_backtest():
         f.write(f"Test Period: {start_date} to {end_date}\n\n")
         
         for currency in CURRENCIES:
-            print(f"\nTesting {currency}...")
+            print(f"\nProcessing {currency}...")
             try:
                 results = backtest.validate_cycle_prediction(
                     currency, 
@@ -569,6 +805,9 @@ def run_full_backtest():
                         total_confidence += np.mean(results['confidences'])
                         all_results[currency] = results
                         print(f"✓ Successfully processed {currency} with {len(results['predictions'])} predictions")
+                        
+                        # Generate plots
+                        backtest.plot_results(currency, results)
                     else:
                         print(f"✗ Insufficient predictions for {currency}: {len(results['predictions'])} < 30")
                 else:
@@ -578,10 +817,6 @@ def run_full_backtest():
                 report = backtest.generate_summary_report(currency, results)
                 f.write(report)
                 f.write("\n" + "="*50 + "\n")
-                
-                # Plot results if we have enough valid predictions
-                if results is not None and len(results['predictions']) >= 30:
-                    backtest.plot_results(currency, results)
                 
             except Exception as e:
                 print(f"Error testing {currency}: {str(e)}")
