@@ -82,41 +82,54 @@ class SensitiveStrategyBacktest:
         df['volume_weighted_rsi'] = df['rsi'] * volume_multiplier
         
         return df
+
     def generate_sensitive_signals(self, df: pd.DataFrame) -> pd.DataFrame:
         """Generate sensitive trading signals"""
         df = df.copy()
         
+        # Short-term EMA cross signal
+        df['short_cross_buy'] = (df['ema_10'] > df['ema_20']) & (df['ema_10'].shift(1) <= df['ema_20'].shift(1))
+        df['short_cross_sell'] = (df['ema_10'] < df['ema_20']) & (df['ema_10'].shift(1) >= df['ema_20'].shift(1))
+        
+        # Stochastic signals
+        df['stoch_oversold'] = (df['k_percent'] < 20) & (df['d_percent'] < 20)
+        df['stoch_overbought'] = (df['k_percent'] > 80) & (df['d_percent'] > 80)
+        df['stoch_cross_buy'] = (df['k_percent'] > df['d_percent']) & (df['k_percent'].shift(1) <= df['d_percent'].shift(1))
+        df['stoch_cross_sell'] = (df['k_percent'] < df['d_percent']) & (df['k_percent'].shift(1) >= df['d_percent'].shift(1))
+        
+        # MACD momentum
+        df['macd_momentum'] = df['macd_hist'].pct_change()
+        
         # Combined sensitive signals
         df['sensitive_buy'] = (
             # Short-term EMA cross with RSI confirmation
-            (df['ema_10'] > df['ema_20']) & (df['volume_weighted_rsi'] < 40) |
+            (df['short_cross_buy'] & (df['volume_weighted_rsi'] < 40)) |
             
             # Stochastic oversold with positive MACD momentum
-            (df['k_percent'] < 20) & (df['d_percent'] < 20) & (df['macd_hist'] > 0) |
+            (df['stoch_oversold'] & (df['macd_momentum'] > 0)) |
             
             # Strong volume spike with oversold conditions
             (df['volume_weighted_rsi'] < 25) |
             
             # Multiple indicator confluence
-            (df['k_percent'] > df['d_percent']) & (df['macd'] > df['macd_signal']) & (df['rsi'] < 45)
+            (df['stoch_cross_buy'] & (df['macd'] > df['macd_signal']) & (df['rsi'] < 45))
         )
         
         df['sensitive_sell'] = (
             # Short-term EMA cross with RSI confirmation
-            (df['ema_10'] < df['ema_20']) & (df['volume_weighted_rsi'] > 60) |
+            (df['short_cross_sell'] & (df['volume_weighted_rsi'] > 60)) |
             
             # Stochastic overbought with negative MACD momentum
-            (df['k_percent'] > 80) & (df['d_percent'] > 80) & (df['macd_hist'] < 0) |
+            (df['stoch_overbought'] & (df['macd_momentum'] < 0)) |
             
             # Strong volume spike with overbought conditions
             (df['volume_weighted_rsi'] > 75) |
             
             # Multiple indicator confluence
-            (df['k_percent'] < df['d_percent']) & (df['macd'] < df['macd_signal']) & (df['rsi'] > 55)
+            (df['stoch_cross_sell'] & (df['macd'] < df['macd_signal']) & (df['rsi'] > 55))
         )
         
         return df
-
     def generate_individual_signals(self, df: pd.DataFrame) -> pd.DataFrame:
         """Generate individual trading signals for each indicator"""
         df = df.copy()
@@ -142,7 +155,7 @@ class SensitiveStrategyBacktest:
         df['vol_rsi_sell'] = (df['volume_weighted_rsi'] > 70) & (df['volume_weighted_rsi'].shift(1) <= 70)
         
         return df
-    
+
     def backtest_individual_strategies(self, df: pd.DataFrame, initial_capital: float = 10000.0) -> dict:
         """Run backtest for each individual signal type"""
         strategies = {
@@ -265,9 +278,34 @@ class SensitiveStrategyBacktest:
             results[strategy_name] = strategy_results
             
         return results
-    
 
+    def generate_individual_signals_report(self, currency: str, results: dict) -> str:
+        """Generate report for individual signal strategies"""
+        report = f"""
+Individual Signal Strategy Analysis for {currency}
+{'='*50}
 
+Buy & Hold Return: {results['EMA_Cross']['buy_and_hold_return']:.2f}%
+
+Performance by Signal Type:
+-------------------------"""
+        
+        for strategy_name, strategy_results in results.items():
+            report += f"""
+
+{strategy_name}:
+{'-'*len(strategy_name)}
+Final Capital: ${strategy_results['final_capital']:,.2f}
+Total Return: {strategy_results['strategy_return']:.2f}%
+vs Buy & Hold: {strategy_results['strategy_return'] - strategy_results['buy_and_hold_return']:.2f}%
+Total Trades: {strategy_results['total_trades']}
+Win Rate: {strategy_results['win_rate']:.2f}%
+Average Trade Return: {strategy_results['avg_trade_return']:.2f}%
+Best Trade: {strategy_results['max_trade_return']:.2f}%
+Worst Trade: {strategy_results['min_trade_return']:.2f}%
+Average Hold: {strategy_results['avg_holding_period']:.1f} days"""
+            
+        return report
     def backtest_strategy(self, df: pd.DataFrame, initial_capital: float = 10000.0) -> dict:
         """Run backtest on the sensitive strategy"""
         results = {
@@ -328,7 +366,7 @@ class SensitiveStrategyBacktest:
                     
                 current_position = 'cash'
         
-        # If still invested at the end, close position
+        # Close any open position at the end
         if current_position == 'invested':
             exit_price = df['price_usd'].iloc[-1]
             exit_date = df.index[-1]
@@ -375,81 +413,9 @@ class SensitiveStrategyBacktest:
             results['avg_holding_period'] = 0
             results['max_holding_period'] = 0
             results['min_holding_period'] = 0
-            
+        
         return results
-    
-    def generate_individual_signals_report(self, currency: str, results: dict) -> str:
-        """Generate report for individual signal strategies"""
-        report = f"""
-Individual Signal Strategy Analysis for {currency}
-{'='*50}
 
-Buy & Hold Return: {results['EMA_Cross']['buy_and_hold_return']:.2f}%
-
-Performance by Signal Type:
--------------------------"""
-        
-        for strategy_name, strategy_results in results.items():
-            report += f"""
-
-{strategy_name}:
-{'-'*len(strategy_name)}
-Final Capital: ${strategy_results['final_capital']:,.2f}
-Total Return: {strategy_results['strategy_return']:.2f}%
-vs Buy & Hold: {strategy_results['strategy_return'] - strategy_results['buy_and_hold_return']:.2f}%
-Total Trades: {strategy_results['total_trades']}
-Win Rate: {strategy_results['win_rate']:.2f}%
-Average Trade Return: {strategy_results['avg_trade_return']:.2f}%
-Best Trade: {strategy_results['max_trade_return']:.2f}%
-Worst Trade: {strategy_results['min_trade_return']:.2f}%
-Average Hold: {strategy_results['avg_holding_period']:.1f} days"""
-            
-        return report
-
-    def generate_report(self, currency: str, results: dict) -> str:
-        """Generate detailed report of backtest results"""
-        report = f"""
-Sensitive Strategy Analysis Results for {currency}
-{'='*50}
-
-Performance Summary:
-------------------
-Initial Capital: ${results['initial_capital']:,.2f}
-Final Capital: ${results['final_capital']:,.2f}
-Total Return: {results['strategy_return']:.2f}%
-Buy & Hold Return: {results['buy_and_hold_return']:.2f}%
-Strategy vs Buy & Hold: {results['strategy_return'] - results['buy_and_hold_return']:.2f}%
-
-Trade Statistics:
----------------
-Total Trades: {results['total_trades']}
-Profitable Trades: {results['profitable_trades']}
-Win Rate: {results['win_rate']:.2f}%
-Average Trade Return: {results['avg_trade_return']:.2f}%
-Best Trade: {results['max_trade_return']:.2f}%
-Worst Trade: {results['min_trade_return']:.2f}%
-Trade Return Std Dev: {results['trade_return_std']:.2f}%
-
-Holding Periods:
---------------
-Average Hold: {results['avg_holding_period']:.1f} days
-Longest Hold: {results['max_holding_period']} days
-Shortest Hold: {results['min_holding_period']} days
-
-Detailed Trade History:
---------------------"""
-
-        for i, trade in enumerate(results['trades'], 1):
-            report += f"""
-Trade {i}:
-  Entry: {trade['entry_date'].strftime('%Y-%m-%d')} at ${trade['entry_price']:.2f}
-  Exit: {trade['exit_date'].strftime('%Y-%m-%d')} at ${trade['exit_price']:.2f}
-  Return: {trade['return_pct']:.2f}%
-  Holding Period: {trade['holding_period']} days
-  Capital After Trade: ${trade['capital_after_trade']:.2f}"""
-        
-        return report
-    
     def plot_results(self, currency: str, df: pd.DataFrame, results: dict):
         """Create visualization of backtest results"""
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -512,7 +478,7 @@ Trade {i}:
         ax4.set_title('Stochastic Oscillator')
         ax4.legend()
         ax4.grid(True)
-        
+
         # Portfolio value plot
         portfolio_values = [x['capital'] for x in results['price_history']]
         ax5.plot(df.index, portfolio_values, label='Portfolio Value', color='green')
@@ -531,6 +497,50 @@ Trade {i}:
         plt.close()
         
         return plot_path
+
+    def generate_report(self, currency: str, results: dict) -> str:
+        """Generate detailed report of backtest results"""
+        report = f"""
+Sensitive Strategy Analysis Results for {currency}
+{'='*50}
+
+Performance Summary:
+------------------
+Initial Capital: ${results['initial_capital']:,.2f}
+Final Capital: ${results['final_capital']:,.2f}
+Total Return: {results['strategy_return']:.2f}%
+Buy & Hold Return: {results['buy_and_hold_return']:.2f}%
+Strategy vs Buy & Hold: {results['strategy_return'] - results['buy_and_hold_return']:.2f}%
+
+Trade Statistics:
+---------------
+Total Trades: {results['total_trades']}
+Profitable Trades: {results['profitable_trades']}
+Win Rate: {results['win_rate']:.2f}%
+Average Trade Return: {results['avg_trade_return']:.2f}%
+Best Trade: {results['max_trade_return']:.2f}%
+Worst Trade: {results['min_trade_return']:.2f}%
+Trade Return Std Dev: {results['trade_return_std']:.2f}%
+
+Holding Periods:
+--------------
+Average Hold: {results['avg_holding_period']:.1f} days
+Longest Hold: {results['max_holding_period']} days
+Shortest Hold: {results['min_holding_period']} days
+
+Detailed Trade History:
+--------------------"""
+
+        for i, trade in enumerate(results['trades'], 1):
+            report += f"""
+Trade {i}:
+  Entry: {trade['entry_date'].strftime('%Y-%m-%d')} at ${trade['entry_price']:.2f}
+  Exit: {trade['exit_date'].strftime('%Y-%m-%d')} at ${trade['exit_price']:.2f}
+  Return: {trade['return_pct']:.2f}%
+  Holding Period: {trade['holding_period']} days
+  Capital After Trade: ${trade['capital_after_trade']:.2f}"""
+        
+        return report
 
 def run_sensitive_analysis():
     """Main function to run the sensitive strategy analysis"""
@@ -576,47 +586,26 @@ def run_sensitive_analysis():
                 df = backtest.add_technical_indicators(df)
                 df = backtest.generate_sensitive_signals(df)
                 df = backtest.generate_individual_signals(df)
-                
-                # Run backtests
+
+                # Run backtest
                 combined_results = backtest.backtest_strategy(df)
-                individual_results = backtest.backtest_individual_strategies(df)
-                
+                individual_results = backtest.backtest_individual_strategies(df)                
                 # Generate plots
                 plot_path = backtest.plot_results(currency, df, combined_results)
                 
-                # Update overall statistics for combined strategy
+                # Update overall statistics
                 overall_stats['currencies_tested'] += 1
-                overall_stats['total_return'] += combined_results['strategy_return']
-                overall_stats['total_trades'] += combined_results['total_trades']
-                overall_stats['profitable_trades'] += combined_results['profitable_trades']
-                overall_stats['avg_holding_period'] += combined_results['avg_holding_period']
+                overall_stats['total_return'] += results['strategy_return']
+                overall_stats['total_trades'] += results['total_trades']
+                overall_stats['profitable_trades'] += results['profitable_trades']
+                overall_stats['avg_holding_period'] += results['avg_holding_period']
                 
-                if combined_results['strategy_return'] > overall_stats['best_performer'][1]:
-                    overall_stats['best_performer'] = (currency, combined_results['strategy_return'])
-                if combined_results['strategy_return'] < overall_stats['worst_performer'][1]:
-                    overall_stats['worst_performer'] = (currency, combined_results['strategy_return'])
-
-                # Track performance of individual strategies
-                for strategy_name, strategy_results in individual_results.items():
-                    if strategy_name not in overall_stats:
-                        overall_stats[strategy_name] = {
-                            'total_return': 0,
-                            'total_trades': 0,
-                            'profitable_trades': 0,
-                            'best_return': (-float('inf'), ''),
-                            'worst_return': (float('inf'), '')
-                        }
-                    
-                    overall_stats[strategy_name]['total_return'] += strategy_results['strategy_return']
-                    overall_stats[strategy_name]['total_trades'] += strategy_results['total_trades']
-                    overall_stats[strategy_name]['profitable_trades'] += strategy_results['profitable_trades']
-                    
-                    if strategy_results['strategy_return'] > overall_stats[strategy_name]['best_return'][0]:
-                        overall_stats[strategy_name]['best_return'] = (strategy_results['strategy_return'], currency)
-                    if strategy_results['strategy_return'] < overall_stats[strategy_name]['worst_return'][0]:
-                        overall_stats[strategy_name]['worst_return'] = (strategy_results['strategy_return'], currency)
+                if results['strategy_return'] > overall_stats['best_performer'][1]:
+                    overall_stats['best_performer'] = (currency, results['strategy_return'])
+                if results['strategy_return'] < overall_stats['worst_performer'][1]:
+                    overall_stats['worst_performer'] = (currency, results['strategy_return'])
                 
-                # Generate and write reports
+                # Generate and write report
                 combined_report = backtest.generate_report(currency, combined_results)
                 individual_report = backtest.generate_individual_signals_report(currency, individual_results)
                 
@@ -626,9 +615,9 @@ def run_sensitive_analysis():
                 f.write("\n\n" + "="*50 + "\n\n")
                 
                 print(f"✓ Successfully processed {currency}")
-                print(f"  Combined Return: {combined_results['strategy_return']:.2f}%")
-                print(f"  Combined Trades: {combined_results['total_trades']}")
-                print(f"  Win Rate: {combined_results['win_rate']:.2f}%")
+                print(f"  Return: {results['strategy_return']:.2f}%")
+                print(f"  Trades: {results['total_trades']}")
+                print(f"  Win Rate: {results['win_rate']:.2f}%")
                 print(f"  Plot saved to: {plot_path}")
                 
             except Exception as e:
@@ -641,40 +630,15 @@ def run_sensitive_analysis():
 Overall Strategy Performance
 ==========================
 Currencies Tested: {overall_stats['currencies_tested']}
-
-Combined Strategy:
----------------
 Average Return: {overall_stats['total_return'] / overall_stats['currencies_tested']:.2f}%
 Total Trades: {overall_stats['total_trades']}
-Overall Win Rate: {(overall_stats['profitable_trades'] / overall_stats['total_trades'] * 100) if overall_stats['total_trades'] > 0 else 0:.2f}%
+Overall Win Rate: {(overall_stats['profitable_trades'] / overall_stats['total_trades'] * 100):.2f}% if overall_stats['total_trades'] > 0 else 0:.2f}}%
 Average Holding Period: {overall_stats['avg_holding_period'] / overall_stats['currencies_tested']:.1f} days
 Best Performer: {overall_stats['best_performer'][0]} ({overall_stats['best_performer'][1]:.2f}%)
 Worst Performer: {overall_stats['worst_performer'][0]} ({overall_stats['worst_performer'][1]:.2f}%)
-
-Individual Strategies Performance:
-------------------------------"""
-            
-            for strategy_name in ['EMA_Cross', 'RSI', 'MACD', 'Stochastic', 'Volume_RSI']:
-                if strategy_name in overall_stats:
-                    stats = overall_stats[strategy_name]
-                    trades = stats['total_trades']
-                    win_rate = (stats['profitable_trades'] / trades * 100) if trades > 0 else 0
-                    avg_return = stats['total_return'] / overall_stats['currencies_tested']
-                    
-                    summary += f"""
-{strategy_name}:
-  Average Return: {avg_return:.2f}%
-  Total Trades: {trades}
-  Win Rate: {win_rate:.2f}%
-  Best: {stats['best_return'][1]} ({stats['best_return'][0]:.2f}%)
-  Worst: {stats['worst_return'][1]} ({stats['worst_return'][0]:.2f}%)"""
-
+"""
             f.write(summary)
             print("\n" + summary)
-        else:
-            summary = "\nNo successful tests completed.\n"
-            f.write(summary)
-            print(summary)
     
     print(f"\nAnalysis completed!")
     print(f"Results saved to: {results_file}")

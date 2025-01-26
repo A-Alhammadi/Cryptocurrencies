@@ -37,6 +37,42 @@ Test Period: 2023-01-01 to 2025-01-01
     Sell Signals: 2
 
 
+Golden Cross/Death Cross Trading Analysis for BTC-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $56,577.84
+Buy & Hold Return: 467.94%
+Cross Strategy Return: 465.78%
+Strategy vs Buy & Hold: -2.16%
+
+Trade Statistics:
+----------------
+Total Trades: 1
+Profitable Trades: 1
+Win Rate: 100.00%
+Average Trade Return: 465.78%
+Best Trade: 465.78%
+Worst Trade: 465.78%
+Trade Return Std Dev: 0.00%
+Average Holding Period: 730.0 days
+Longest Hold: 730 days
+Shortest Hold: 730 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2023-01-02 at $16688.47
+  Exit: 2025-01-01 at $94419.76
+  Return: 465.78%
+  Holding Period: 730 days
+  Capital After Trade: $56577.84
+
+
+
+
 Signal Trading Analysis for BTC-USD
 ========================================
 
@@ -79,25 +115,25 @@ Trade 2:
 
     Market Regime Analysis:
     --------------------
-NEUTRAL:
-  Count: 29
-  MAPE: 39.08%
-  Directional Accuracy: 27.59%
+BULL:
+  Count: 22
+  MAPE: 39.34%
+  Directional Accuracy: 50.00%
 
 BEAR:
   Count: 19
   MAPE: 27.69%
   Directional Accuracy: 31.58%
 
-BULL:
-  Count: 22
-  MAPE: 39.34%
-  Directional Accuracy: 50.00%
-
 STRONG_BULL:
   Count: 3
   MAPE: 43.88%
   Directional Accuracy: 66.67%
+
+NEUTRAL:
+  Count: 29
+  MAPE: 39.08%
+  Directional Accuracy: 27.59%
 
 Recent Predictions:
 ----------------
@@ -142,6 +178,56 @@ Date: 2024-11-30 Predicted: $46014.69 Actual: $96449.05 Confidence: 65.87% Regim
     Sell Signals: 34
 
 
+Golden Cross/Death Cross Trading Analysis for ETH-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $19,183.49
+Buy & Hold Return: 179.23%
+Cross Strategy Return: 91.83%
+Strategy vs Buy & Hold: -87.40%
+
+Trade Statistics:
+----------------
+Total Trades: 3
+Profitable Trades: 2
+Win Rate: 66.67%
+Average Trade Return: 25.74%
+Best Trade: 42.74%
+Worst Trade: -0.22%
+Trade Return Std Dev: 18.65%
+Average Holding Period: 190.7 days
+Longest Hold: 282 days
+Shortest Hold: 41 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2023-01-02 at $1214.66
+  Exit: 2023-09-08 at $1636.14
+  Return: 34.70%
+  Holding Period: 249 days
+  Capital After Trade: $13469.96
+
+Trade 2:
+  Entry: 2023-11-05 at $1894.16
+  Exit: 2024-08-13 at $2703.67
+  Return: 42.74%
+  Holding Period: 282 days
+  Capital After Trade: $19226.68
+
+Trade 3:
+  Entry: 2024-11-21 at $3361.05
+  Exit: 2025-01-01 at $3353.50
+  Return: -0.22%
+  Holding Period: 41 days
+  Capital After Trade: $19183.49
+
+
+
+
 Signal Trading Analysis for ETH-USD
 ========================================
 
@@ -184,25 +270,25 @@ Trade 2:
 
     Market Regime Analysis:
     --------------------
-NEUTRAL:
+BULL:
   Count: 23
-  MAPE: 40.39%
-  Directional Accuracy: 13.04%
+  MAPE: 40.31%
+  Directional Accuracy: 39.13%
 
 BEAR:
   Count: 21
   MAPE: 21.58%
   Directional Accuracy: 52.38%
 
-BULL:
-  Count: 23
-  MAPE: 40.31%
-  Directional Accuracy: 39.13%
-
 STRONG_BULL:
   Count: 4
   MAPE: 51.19%
   Directional Accuracy: 50.00%
+
+NEUTRAL:
+  Count: 23
+  MAPE: 40.39%
+  Directional Accuracy: 13.04%
 
 Recent Predictions:
 ----------------
@@ -247,6 +333,49 @@ Date: 2024-12-02 Predicted: $1647.94 Actual: $3644.20 Confidence: 72.80% Regime:
     Sell Signals: 25
 
 
+Golden Cross/Death Cross Trading Analysis for BNB-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $25,188.90
+Buy & Hold Return: 189.39%
+Cross Strategy Return: 151.89%
+Strategy vs Buy & Hold: -37.50%
+
+Trade Statistics:
+----------------
+Total Trades: 2
+Profitable Trades: 1
+Win Rate: 50.00%
+Average Trade Return: 78.54%
+Best Trade: 160.33%
+Worst Trade: -3.24%
+Trade Return Std Dev: 81.79%
+Average Holding Period: 269.0 days
+Longest Hold: 375 days
+Shortest Hold: 163 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2023-01-02 at $245.54
+  Exit: 2023-06-14 at $237.57
+  Return: -3.24%
+  Holding Period: 163 days
+  Capital After Trade: $9675.74
+
+Trade 2:
+  Entry: 2023-12-23 at $271.39
+  Exit: 2025-01-01 at $706.51
+  Return: 160.33%
+  Holding Period: 375 days
+  Capital After Trade: $25188.90
+
+
+
+
 Signal Trading Analysis for BNB-USD
 ========================================
 
@@ -283,25 +412,25 @@ Trade 1:
 
     Market Regime Analysis:
     --------------------
-NEUTRAL:
-  Count: 28
-  MAPE: 34.40%
-  Directional Accuracy: 42.86%
+BULL:
+  Count: 12
+  MAPE: 44.52%
+  Directional Accuracy: 33.33%
 
 BEAR:
   Count: 20
   MAPE: 37.45%
   Directional Accuracy: 15.00%
 
-BULL:
-  Count: 12
-  MAPE: 44.52%
-  Directional Accuracy: 33.33%
-
 STRONG_BULL:
   Count: 9
   MAPE: 52.19%
   Directional Accuracy: 0.00%
+
+NEUTRAL:
+  Count: 28
+  MAPE: 34.40%
+  Directional Accuracy: 42.86%
 
 Recent Predictions:
 ----------------
@@ -346,6 +475,49 @@ Date: 2024-12-02 Predicted: $421.09 Actual: $647.59 Confidence: 70.52% Regime: B
     Sell Signals: 3
 
 
+Golden Cross/Death Cross Trading Analysis for SOL-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $135,853.02
+Buy & Hold Return: 1,842.20%
+Cross Strategy Return: 1,258.53%
+Strategy vs Buy & Hold: -583.67%
+
+Trade Statistics:
+----------------
+Total Trades: 2
+Profitable Trades: 2
+Win Rate: 100.00%
+Average Trade Return: 426.47%
+Best Trade: 802.38%
+Worst Trade: 50.55%
+Trade Return Std Dev: 375.92%
+Average Holding Period: 359.0 days
+Longest Hold: 544 days
+Shortest Hold: 174 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2023-01-02 at $11.27
+  Exit: 2023-06-25 at $16.97
+  Return: 50.55%
+  Holding Period: 174 days
+  Capital After Trade: $15054.94
+
+Trade 2:
+  Entry: 2023-07-07 at $21.48
+  Exit: 2025-01-01 at $193.87
+  Return: 802.38%
+  Holding Period: 544 days
+  Capital After Trade: $135853.02
+
+
+
+
 Signal Trading Analysis for SOL-USD
 ========================================
 
@@ -382,25 +554,25 @@ Trade 1:
 
     Market Regime Analysis:
     --------------------
-NEUTRAL:
-  Count: 26
-  MAPE: 40.40%
-  Directional Accuracy: 38.46%
+BULL:
+  Count: 15
+  MAPE: 41.22%
+  Directional Accuracy: 53.33%
 
 BEAR:
   Count: 23
   MAPE: 32.79%
   Directional Accuracy: 21.74%
 
-BULL:
-  Count: 15
-  MAPE: 41.22%
-  Directional Accuracy: 53.33%
-
 STRONG_BULL:
   Count: 3
   MAPE: 53.13%
   Directional Accuracy: 0.00%
+
+NEUTRAL:
+  Count: 26
+  MAPE: 40.40%
+  Directional Accuracy: 38.46%
 
 Recent Predictions:
 ----------------
@@ -443,6 +615,63 @@ Date: 2024-11-30 Predicted: $109.83 Actual: $237.74 Confidence: 66.88% Regime: N
     Win Rate: 0.00%
     Buy Signals: 62
     Sell Signals: 21
+
+
+Golden Cross/Death Cross Trading Analysis for XRP-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $34,899.58
+Buy & Hold Return: 585.54%
+Cross Strategy Return: 249.00%
+Strategy vs Buy & Hold: -336.54%
+
+Trade Statistics:
+----------------
+Total Trades: 4
+Profitable Trades: 2
+Win Rate: 50.00%
+Average Trade Return: 61.57%
+Best Trade: 228.15%
+Worst Trade: -19.56%
+Trade Return Std Dev: 99.73%
+Average Holding Period: 145.8 days
+Longest Hold: 397 days
+Shortest Hold: 50 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2023-01-02 at $0.35
+  Exit: 2024-02-03 at $0.52
+  Return: 48.88%
+  Holding Period: 397 days
+  Capital After Trade: $14888.25
+
+Trade 2:
+  Entry: 2024-03-03 at $0.63
+  Exit: 2024-04-22 at $0.56
+  Return: -11.20%
+  Holding Period: 50 days
+  Capital After Trade: $13220.61
+
+Trade 3:
+  Entry: 2024-07-31 at $0.62
+  Exit: 2024-10-25 at $0.50
+  Return: -19.56%
+  Holding Period: 86 days
+  Capital After Trade: $10635.13
+
+Trade 4:
+  Entry: 2024-11-12 at $0.71
+  Exit: 2025-01-01 at $2.32
+  Return: 228.15%
+  Holding Period: 50 days
+  Capital After Trade: $34899.58
+
+
 
 
 Signal Trading Analysis for XRP-USD
@@ -493,20 +722,20 @@ Trade 3:
 
     Market Regime Analysis:
     --------------------
-NEUTRAL:
-  Count: 17
-  MAPE: 32.59%
-  Directional Accuracy: 43.75%
+BULL:
+  Count: 12
+  MAPE: 35.88%
+  Directional Accuracy: 58.33%
 
 BEAR:
   Count: 41
   MAPE: 26.89%
   Directional Accuracy: 46.15%
 
-BULL:
-  Count: 12
-  MAPE: 35.88%
-  Directional Accuracy: 58.33%
+NEUTRAL:
+  Count: 17
+  MAPE: 32.59%
+  Directional Accuracy: 43.75%
 
 Recent Predictions:
 ----------------
@@ -551,6 +780,56 @@ Date: 2024-11-09 Predicted: $0.42 Actual: $0.56 Confidence: 66.74% Regime: BEAR
     Sell Signals: 11
 
 
+Golden Cross/Death Cross Trading Analysis for RAY-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $168,257.53
+Buy & Hold Return: 3,492.63%
+Cross Strategy Return: 1,582.58%
+Strategy vs Buy & Hold: -1,910.06%
+
+Trade Statistics:
+----------------
+Total Trades: 3
+Profitable Trades: 2
+Win Rate: 66.67%
+Average Trade Return: 565.36%
+Best Trade: 1698.23%
+Worst Trade: -21.77%
+Trade Return Std Dev: 801.24%
+Average Holding Period: 203.7 days
+Longest Hold: 424 days
+Shortest Hold: 27 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2023-01-02 at $0.14
+  Exit: 2023-06-11 at $0.17
+  Return: 19.61%
+  Holding Period: 160 days
+  Capital After Trade: $11960.79
+
+Trade 2:
+  Entry: 2023-07-21 at $0.23
+  Exit: 2023-08-17 at $0.18
+  Return: -21.77%
+  Holding Period: 27 days
+  Capital After Trade: $9356.85
+
+Trade 3:
+  Entry: 2023-11-04 at $0.28
+  Exit: 2025-01-01 at $4.99
+  Return: 1698.23%
+  Holding Period: 424 days
+  Capital After Trade: $168257.53
+
+
+
+
 Signal Trading Analysis for RAY-USD
 ========================================
 
@@ -593,20 +872,20 @@ Trade 2:
 
     Market Regime Analysis:
     --------------------
-NEUTRAL:
+BULL:
   Count: 12
-  MAPE: 50.31%
-  Directional Accuracy: 41.67%
+  MAPE: 43.67%
+  Directional Accuracy: 66.67%
 
 BEAR:
   Count: 34
   MAPE: 42.11%
   Directional Accuracy: 20.59%
 
-BULL:
+NEUTRAL:
   Count: 12
-  MAPE: 43.67%
-  Directional Accuracy: 66.67%
+  MAPE: 50.31%
+  Directional Accuracy: 41.67%
 
 Recent Predictions:
 ----------------
@@ -651,6 +930,49 @@ Date: 2024-11-18 Predicted: $1.15 Actual: $5.65 Confidence: 71.82% Regime: BEAR
     Sell Signals: 2
 
 
+Golden Cross/Death Cross Trading Analysis for TRX-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $41,390.62
+Buy & Hold Return: 365.73%
+Cross Strategy Return: 313.91%
+Strategy vs Buy & Hold: -51.83%
+
+Trade Statistics:
+----------------
+Total Trades: 2
+Profitable Trades: 1
+Win Rate: 50.00%
+Average Trade Return: 161.37%
+Best Trade: 325.45%
+Worst Trade: -2.71%
+Trade Return Std Dev: 164.08%
+Average Holding Period: 361.0 days
+Longest Hold: 719 days
+Shortest Hold: 3 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2023-01-02 at $0.06
+  Exit: 2023-01-05 at $0.05
+  Return: -2.71%
+  Holding Period: 3 days
+  Capital After Trade: $9728.77
+
+Trade 2:
+  Entry: 2023-01-13 at $0.06
+  Exit: 2025-01-01 at $0.26
+  Return: 325.45%
+  Holding Period: 719 days
+  Capital After Trade: $41390.62
+
+
+
+
 Signal Trading Analysis for TRX-USD
 ========================================
 
@@ -687,25 +1009,25 @@ Trade 1:
 
     Market Regime Analysis:
     --------------------
-NEUTRAL:
-  Count: 36
-  MAPE: 37.04%
-  Directional Accuracy: 22.22%
+BULL:
+  Count: 18
+  MAPE: 37.80%
+  Directional Accuracy: 47.06%
 
 BEAR:
   Count: 17
   MAPE: 32.82%
   Directional Accuracy: 5.88%
 
-BULL:
-  Count: 18
-  MAPE: 37.80%
-  Directional Accuracy: 47.06%
-
 STRONG_BULL:
   Count: 4
   MAPE: 52.67%
   Directional Accuracy: 50.00%
+
+NEUTRAL:
+  Count: 36
+  MAPE: 37.04%
+  Directional Accuracy: 22.22%
 
 Recent Predictions:
 ----------------
@@ -748,6 +1070,56 @@ Date: 2024-11-30 Predicted: $0.11 Actual: $0.21 Confidence: 83.76% Regime: BULL
     Win Rate: 0.00%
     Buy Signals: 52
     Sell Signals: 34
+
+
+Golden Cross/Death Cross Trading Analysis for DOGE-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $35,840.50
+Buy & Hold Return: 361.81%
+Cross Strategy Return: 258.40%
+Strategy vs Buy & Hold: -103.40%
+
+Trade Statistics:
+----------------
+Total Trades: 3
+Profitable Trades: 3
+Win Rate: 100.00%
+Average Trade Return: 63.81%
+Best Trade: 147.54%
+Worst Trade: 2.16%
+Trade Return Std Dev: 61.37%
+Average Holding Period: 149.3 days
+Longest Hold: 240 days
+Shortest Hold: 68 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2023-01-02 at $0.07
+  Exit: 2023-05-22 at $0.07
+  Return: 2.16%
+  Holding Period: 140 days
+  Capital After Trade: $10216.08
+
+Trade 2:
+  Entry: 2023-11-16 at $0.08
+  Exit: 2024-07-13 at $0.11
+  Return: 41.73%
+  Holding Period: 240 days
+  Capital After Trade: $14478.83
+
+Trade 3:
+  Entry: 2024-10-25 at $0.13
+  Exit: 2025-01-01 at $0.32
+  Return: 147.54%
+  Holding Period: 68 days
+  Capital After Trade: $35840.50
+
+
 
 
 Signal Trading Analysis for DOGE-USD
@@ -804,25 +1176,25 @@ Trade 4:
 
     Market Regime Analysis:
     --------------------
-NEUTRAL:
-  Count: 27
-  MAPE: 36.21%
-  Directional Accuracy: 62.96%
+BULL:
+  Count: 17
+  MAPE: 50.65%
+  Directional Accuracy: 37.50%
 
 BEAR:
   Count: 22
   MAPE: 34.16%
   Directional Accuracy: 27.27%
 
-BULL:
-  Count: 17
-  MAPE: 50.65%
-  Directional Accuracy: 37.50%
-
 STRONG_BULL:
   Count: 1
   MAPE: 28.66%
   Directional Accuracy: 100.00%
+
+NEUTRAL:
+  Count: 27
+  MAPE: 36.21%
+  Directional Accuracy: 62.96%
 
 Recent Predictions:
 ----------------
@@ -867,6 +1239,56 @@ Date: 2024-12-02 Predicted: $0.07 Actual: $0.42 Confidence: 76.31% Regime: NEUTR
     Sell Signals: 34
 
 
+Golden Cross/Death Cross Trading Analysis for ADA-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $18,506.98
+Buy & Hold Return: 267.37%
+Cross Strategy Return: 85.07%
+Strategy vs Buy & Hold: -182.30%
+
+Trade Statistics:
+----------------
+Total Trades: 3
+Profitable Trades: 3
+Win Rate: 100.00%
+Average Trade Return: 24.93%
+Best Trade: 58.17%
+Worst Trade: 2.81%
+Trade Return Std Dev: 23.93%
+Average Holding Period: 132.7 days
+Longest Hold: 183 days
+Shortest Hold: 48 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2023-01-02 at $0.25
+  Exit: 2023-06-18 at $0.26
+  Return: 2.81%
+  Holding Period: 167 days
+  Capital After Trade: $10281.10
+
+Trade 2:
+  Entry: 2023-11-11 at $0.38
+  Exit: 2024-05-12 at $0.44
+  Return: 13.80%
+  Holding Period: 183 days
+  Capital After Trade: $11700.40
+
+Trade 3:
+  Entry: 2024-11-14 at $0.58
+  Exit: 2025-01-01 at $0.92
+  Return: 58.17%
+  Holding Period: 48 days
+  Capital After Trade: $18506.98
+
+
+
+
 Signal Trading Analysis for ADA-USD
 ========================================
 
@@ -909,25 +1331,25 @@ Trade 2:
 
     Market Regime Analysis:
     --------------------
-NEUTRAL:
-  Count: 21
-  MAPE: 40.35%
-  Directional Accuracy: 47.62%
+BULL:
+  Count: 17
+  MAPE: 42.64%
+  Directional Accuracy: 47.06%
 
 BEAR:
   Count: 17
   MAPE: 24.41%
   Directional Accuracy: 64.71%
 
-BULL:
-  Count: 17
-  MAPE: 42.64%
-  Directional Accuracy: 47.06%
-
 STRONG_BULL:
   Count: 7
   MAPE: 35.81%
   Directional Accuracy: 57.14%
+
+NEUTRAL:
+  Count: 21
+  MAPE: 40.35%
+  Directional Accuracy: 47.62%
 
 Recent Predictions:
 ----------------
@@ -970,6 +1392,56 @@ Date: 2024-11-27 Predicted: $0.25 Actual: $1.01 Confidence: 72.65% Regime: NEUTR
     Win Rate: 0.00%
     Buy Signals: 38
     Sell Signals: 34
+
+
+Golden Cross/Death Cross Trading Analysis for DOT-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $11,245.98
+Buy & Hold Return: 60.80%
+Cross Strategy Return: 12.46%
+Strategy vs Buy & Hold: -48.34%
+
+Trade Statistics:
+----------------
+Total Trades: 3
+Profitable Trades: 2
+Win Rate: 66.67%
+Average Trade Return: 5.30%
+Best Trade: 19.86%
+Worst Trade: -16.97%
+Trade Return Std Dev: 15.99%
+Average Holding Period: 128.3 days
+Longest Hold: 196 days
+Shortest Hold: 35 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2023-01-02 at $4.49
+  Exit: 2023-06-05 at $5.07
+  Return: 13.00%
+  Holding Period: 154 days
+  Capital After Trade: $11300.47
+
+Trade 2:
+  Entry: 2023-11-25 at $5.33
+  Exit: 2024-06-08 at $6.39
+  Return: 19.86%
+  Holding Period: 196 days
+  Capital After Trade: $13544.28
+
+Trade 3:
+  Entry: 2024-11-27 at $8.46
+  Exit: 2025-01-01 at $7.03
+  Return: -16.97%
+  Holding Period: 35 days
+  Capital After Trade: $11245.98
+
+
 
 
 Signal Trading Analysis for DOT-USD
@@ -1020,25 +1492,25 @@ Trade 3:
 
     Market Regime Analysis:
     --------------------
-NEUTRAL:
-  Count: 22
-  MAPE: 28.67%
-  Directional Accuracy: 59.09%
+BULL:
+  Count: 15
+  MAPE: 35.42%
+  Directional Accuracy: 53.33%
 
 BEAR:
   Count: 25
   MAPE: 18.91%
   Directional Accuracy: 64.00%
 
-BULL:
-  Count: 15
-  MAPE: 35.42%
-  Directional Accuracy: 53.33%
-
 STRONG_BULL:
   Count: 6
   MAPE: 57.68%
   Directional Accuracy: 16.67%
+
+NEUTRAL:
+  Count: 22
+  MAPE: 28.67%
+  Directional Accuracy: 59.09%
 
 Recent Predictions:
 ----------------
@@ -1083,6 +1555,56 @@ Date: 2024-11-16 Predicted: $3.03 Actual: $5.76 Confidence: 70.54% Regime: NEUTR
     Sell Signals: 32
 
 
+Golden Cross/Death Cross Trading Analysis for LTC-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $7,347.74
+Buy & Hold Return: 48.01%
+Cross Strategy Return: -26.52%
+Strategy vs Buy & Hold: -74.53%
+
+Trade Statistics:
+----------------
+Total Trades: 3
+Profitable Trades: 1
+Win Rate: 33.33%
+Average Trade Return: -8.75%
+Best Trade: 9.96%
+Worst Trade: -23.14%
+Trade Return Std Dev: 13.85%
+Average Holding Period: 128.7 days
+Longest Hold: 227 days
+Shortest Hold: 46 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2023-01-02 at $74.86
+  Exit: 2023-08-17 at $65.09
+  Return: -13.06%
+  Holding Period: 227 days
+  Capital After Trade: $8693.99
+
+Trade 2:
+  Entry: 2024-03-03 at $90.67
+  Exit: 2024-06-24 at $69.69
+  Return: -23.14%
+  Holding Period: 113 days
+  Capital After Trade: $6682.41
+
+Trade 3:
+  Entry: 2024-11-16 at $95.32
+  Exit: 2025-01-01 at $104.81
+  Return: 9.96%
+  Holding Period: 46 days
+  Capital After Trade: $7347.74
+
+
+
+
 Signal Trading Analysis for LTC-USD
 ========================================
 
@@ -1125,25 +1647,25 @@ Trade 2:
 
     Market Regime Analysis:
     --------------------
-NEUTRAL:
-  Count: 21
-  MAPE: 35.33%
-  Directional Accuracy: 45.00%
+BULL:
+  Count: 16
+  MAPE: 37.45%
+  Directional Accuracy: 40.00%
 
 BEAR:
   Count: 30
   MAPE: 20.12%
   Directional Accuracy: 60.00%
 
-BULL:
-  Count: 16
-  MAPE: 37.45%
-  Directional Accuracy: 40.00%
-
 STRONG_BULL:
   Count: 4
   MAPE: 38.71%
   Directional Accuracy: 50.00%
+
+NEUTRAL:
+  Count: 21
+  MAPE: 35.33%
+  Directional Accuracy: 45.00%
 
 Recent Predictions:
 ----------------

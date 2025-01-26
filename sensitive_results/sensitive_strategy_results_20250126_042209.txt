@@ -1,0 +1,3456 @@
+Sensitive Strategy Analysis Results
+=================================
+
+Test Period: 2020-01-01 to 2025-01-01
+
+
+Sensitive Strategy Analysis Results for BTC-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $14,839.51
+Total Return: 48.40%
+Buy & Hold Return: 1211.35%
+Strategy vs Buy & Hold: -1162.96%
+
+Trade Statistics:
+---------------
+Total Trades: 42
+Profitable Trades: 27
+Win Rate: 64.29%
+Average Trade Return: 1.47%
+Best Trade: 18.70%
+Worst Trade: -33.21%
+Trade Return Std Dev: 9.71%
+
+Holding Periods:
+--------------
+Average Hold: 19.2 days
+Longest Hold: 73 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2020-02-21 at $9686.44
+  Exit: 2020-03-27 at $6469.80
+  Return: -33.21%
+  Holding Period: 35 days
+  Capital After Trade: $6679.23
+Trade 2:
+  Entry: 2020-05-26 at $8835.05
+  Exit: 2020-05-30 at $9700.41
+  Return: 9.79%
+  Holding Period: 4 days
+  Capital After Trade: $7333.44
+Trade 3:
+  Entry: 2020-06-13 at $9475.28
+  Exit: 2020-07-19 at $9185.82
+  Return: -3.05%
+  Holding Period: 36 days
+  Capital After Trade: $7109.41
+Trade 4:
+  Entry: 2020-08-26 at $11488.36
+  Exit: 2020-09-20 at $10938.27
+  Return: -4.79%
+  Holding Period: 25 days
+  Capital After Trade: $6768.99
+Trade 5:
+  Entry: 2020-10-03 at $10549.33
+  Exit: 2020-10-13 at $11425.90
+  Return: 8.31%
+  Holding Period: 10 days
+  Capital After Trade: $7331.45
+Trade 6:
+  Entry: 2021-01-21 at $30825.70
+  Exit: 2021-01-29 at $34316.39
+  Return: 11.32%
+  Holding Period: 8 days
+  Capital After Trade: $8161.65
+Trade 7:
+  Entry: 2021-02-25 at $47093.85
+  Exit: 2021-02-26 at $46339.76
+  Return: -1.60%
+  Holding Period: 1 days
+  Capital After Trade: $8030.97
+Trade 8:
+  Entry: 2021-02-27 at $46188.45
+  Exit: 2021-03-09 at $54824.12
+  Return: 18.70%
+  Holding Period: 10 days
+  Capital After Trade: $9532.48
+Trade 9:
+  Entry: 2021-03-24 at $52774.27
+  Exit: 2021-03-30 at $58917.69
+  Return: 11.64%
+  Holding Period: 6 days
+  Capital After Trade: $10642.15
+Trade 10:
+  Entry: 2021-04-20 at $56473.03
+  Exit: 2021-05-07 at $57356.40
+  Return: 1.56%
+  Holding Period: 17 days
+  Capital After Trade: $10808.62
+Trade 11:
+  Entry: 2021-05-14 at $49880.54
+  Exit: 2021-07-26 at $37337.54
+  Return: -25.15%
+  Holding Period: 73 days
+  Capital After Trade: $8090.68
+Trade 12:
+  Entry: 2021-09-09 at $46391.42
+  Exit: 2021-10-05 at $51514.81
+  Return: 11.04%
+  Holding Period: 26 days
+  Capital After Trade: $8984.20
+Trade 13:
+  Entry: 2021-11-17 at $60368.01
+  Exit: 2021-12-27 at $50640.42
+  Return: -16.11%
+  Holding Period: 40 days
+  Capital After Trade: $7536.50
+Trade 14:
+  Entry: 2022-01-05 at $43569.00
+  Exit: 2022-02-04 at $41500.88
+  Return: -4.75%
+  Holding Period: 30 days
+  Capital After Trade: $7178.76
+Trade 15:
+  Entry: 2022-02-19 at $40122.16
+  Exit: 2022-03-18 at $41801.16
+  Return: 4.18%
+  Holding Period: 27 days
+  Capital After Trade: $7479.17
+Trade 16:
+  Entry: 2022-04-08 at $42287.66
+  Exit: 2022-04-25 at $40458.31
+  Return: -4.33%
+  Holding Period: 17 days
+  Capital After Trade: $7155.62
+Trade 17:
+  Entry: 2022-04-26 at $38117.46
+  Exit: 2022-05-30 at $31726.39
+  Return: -16.77%
+  Holding Period: 34 days
+  Capital After Trade: $5955.85
+Trade 18:
+  Entry: 2022-06-13 at $22487.39
+  Exit: 2022-07-08 at $21731.12
+  Return: -3.36%
+  Holding Period: 25 days
+  Capital After Trade: $5755.55
+Trade 19:
+  Entry: 2022-08-19 at $20877.55
+  Exit: 2022-09-09 at $21381.15
+  Return: 2.41%
+  Holding Period: 21 days
+  Capital After Trade: $5894.39
+Trade 20:
+  Entry: 2022-09-20 at $18890.79
+  Exit: 2022-10-25 at $20095.86
+  Return: 6.38%
+  Holding Period: 35 days
+  Capital After Trade: $6270.40
+Trade 21:
+  Entry: 2022-11-09 at $15880.78
+  Exit: 2022-12-03 at $16908.24
+  Return: 6.47%
+  Holding Period: 24 days
+  Capital After Trade: $6676.08
+Trade 22:
+  Entry: 2022-12-18 at $16757.98
+  Exit: 2023-01-09 at $17196.55
+  Return: 2.62%
+  Holding Period: 22 days
+  Capital After Trade: $6850.80
+Trade 23:
+  Entry: 2023-02-10 at $21651.18
+  Exit: 2023-02-16 at $23623.47
+  Return: 9.11%
+  Holding Period: 6 days
+  Capital After Trade: $7474.87
+Trade 24:
+  Entry: 2023-03-03 at $22362.68
+  Exit: 2023-03-13 at $24197.53
+  Return: 8.20%
+  Holding Period: 10 days
+  Capital After Trade: $8088.18
+Trade 25:
+  Entry: 2023-04-21 at $27276.91
+  Exit: 2023-05-05 at $29534.38
+  Return: 8.28%
+  Holding Period: 14 days
+  Capital After Trade: $8757.57
+Trade 26:
+  Entry: 2023-05-09 at $27658.78
+  Exit: 2023-06-06 at $27238.78
+  Return: -1.52%
+  Holding Period: 28 days
+  Capital After Trade: $8624.59
+Trade 27:
+  Entry: 2023-06-11 at $25940.17
+  Exit: 2023-06-20 at $28327.49
+  Return: 9.20%
+  Holding Period: 9 days
+  Capital After Trade: $9418.32
+Trade 28:
+  Entry: 2023-07-08 at $30292.54
+  Exit: 2023-07-13 at $31476.05
+  Return: 3.91%
+  Holding Period: 5 days
+  Capital After Trade: $9786.29
+Trade 29:
+  Entry: 2023-07-18 at $29856.56
+  Exit: 2023-08-08 at $29765.49
+  Return: -0.31%
+  Holding Period: 21 days
+  Capital After Trade: $9756.44
+Trade 30:
+  Entry: 2023-08-17 at $26664.55
+  Exit: 2023-09-17 at $26534.19
+  Return: -0.49%
+  Holding Period: 31 days
+  Capital After Trade: $9708.74
+Trade 31:
+  Entry: 2023-10-13 at $26862.38
+  Exit: 2023-10-16 at $28519.47
+  Return: 6.17%
+  Holding Period: 3 days
+  Capital After Trade: $10307.66
+Trade 32:
+  Entry: 2023-11-25 at $37796.79
+  Exit: 2023-11-28 at $37831.09
+  Return: 0.09%
+  Holding Period: 3 days
+  Capital After Trade: $10317.01
+Trade 33:
+  Entry: 2024-01-14 at $41796.27
+  Exit: 2024-01-29 at $43288.25
+  Return: 3.57%
+  Holding Period: 15 days
+  Capital After Trade: $10685.29
+Trade 34:
+  Entry: 2024-03-23 at $64062.20
+  Exit: 2024-03-28 at $70744.95
+  Return: 10.43%
+  Holding Period: 5 days
+  Capital After Trade: $11799.94
+Trade 35:
+  Entry: 2024-03-30 at $69645.30
+  Exit: 2024-03-31 at $71333.65
+  Return: 2.42%
+  Holding Period: 1 days
+  Capital After Trade: $12086.00
+Trade 36:
+  Entry: 2024-04-15 at $63426.21
+  Exit: 2024-05-15 at $66267.49
+  Return: 4.48%
+  Holding Period: 30 days
+  Capital After Trade: $12627.41
+Trade 37:
+  Entry: 2024-06-01 at $67706.94
+  Exit: 2024-06-05 at $71082.82
+  Return: 4.99%
+  Holding Period: 4 days
+  Capital After Trade: $13257.01
+Trade 38:
+  Entry: 2024-06-13 at $66756.40
+  Exit: 2024-07-16 at $65097.15
+  Return: -2.49%
+  Holding Period: 33 days
+  Capital After Trade: $12927.51
+Trade 39:
+  Entry: 2024-08-02 at $61415.07
+  Exit: 2024-08-23 at $64094.36
+  Return: 4.36%
+  Holding Period: 21 days
+  Capital After Trade: $13491.48
+Trade 40:
+  Entry: 2024-08-31 at $58969.90
+  Exit: 2024-09-18 at $61649.68
+  Return: 4.54%
+  Holding Period: 18 days
+  Capital After Trade: $14104.58
+Trade 41:
+  Entry: 2024-10-02 at $60632.79
+  Exit: 2024-10-14 at $66046.12
+  Return: 8.93%
+  Holding Period: 12 days
+  Capital After Trade: $15363.84
+Trade 42:
+  Entry: 2024-12-20 at $97755.93
+  Exit: 2025-01-01 at $94419.76
+  Return: -3.41%
+  Holding Period: 12 days
+  Capital After Trade: $14839.51
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for ETH-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $8,288.90
+Total Return: -17.11%
+Buy & Hold Return: 2463.80%
+Strategy vs Buy & Hold: -2480.91%
+
+Trade Statistics:
+---------------
+Total Trades: 38
+Profitable Trades: 27
+Win Rate: 71.05%
+Average Trade Return: 1.10%
+Best Trade: 23.44%
+Worst Trade: -56.66%
+Trade Return Std Dev: 15.55%
+
+Holding Periods:
+--------------
+Average Hold: 22.4 days
+Longest Hold: 74 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2020-02-27 at $226.75
+  Exit: 2020-04-05 at $143.55
+  Return: -36.69%
+  Holding Period: 38 days
+  Capital After Trade: $6330.52
+Trade 2:
+  Entry: 2020-05-12 at $189.31
+  Exit: 2020-05-19 at $213.45
+  Return: 12.75%
+  Holding Period: 7 days
+  Capital After Trade: $7137.70
+Trade 3:
+  Entry: 2020-06-17 at $233.03
+  Exit: 2020-07-08 at $246.67
+  Return: 5.85%
+  Holding Period: 21 days
+  Capital After Trade: $7555.55
+Trade 4:
+  Entry: 2020-08-26 at $386.47
+  Exit: 2020-09-01 at $477.05
+  Return: 23.44%
+  Holding Period: 6 days
+  Capital After Trade: $9326.54
+Trade 5:
+  Entry: 2020-09-05 at $335.26
+  Exit: 2020-09-06 at $353.36
+  Return: 5.40%
+  Holding Period: 1 days
+  Capital After Trade: $9830.12
+Trade 6:
+  Entry: 2020-09-07 at $352.67
+  Exit: 2020-09-10 at $368.10
+  Return: 4.37%
+  Holding Period: 3 days
+  Capital After Trade: $10260.16
+Trade 7:
+  Entry: 2020-09-15 at $364.84
+  Exit: 2020-10-12 at $387.73
+  Return: 6.27%
+  Holding Period: 27 days
+  Capital After Trade: $10903.93
+Trade 8:
+  Entry: 2021-02-24 at $1626.58
+  Exit: 2021-03-13 at $1924.69
+  Return: 18.33%
+  Holding Period: 17 days
+  Capital After Trade: $12902.35
+Trade 9:
+  Entry: 2021-03-22 at $1691.33
+  Exit: 2021-03-30 at $1846.03
+  Return: 9.15%
+  Holding Period: 8 days
+  Capital After Trade: $14082.47
+Trade 10:
+  Entry: 2021-05-18 at $3380.07
+  Exit: 2021-07-26 at $2233.37
+  Return: -33.93%
+  Holding Period: 69 days
+  Capital After Trade: $9304.93
+Trade 11:
+  Entry: 2021-09-11 at $3270.28
+  Exit: 2021-10-06 at $3580.56
+  Return: 9.49%
+  Holding Period: 25 days
+  Capital After Trade: $10187.79
+Trade 12:
+  Entry: 2021-11-17 at $4287.59
+  Exit: 2021-11-30 at $4631.48
+  Return: 8.02%
+  Holding Period: 13 days
+  Capital After Trade: $11004.89
+Trade 13:
+  Entry: 2021-12-13 at $3784.23
+  Exit: 2021-12-27 at $4037.55
+  Return: 6.69%
+  Holding Period: 14 days
+  Capital After Trade: $11741.58
+Trade 14:
+  Entry: 2021-12-30 at $3713.85
+  Exit: 2022-02-04 at $2983.59
+  Return: -19.66%
+  Holding Period: 36 days
+  Capital After Trade: $9432.80
+Trade 15:
+  Entry: 2022-02-20 at $2628.65
+  Exit: 2022-03-18 at $2945.34
+  Return: 12.05%
+  Holding Period: 26 days
+  Capital After Trade: $10569.24
+Trade 16:
+  Entry: 2022-04-08 at $3192.07
+  Exit: 2022-04-25 at $3009.39
+  Return: -5.72%
+  Holding Period: 17 days
+  Capital After Trade: $9964.37
+Trade 17:
+  Entry: 2022-04-26 at $2808.30
+  Exit: 2022-07-09 at $1216.98
+  Return: -56.66%
+  Holding Period: 74 days
+  Capital After Trade: $4318.07
+Trade 18:
+  Entry: 2022-08-20 at $1577.00
+  Exit: 2022-09-09 at $1719.09
+  Return: 9.01%
+  Holding Period: 20 days
+  Capital After Trade: $4707.11
+Trade 19:
+  Entry: 2022-09-16 at $1432.45
+  Exit: 2022-10-24 at $1345.00
+  Return: -6.10%
+  Holding Period: 38 days
+  Capital After Trade: $4419.75
+Trade 20:
+  Entry: 2022-11-09 at $1100.17
+  Exit: 2022-12-06 at $1271.65
+  Return: 15.59%
+  Holding Period: 27 days
+  Capital After Trade: $5108.65
+Trade 21:
+  Entry: 2022-12-17 at $1188.15
+  Exit: 2023-01-04 at $1256.53
+  Return: 5.75%
+  Holding Period: 18 days
+  Capital After Trade: $5402.65
+Trade 22:
+  Entry: 2023-02-11 at $1539.93
+  Exit: 2023-02-16 at $1640.07
+  Return: 6.50%
+  Holding Period: 5 days
+  Capital After Trade: $5753.98
+Trade 23:
+  Entry: 2023-03-04 at $1566.92
+  Exit: 2023-03-13 at $1680.31
+  Return: 7.24%
+  Holding Period: 9 days
+  Capital After Trade: $6170.35
+Trade 24:
+  Entry: 2023-04-22 at $1874.23
+  Exit: 2023-05-28 at $1910.91
+  Return: 1.96%
+  Holding Period: 36 days
+  Capital After Trade: $6291.13
+Trade 25:
+  Entry: 2023-06-11 at $1753.42
+  Exit: 2023-06-21 at $1891.01
+  Return: 7.85%
+  Holding Period: 10 days
+  Capital After Trade: $6784.80
+Trade 26:
+  Entry: 2023-07-22 at $1864.91
+  Exit: 2023-09-28 at $1652.88
+  Return: -11.37%
+  Holding Period: 68 days
+  Capital After Trade: $6013.41
+Trade 27:
+  Entry: 2023-10-10 at $1567.71
+  Exit: 2023-10-23 at $1765.38
+  Return: 12.61%
+  Holding Period: 13 days
+  Capital After Trade: $6771.62
+Trade 28:
+  Entry: 2023-12-17 at $2196.48
+  Exit: 2023-12-27 at $2378.74
+  Return: 8.30%
+  Holding Period: 10 days
+  Capital After Trade: $7333.52
+Trade 29:
+  Entry: 2024-01-06 at $2241.62
+  Exit: 2024-01-09 at $2344.83
+  Return: 4.60%
+  Holding Period: 3 days
+  Capital After Trade: $7671.15
+Trade 30:
+  Entry: 2024-01-20 at $2469.59
+  Exit: 2024-02-06 at $2372.20
+  Return: -3.94%
+  Holding Period: 17 days
+  Capital After Trade: $7368.64
+Trade 31:
+  Entry: 2024-03-18 at $3517.99
+  Exit: 2024-03-31 at $3647.86
+  Return: 3.69%
+  Holding Period: 13 days
+  Capital After Trade: $7640.66
+Trade 32:
+  Entry: 2024-04-04 at $3330.04
+  Exit: 2024-05-20 at $3663.86
+  Return: 10.02%
+  Holding Period: 46 days
+  Capital After Trade: $8406.59
+Trade 33:
+  Entry: 2024-06-08 at $3680.95
+  Exit: 2024-07-19 at $3505.73
+  Return: -4.76%
+  Holding Period: 41 days
+  Capital After Trade: $8006.43
+Trade 34:
+  Entry: 2024-08-01 at $3201.56
+  Exit: 2024-08-23 at $2764.45
+  Return: -13.65%
+  Holding Period: 22 days
+  Capital After Trade: $6913.29
+Trade 35:
+  Entry: 2024-08-31 at $2513.39
+  Exit: 2024-09-20 at $2561.07
+  Return: 1.90%
+  Holding Period: 20 days
+  Capital After Trade: $7044.44
+Trade 36:
+  Entry: 2024-10-03 at $2349.79
+  Exit: 2024-10-15 at $2606.02
+  Return: 10.90%
+  Holding Period: 12 days
+  Capital After Trade: $7812.59
+Trade 37:
+  Entry: 2024-10-26 at $2479.60
+  Exit: 2024-11-06 at $2724.17
+  Return: 9.86%
+  Holding Period: 11 days
+  Capital After Trade: $8583.15
+Trade 38:
+  Entry: 2024-12-20 at $3472.55
+  Exit: 2025-01-01 at $3353.50
+  Return: -3.43%
+  Holding Period: 12 days
+  Capital After Trade: $8288.90
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for BNB-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $9,405.28
+Total Return: -5.95%
+Buy & Hold Return: 5061.14%
+Strategy vs Buy & Hold: -5067.09%
+
+Trade Statistics:
+---------------
+Total Trades: 43
+Profitable Trades: 29
+Win Rate: 67.44%
+Average Trade Return: 1.09%
+Best Trade: 25.05%
+Worst Trade: -43.00%
+Trade Return Std Dev: 14.54%
+
+Holding Periods:
+--------------
+Average Hold: 18.1 days
+Longest Hold: 65 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2020-02-21 at $22.18
+  Exit: 2020-04-03 at $13.37
+  Return: -39.72%
+  Holding Period: 42 days
+  Capital After Trade: $6027.98
+Trade 2:
+  Entry: 2020-05-11 at $15.10
+  Exit: 2020-05-20 at $16.89
+  Return: 11.86%
+  Holding Period: 9 days
+  Capital After Trade: $6742.87
+Trade 3:
+  Entry: 2020-06-15 at $16.38
+  Exit: 2020-07-08 at $17.23
+  Return: 5.14%
+  Holding Period: 23 days
+  Capital After Trade: $7089.73
+Trade 4:
+  Entry: 2020-09-05 at $19.48
+  Exit: 2020-09-06 at $23.19
+  Return: 19.06%
+  Holding Period: 1 days
+  Capital After Trade: $8440.76
+Trade 5:
+  Entry: 2020-09-22 at $24.10
+  Exit: 2020-10-05 at $28.66
+  Return: 18.91%
+  Holding Period: 13 days
+  Capital After Trade: $10037.22
+Trade 6:
+  Entry: 2020-10-31 at $28.43
+  Exit: 2020-11-21 at $30.39
+  Return: 6.89%
+  Holding Period: 21 days
+  Capital After Trade: $10729.20
+Trade 7:
+  Entry: 2020-12-08 at $27.64
+  Exit: 2020-12-19 at $33.30
+  Return: 20.48%
+  Holding Period: 11 days
+  Capital After Trade: $12926.59
+Trade 8:
+  Entry: 2021-03-23 at $255.69
+  Exit: 2021-03-28 at $269.19
+  Return: 5.28%
+  Holding Period: 5 days
+  Capital After Trade: $13609.17
+Trade 9:
+  Entry: 2021-04-25 at $505.08
+  Exit: 2021-04-29 at $599.71
+  Return: 18.74%
+  Holding Period: 4 days
+  Capital After Trade: $16158.94
+Trade 10:
+  Entry: 2021-05-15 at $563.04
+  Exit: 2021-07-06 at $320.93
+  Return: -43.00%
+  Holding Period: 52 days
+  Capital After Trade: $9210.63
+Trade 11:
+  Entry: 2021-07-20 at $264.78
+  Exit: 2021-08-02 at $331.10
+  Return: 25.05%
+  Holding Period: 13 days
+  Capital After Trade: $11517.64
+Trade 12:
+  Entry: 2021-09-09 at $421.27
+  Exit: 2021-10-06 at $435.40
+  Return: 3.35%
+  Holding Period: 27 days
+  Capital After Trade: $11903.99
+Trade 13:
+  Entry: 2021-11-18 at $532.24
+  Exit: 2021-11-30 at $622.67
+  Return: 16.99%
+  Holding Period: 12 days
+  Capital After Trade: $13926.59
+Trade 14:
+  Entry: 2021-12-12 at $570.82
+  Exit: 2021-12-27 at $562.64
+  Return: -1.43%
+  Holding Period: 15 days
+  Capital After Trade: $13726.96
+Trade 15:
+  Entry: 2021-12-31 at $511.71
+  Exit: 2022-02-07 at $433.23
+  Return: -15.34%
+  Holding Period: 38 days
+  Capital After Trade: $11621.70
+Trade 16:
+  Entry: 2022-02-23 at $366.54
+  Exit: 2022-03-24 at $414.13
+  Return: 12.98%
+  Holding Period: 29 days
+  Capital After Trade: $13130.54
+Trade 17:
+  Entry: 2022-04-10 at $418.59
+  Exit: 2022-05-26 at $304.96
+  Return: -27.15%
+  Holding Period: 46 days
+  Capital After Trade: $9566.24
+Trade 18:
+  Entry: 2022-06-04 at $301.63
+  Exit: 2022-07-06 at $238.50
+  Return: -20.93%
+  Holding Period: 32 days
+  Capital After Trade: $7564.04
+Trade 19:
+  Entry: 2022-08-18 at $298.14
+  Exit: 2022-09-09 at $293.41
+  Return: -1.59%
+  Holding Period: 22 days
+  Capital After Trade: $7443.93
+Trade 20:
+  Entry: 2022-09-20 at $266.37
+  Exit: 2022-10-04 at $296.30
+  Return: 11.24%
+  Holding Period: 14 days
+  Capital After Trade: $8280.32
+Trade 21:
+  Entry: 2022-10-10 at $271.81
+  Exit: 2022-10-25 at $284.43
+  Return: 4.65%
+  Holding Period: 15 days
+  Capital After Trade: $8664.97
+Trade 22:
+  Entry: 2022-11-13 at $276.58
+  Exit: 2022-11-23 at $297.85
+  Return: 7.69%
+  Holding Period: 10 days
+  Capital After Trade: $9331.28
+Trade 23:
+  Entry: 2022-12-09 at $286.09
+  Exit: 2023-01-04 at $259.12
+  Return: -9.43%
+  Holding Period: 26 days
+  Capital After Trade: $8451.58
+Trade 24:
+  Entry: 2023-02-11 at $310.62
+  Exit: 2023-02-13 at $294.48
+  Return: -5.20%
+  Holding Period: 2 days
+  Capital After Trade: $8012.41
+Trade 25:
+  Entry: 2023-02-14 at $296.12
+  Exit: 2023-02-16 at $304.76
+  Return: 2.92%
+  Holding Period: 2 days
+  Capital After Trade: $8246.28
+Trade 26:
+  Entry: 2023-02-18 at $316.68
+  Exit: 2023-02-27 at $304.86
+  Return: -3.73%
+  Holding Period: 9 days
+  Capital After Trade: $7938.31
+Trade 27:
+  Entry: 2023-03-02 at $299.95
+  Exit: 2023-03-13 at $308.91
+  Return: 2.99%
+  Holding Period: 11 days
+  Capital After Trade: $8175.61
+Trade 28:
+  Entry: 2023-03-29 at $313.84
+  Exit: 2023-04-11 at $322.76
+  Return: 2.84%
+  Holding Period: 13 days
+  Capital After Trade: $8407.88
+Trade 29:
+  Entry: 2023-05-06 at $322.77
+  Exit: 2023-07-10 at $245.87
+  Return: -23.82%
+  Holding Period: 65 days
+  Capital After Trade: $6404.74
+Trade 30:
+  Entry: 2023-07-26 at $238.96
+  Exit: 2023-07-31 at $241.12
+  Return: 0.90%
+  Holding Period: 5 days
+  Capital After Trade: $6462.58
+Trade 31:
+  Entry: 2023-08-13 at $240.03
+  Exit: 2023-09-26 at $212.38
+  Return: -11.52%
+  Holding Period: 44 days
+  Capital After Trade: $5718.01
+Trade 32:
+  Entry: 2023-10-11 at $206.53
+  Exit: 2023-10-16 at $214.82
+  Return: 4.01%
+  Holding Period: 5 days
+  Capital After Trade: $5947.54
+Trade 33:
+  Entry: 2023-11-25 at $234.44
+  Exit: 2023-12-04 at $233.30
+  Return: -0.49%
+  Holding Period: 9 days
+  Capital After Trade: $5918.50
+Trade 34:
+  Entry: 2024-01-10 at $305.10
+  Exit: 2024-01-20 at $316.96
+  Return: 3.89%
+  Holding Period: 10 days
+  Capital After Trade: $6148.64
+Trade 35:
+  Entry: 2024-01-24 at $293.09
+  Exit: 2024-02-08 at $318.87
+  Return: 8.80%
+  Holding Period: 15 days
+  Capital After Trade: $6689.48
+Trade 36:
+  Entry: 2024-03-27 at $574.51
+  Exit: 2024-03-30 at $601.02
+  Return: 4.61%
+  Holding Period: 3 days
+  Capital After Trade: $6998.09
+Trade 37:
+  Entry: 2024-04-15 at $552.87
+  Exit: 2024-04-23 at $606.84
+  Return: 9.76%
+  Holding Period: 8 days
+  Capital After Trade: $7681.18
+Trade 38:
+  Entry: 2024-06-13 at $599.52
+  Exit: 2024-07-18 at $571.95
+  Return: -4.60%
+  Holding Period: 35 days
+  Capital After Trade: $7328.02
+Trade 39:
+  Entry: 2024-08-03 at $529.48
+  Exit: 2024-08-19 at $559.82
+  Return: 5.73%
+  Holding Period: 16 days
+  Capital After Trade: $7747.90
+Trade 40:
+  Entry: 2024-08-30 at $535.32
+  Exit: 2024-09-17 at $546.01
+  Return: 2.00%
+  Holding Period: 18 days
+  Capital After Trade: $7902.73
+Trade 41:
+  Entry: 2024-10-02 at $542.71
+  Exit: 2024-10-14 at $588.90
+  Return: 8.51%
+  Holding Period: 12 days
+  Capital After Trade: $8575.30
+Trade 42:
+  Entry: 2024-11-02 at $568.04
+  Exit: 2024-11-08 at $597.95
+  Return: 5.27%
+  Holding Period: 6 days
+  Capital After Trade: $9026.86
+Trade 43:
+  Entry: 2024-12-20 at $678.09
+  Exit: 2025-01-01 at $706.51
+  Return: 4.19%
+  Holding Period: 12 days
+  Capital After Trade: $9405.28
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for SOL-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $20,601.77
+Total Return: 106.02%
+Buy & Hold Return: 20285.15%
+Strategy vs Buy & Hold: -20179.13%
+
+Trade Statistics:
+---------------
+Total Trades: 52
+Profitable Trades: 34
+Win Rate: 65.38%
+Average Trade Return: 3.43%
+Best Trade: 60.34%
+Worst Trade: -61.28%
+Trade Return Std Dev: 18.74%
+
+Holding Periods:
+--------------
+Average Hold: 17.2 days
+Longest Hold: 100 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2020-04-23 at $0.63
+  Exit: 2020-05-22 at $0.64
+  Return: 1.82%
+  Holding Period: 29 days
+  Capital After Trade: $10181.97
+Trade 2:
+  Entry: 2020-06-01 at $0.58
+  Exit: 2020-06-05 at $0.66
+  Return: 14.49%
+  Holding Period: 4 days
+  Capital After Trade: $11657.00
+Trade 3:
+  Entry: 2020-06-07 at $0.62
+  Exit: 2020-06-19 at $0.68
+  Return: 10.99%
+  Holding Period: 12 days
+  Capital After Trade: $12937.96
+Trade 4:
+  Entry: 2020-09-07 at $2.93
+  Exit: 2020-09-09 at $3.64
+  Return: 24.17%
+  Holding Period: 2 days
+  Capital After Trade: $16065.17
+Trade 5:
+  Entry: 2020-09-12 at $3.33
+  Exit: 2020-11-06 at $1.91
+  Return: -42.58%
+  Holding Period: 55 days
+  Capital After Trade: $9225.23
+Trade 6:
+  Entry: 2020-11-28 at $1.89
+  Exit: 2020-12-15 at $1.76
+  Return: -6.79%
+  Holding Period: 17 days
+  Capital After Trade: $8598.82
+Trade 7:
+  Entry: 2020-12-19 at $1.67
+  Exit: 2020-12-29 at $1.67
+  Return: 0.34%
+  Holding Period: 10 days
+  Capital After Trade: $8628.16
+Trade 8:
+  Entry: 2021-01-23 at $3.50
+  Exit: 2021-01-25 at $3.70
+  Return: 5.59%
+  Holding Period: 2 days
+  Capital After Trade: $9110.44
+Trade 9:
+  Entry: 2021-03-05 at $12.61
+  Exit: 2021-03-11 at $15.99
+  Return: 26.82%
+  Holding Period: 6 days
+  Capital After Trade: $11553.66
+Trade 10:
+  Entry: 2021-03-25 at $13.03
+  Exit: 2021-03-27 at $16.51
+  Return: 26.74%
+  Holding Period: 2 days
+  Capital After Trade: $14643.40
+Trade 11:
+  Entry: 2021-05-06 at $43.46
+  Exit: 2021-05-12 at $42.46
+  Return: -2.30%
+  Holding Period: 6 days
+  Capital After Trade: $14306.98
+Trade 12:
+  Entry: 2021-05-13 at $41.00
+  Exit: 2021-05-16 at $47.20
+  Return: 15.13%
+  Holding Period: 3 days
+  Capital After Trade: $16471.62
+Trade 13:
+  Entry: 2021-05-23 at $24.69
+  Exit: 2021-06-05 at $39.59
+  Return: 60.34%
+  Holding Period: 13 days
+  Capital After Trade: $26410.24
+Trade 14:
+  Entry: 2021-06-19 at $35.35
+  Exit: 2021-07-26 at $28.31
+  Return: -19.93%
+  Holding Period: 37 days
+  Capital After Trade: $21146.04
+Trade 15:
+  Entry: 2021-07-28 at $27.82
+  Exit: 2021-07-30 at $32.39
+  Return: 16.46%
+  Holding Period: 2 days
+  Capital After Trade: $24626.77
+Trade 16:
+  Entry: 2021-09-21 at $123.95
+  Exit: 2021-10-03 at $172.59
+  Return: 39.24%
+  Holding Period: 12 days
+  Capital After Trade: $34290.44
+Trade 17:
+  Entry: 2021-11-17 at $218.72
+  Exit: 2021-12-02 at $233.99
+  Return: 6.99%
+  Holding Period: 15 days
+  Capital After Trade: $36685.71
+Trade 18:
+  Entry: 2021-12-06 at $194.20
+  Exit: 2021-12-27 at $195.43
+  Return: 0.63%
+  Holding Period: 21 days
+  Capital After Trade: $36918.12
+Trade 19:
+  Entry: 2022-01-04 at $167.94
+  Exit: 2022-02-08 at $113.60
+  Return: -32.36%
+  Holding Period: 35 days
+  Capital After Trade: $24971.77
+Trade 20:
+  Entry: 2022-02-13 at $93.24
+  Exit: 2022-02-24 at $89.19
+  Return: -4.34%
+  Holding Period: 11 days
+  Capital After Trade: $23887.31
+Trade 21:
+  Entry: 2022-03-06 at $84.54
+  Exit: 2022-03-24 at $102.22
+  Return: 20.91%
+  Holding Period: 18 days
+  Capital After Trade: $28883.20
+Trade 22:
+  Entry: 2022-04-09 at $112.97
+  Exit: 2022-07-18 at $43.75
+  Return: -61.28%
+  Holding Period: 100 days
+  Capital After Trade: $11184.37
+Trade 23:
+  Entry: 2022-08-06 at $40.06
+  Exit: 2022-08-09 at $40.37
+  Return: 0.79%
+  Holding Period: 3 days
+  Capital After Trade: $11272.49
+Trade 24:
+  Entry: 2022-08-19 at $35.89
+  Exit: 2022-09-09 at $34.74
+  Return: -3.21%
+  Holding Period: 21 days
+  Capital After Trade: $10911.14
+Trade 25:
+  Entry: 2022-09-21 at $30.83
+  Exit: 2022-10-25 at $30.94
+  Return: 0.37%
+  Holding Period: 34 days
+  Capital After Trade: $10951.35
+Trade 26:
+  Entry: 2022-11-09 at $13.94
+  Exit: 2022-12-13 at $13.83
+  Return: -0.77%
+  Holding Period: 34 days
+  Capital After Trade: $10867.40
+Trade 27:
+  Entry: 2022-12-18 at $12.41
+  Exit: 2023-01-02 at $11.27
+  Return: -9.19%
+  Holding Period: 15 days
+  Capital After Trade: $9869.22
+Trade 28:
+  Entry: 2023-01-28 at $23.98
+  Exit: 2023-01-29 at $26.13
+  Return: 8.97%
+  Holding Period: 1 days
+  Capital After Trade: $10754.25
+Trade 29:
+  Entry: 2023-02-04 at $24.32
+  Exit: 2023-02-19 at $24.84
+  Return: 2.15%
+  Holding Period: 15 days
+  Capital After Trade: $10985.54
+Trade 30:
+  Entry: 2023-03-01 at $22.51
+  Exit: 2023-03-13 at $20.43
+  Return: -9.21%
+  Holding Period: 12 days
+  Capital After Trade: $9973.83
+Trade 31:
+  Entry: 2023-03-16 at $19.73
+  Exit: 2023-03-20 at $22.18
+  Return: 12.40%
+  Holding Period: 4 days
+  Capital After Trade: $11210.25
+Trade 32:
+  Entry: 2023-03-25 at $20.45
+  Exit: 2023-04-11 at $23.02
+  Return: 12.58%
+  Holding Period: 17 days
+  Capital After Trade: $12620.50
+Trade 33:
+  Entry: 2023-04-22 at $21.82
+  Exit: 2023-05-30 at $21.25
+  Return: -2.58%
+  Holding Period: 38 days
+  Capital After Trade: $12295.27
+Trade 34:
+  Entry: 2023-06-08 at $18.91
+  Exit: 2023-06-10 at $15.66
+  Return: -17.20%
+  Holding Period: 2 days
+  Capital After Trade: $10179.87
+Trade 35:
+  Entry: 2023-06-11 at $15.56
+  Exit: 2023-06-29 at $17.97
+  Return: 15.50%
+  Holding Period: 18 days
+  Capital After Trade: $11757.80
+Trade 36:
+  Entry: 2023-07-25 at $23.28
+  Exit: 2023-08-12 at $24.91
+  Return: 6.99%
+  Holding Period: 18 days
+  Capital After Trade: $12579.76
+Trade 37:
+  Entry: 2023-08-17 at $21.71
+  Exit: 2023-09-30 at $21.40
+  Return: -1.45%
+  Holding Period: 44 days
+  Capital After Trade: $12397.33
+Trade 38:
+  Entry: 2023-10-15 at $21.92
+  Exit: 2023-10-16 at $23.98
+  Return: 9.40%
+  Holding Period: 1 days
+  Capital After Trade: $13562.83
+Trade 39:
+  Entry: 2023-11-24 at $56.87
+  Exit: 2023-12-02 at $63.83
+  Return: 12.25%
+  Holding Period: 8 days
+  Capital After Trade: $15224.34
+Trade 40:
+  Entry: 2024-01-05 at $99.98
+  Exit: 2024-01-30 at $101.47
+  Return: 1.49%
+  Holding Period: 25 days
+  Capital After Trade: $15451.87
+Trade 41:
+  Entry: 2024-02-23 at $99.95
+  Exit: 2024-02-28 at $118.05
+  Return: 18.11%
+  Holding Period: 5 days
+  Capital After Trade: $18249.54
+Trade 42:
+  Entry: 2024-03-23 at $172.90
+  Exit: 2024-03-27 at $186.36
+  Return: 7.78%
+  Holding Period: 4 days
+  Capital After Trade: $19670.14
+Trade 43:
+  Entry: 2024-03-28 at $189.62
+  Exit: 2024-03-31 at $202.87
+  Return: 6.99%
+  Holding Period: 3 days
+  Capital After Trade: $21044.87
+Trade 44:
+  Entry: 2024-04-06 at $178.92
+  Exit: 2024-05-15 at $158.19
+  Return: -11.59%
+  Holding Period: 39 days
+  Capital After Trade: $18606.68
+Trade 45:
+  Entry: 2024-05-31 at $165.64
+  Exit: 2024-07-05 at $134.37
+  Return: -18.88%
+  Holding Period: 35 days
+  Capital After Trade: $15094.19
+Trade 46:
+  Entry: 2024-07-13 at $141.92
+  Exit: 2024-07-17 at $155.58
+  Return: 9.62%
+  Holding Period: 4 days
+  Capital After Trade: $16546.89
+Trade 47:
+  Entry: 2024-08-02 at $152.64
+  Exit: 2024-08-19 at $144.34
+  Return: -5.43%
+  Holding Period: 17 days
+  Capital After Trade: $15647.71
+Trade 48:
+  Entry: 2024-08-22 at $143.26
+  Exit: 2024-08-26 at $157.24
+  Return: 9.76%
+  Holding Period: 4 days
+  Capital After Trade: $17174.60
+Trade 49:
+  Entry: 2024-08-31 at $135.37
+  Exit: 2024-09-19 at $142.84
+  Return: 5.51%
+  Holding Period: 19 days
+  Capital After Trade: $18121.28
+Trade 50:
+  Entry: 2024-10-03 at $136.79
+  Exit: 2024-10-14 at $157.45
+  Return: 15.10%
+  Holding Period: 11 days
+  Capital After Trade: $20858.31
+Trade 51:
+  Entry: 2024-11-03 at $162.55
+  Exit: 2024-11-06 at $186.95
+  Return: 15.01%
+  Holding Period: 3 days
+  Capital After Trade: $23989.73
+Trade 52:
+  Entry: 2024-12-02 at $225.76
+  Exit: 2025-01-01 at $193.87
+  Return: -14.12%
+  Holding Period: 30 days
+  Capital After Trade: $20601.77
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for XRP-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $6,195.52
+Total Return: -38.04%
+Buy & Hold Return: 1105.37%
+Strategy vs Buy & Hold: -1143.41%
+
+Trade Statistics:
+---------------
+Total Trades: 50
+Profitable Trades: 29
+Win Rate: 58.00%
+Average Trade Return: 0.90%
+Best Trade: 69.83%
+Worst Trade: -56.23%
+Trade Return Std Dev: 18.69%
+
+Holding Periods:
+--------------
+Average Hold: 20.5 days
+Longest Hold: 99 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2020-02-20 at $0.27
+  Exit: 2020-03-28 at $0.18
+  Return: -35.47%
+  Holding Period: 37 days
+  Capital After Trade: $6453.21
+Trade 2:
+  Entry: 2020-05-12 at $0.20
+  Exit: 2020-07-08 at $0.20
+  Return: 3.57%
+  Holding Period: 57 days
+  Capital After Trade: $6683.57
+Trade 3:
+  Entry: 2020-08-21 at $0.28
+  Exit: 2020-09-02 at $0.28
+  Return: -1.50%
+  Holding Period: 12 days
+  Capital After Trade: $6583.06
+Trade 4:
+  Entry: 2020-09-04 at $0.26
+  Exit: 2020-10-05 at $0.25
+  Return: -1.98%
+  Holding Period: 31 days
+  Capital After Trade: $6452.71
+Trade 5:
+  Entry: 2020-10-18 at $0.24
+  Exit: 2020-10-22 at $0.26
+  Return: 6.02%
+  Holding Period: 4 days
+  Capital After Trade: $6841.16
+Trade 6:
+  Entry: 2020-10-30 at $0.24
+  Exit: 2020-11-12 at $0.25
+  Return: 6.57%
+  Holding Period: 13 days
+  Capital After Trade: $7290.76
+Trade 7:
+  Entry: 2020-12-07 at $0.61
+  Exit: 2020-12-17 at $0.58
+  Return: -5.30%
+  Holding Period: 10 days
+  Capital After Trade: $6904.54
+Trade 8:
+  Entry: 2020-12-23 at $0.26
+  Exit: 2021-01-07 at $0.33
+  Return: 26.06%
+  Holding Period: 15 days
+  Capital After Trade: $8704.09
+Trade 9:
+  Entry: 2021-01-21 at $0.27
+  Exit: 2021-01-29 at $0.28
+  Return: 4.92%
+  Holding Period: 8 days
+  Capital After Trade: $9132.65
+Trade 10:
+  Entry: 2021-02-25 at $0.43
+  Exit: 2021-03-14 at $0.44
+  Return: 1.75%
+  Holding Period: 17 days
+  Capital After Trade: $9292.13
+Trade 11:
+  Entry: 2021-04-23 at $1.17
+  Exit: 2021-05-01 at $1.65
+  Return: 41.15%
+  Holding Period: 8 days
+  Capital After Trade: $13116.24
+Trade 12:
+  Entry: 2021-05-12 at $1.25
+  Exit: 2021-05-18 at $1.59
+  Return: 27.48%
+  Holding Period: 6 days
+  Capital After Trade: $16720.13
+Trade 13:
+  Entry: 2021-05-21 at $1.01
+  Exit: 2021-07-26 at $0.63
+  Return: -37.87%
+  Holding Period: 66 days
+  Capital After Trade: $10387.95
+Trade 14:
+  Entry: 2021-08-28 at $1.15
+  Exit: 2021-09-02 at $1.26
+  Return: 9.67%
+  Holding Period: 5 days
+  Capital After Trade: $11392.91
+Trade 15:
+  Entry: 2021-09-09 at $1.09
+  Exit: 2021-10-07 at $1.07
+  Return: -1.96%
+  Holding Period: 28 days
+  Capital After Trade: $11169.37
+Trade 16:
+  Entry: 2021-10-23 at $1.09
+  Exit: 2021-11-02 at $1.14
+  Return: 3.81%
+  Holding Period: 10 days
+  Capital After Trade: $11594.91
+Trade 17:
+  Entry: 2021-11-17 at $1.10
+  Exit: 2021-12-20 at $0.88
+  Return: -19.75%
+  Holding Period: 33 days
+  Capital After Trade: $9305.49
+Trade 18:
+  Entry: 2022-01-01 at $0.85
+  Exit: 2022-02-05 at $0.67
+  Return: -21.47%
+  Holding Period: 35 days
+  Capital After Trade: $7308.00
+Trade 19:
+  Entry: 2022-02-22 at $0.72
+  Exit: 2022-03-10 at $0.74
+  Return: 2.02%
+  Holding Period: 16 days
+  Capital After Trade: $7455.93
+Trade 20:
+  Entry: 2022-04-06 at $0.76
+  Exit: 2022-07-14 at $0.33
+  Return: -56.23%
+  Holding Period: 99 days
+  Capital After Trade: $3263.40
+Trade 21:
+  Entry: 2022-08-06 at $0.37
+  Exit: 2022-08-09 at $0.37
+  Return: -0.93%
+  Holding Period: 3 days
+  Capital After Trade: $3232.93
+Trade 22:
+  Entry: 2022-08-13 at $0.38
+  Exit: 2022-09-09 at $0.36
+  Return: -5.41%
+  Holding Period: 27 days
+  Capital After Trade: $3058.03
+Trade 23:
+  Entry: 2022-10-15 at $0.48
+  Exit: 2022-11-04 at $0.50
+  Return: 4.76%
+  Holding Period: 20 days
+  Capital After Trade: $3203.45
+Trade 24:
+  Entry: 2022-11-09 at $0.33
+  Exit: 2022-12-13 at $0.40
+  Return: 18.58%
+  Holding Period: 34 days
+  Capital After Trade: $3798.81
+Trade 25:
+  Entry: 2022-12-17 at $0.35
+  Exit: 2023-01-02 at $0.35
+  Return: -1.76%
+  Holding Period: 16 days
+  Capital After Trade: $3731.85
+Trade 26:
+  Entry: 2023-01-03 at $0.34
+  Exit: 2023-01-11 at $0.37
+  Return: 8.82%
+  Holding Period: 8 days
+  Capital After Trade: $4061.09
+Trade 27:
+  Entry: 2023-02-10 at $0.38
+  Exit: 2023-02-20 at $0.40
+  Return: 4.15%
+  Holding Period: 10 days
+  Capital After Trade: $4229.63
+Trade 28:
+  Entry: 2023-02-26 at $0.38
+  Exit: 2023-03-08 at $0.39
+  Return: 2.95%
+  Holding Period: 10 days
+  Capital After Trade: $4354.34
+Trade 29:
+  Entry: 2023-03-11 at $0.37
+  Exit: 2023-03-21 at $0.47
+  Return: 28.04%
+  Holding Period: 10 days
+  Capital After Trade: $5575.52
+Trade 30:
+  Entry: 2023-04-08 at $0.51
+  Exit: 2023-04-16 at $0.52
+  Return: 3.10%
+  Holding Period: 8 days
+  Capital After Trade: $5748.35
+Trade 31:
+  Entry: 2023-04-21 at $0.45
+  Exit: 2023-05-22 at $0.46
+  Return: 2.72%
+  Holding Period: 31 days
+  Capital After Trade: $5904.46
+Trade 32:
+  Entry: 2023-06-15 at $0.48
+  Exit: 2023-07-13 at $0.82
+  Return: 69.83%
+  Holding Period: 28 days
+  Capital After Trade: $10027.31
+Trade 33:
+  Entry: 2023-07-27 at $0.71
+  Exit: 2023-09-20 at $0.52
+  Return: -26.94%
+  Holding Period: 55 days
+  Capital After Trade: $7325.46
+Trade 34:
+  Entry: 2023-09-23 at $0.51
+  Exit: 2023-09-29 at $0.52
+  Return: 2.69%
+  Holding Period: 6 days
+  Capital After Trade: $7522.79
+Trade 35:
+  Entry: 2023-10-07 at $0.52
+  Exit: 2023-10-19 at $0.52
+  Return: -0.34%
+  Holding Period: 12 days
+  Capital After Trade: $7497.15
+Trade 36:
+  Entry: 2023-11-17 at $0.61
+  Exit: 2023-12-03 at $0.62
+  Return: 1.63%
+  Holding Period: 16 days
+  Capital After Trade: $7619.38
+Trade 37:
+  Entry: 2023-12-16 at $0.62
+  Exit: 2023-12-25 at $0.65
+  Return: 4.28%
+  Holding Period: 9 days
+  Capital After Trade: $7945.16
+Trade 38:
+  Entry: 2024-01-01 at $0.63
+  Exit: 2024-01-02 at $0.63
+  Return: -0.75%
+  Holding Period: 1 days
+  Capital After Trade: $7885.65
+Trade 39:
+  Entry: 2024-01-04 at $0.59
+  Exit: 2024-02-14 at $0.54
+  Return: -8.47%
+  Holding Period: 41 days
+  Capital After Trade: $7217.71
+Trade 40:
+  Entry: 2024-03-23 at $0.62
+  Exit: 2024-04-02 at $0.59
+  Return: -5.20%
+  Holding Period: 10 days
+  Capital After Trade: $6842.21
+Trade 41:
+  Entry: 2024-04-03 at $0.57
+  Exit: 2024-05-01 at $0.52
+  Return: -10.07%
+  Holding Period: 28 days
+  Capital After Trade: $6152.93
+Trade 42:
+  Entry: 2024-05-05 at $0.53
+  Exit: 2024-05-21 at $0.54
+  Return: 1.36%
+  Holding Period: 16 days
+  Capital After Trade: $6236.54
+Trade 43:
+  Entry: 2024-06-01 at $0.52
+  Exit: 2024-07-12 at $0.47
+  Return: -8.41%
+  Holding Period: 41 days
+  Capital After Trade: $5712.13
+Trade 44:
+  Entry: 2024-08-03 at $0.56
+  Exit: 2024-08-07 at $0.60
+  Return: 7.98%
+  Holding Period: 4 days
+  Capital After Trade: $6168.16
+Trade 45:
+  Entry: 2024-08-11 at $0.55
+  Exit: 2024-08-18 at $0.56
+  Return: 1.98%
+  Holding Period: 7 days
+  Capital After Trade: $6290.23
+Trade 46:
+  Entry: 2024-08-22 at $0.60
+  Exit: 2024-09-12 at $0.56
+  Return: -5.86%
+  Holding Period: 21 days
+  Capital After Trade: $5921.56
+Trade 47:
+  Entry: 2024-10-03 at $0.52
+  Exit: 2024-10-17 at $0.54
+  Return: 4.16%
+  Holding Period: 14 days
+  Capital After Trade: $6167.81
+Trade 48:
+  Entry: 2024-10-27 at $0.52
+  Exit: 2024-11-06 at $0.54
+  Return: 5.04%
+  Holding Period: 10 days
+  Capital After Trade: $6478.91
+Trade 49:
+  Entry: 2024-12-14 at $2.40
+  Exit: 2024-12-19 at $2.25
+  Return: -6.25%
+  Holding Period: 5 days
+  Capital After Trade: $6074.26
+Trade 50:
+  Entry: 2024-12-20 at $2.28
+  Exit: 2025-01-01 at $2.32
+  Return: 2.00%
+  Holding Period: 12 days
+  Capital After Trade: $6195.52
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for RAY-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $1,299.54
+Total Return: -87.00%
+Buy & Hold Return: -30.70%
+Strategy vs Buy & Hold: -56.31%
+
+Trade Statistics:
+---------------
+Total Trades: 56
+Profitable Trades: 29
+Win Rate: 51.79%
+Average Trade Return: -0.58%
+Best Trade: 62.43%
+Worst Trade: -71.67%
+Trade Return Std Dev: 21.04%
+
+Holding Periods:
+--------------
+Average Hold: 15.3 days
+Longest Hold: 92 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2021-03-06 at $7.39
+  Exit: 2021-03-12 at $9.92
+  Return: 34.22%
+  Holding Period: 6 days
+  Capital After Trade: $13422.36
+Trade 2:
+  Entry: 2021-03-16 at $9.86
+  Exit: 2021-03-31 at $9.12
+  Return: -7.57%
+  Holding Period: 15 days
+  Capital After Trade: $12406.32
+Trade 3:
+  Entry: 2021-04-19 at $7.95
+  Exit: 2021-04-21 at $9.47
+  Return: 19.12%
+  Holding Period: 2 days
+  Capital After Trade: $14778.69
+Trade 4:
+  Entry: 2021-04-24 at $9.11
+  Exit: 2021-04-26 at $12.13
+  Return: 33.21%
+  Holding Period: 2 days
+  Capital After Trade: $19686.90
+Trade 5:
+  Entry: 2021-05-12 at $10.53
+  Exit: 2021-05-13 at $9.44
+  Return: -10.42%
+  Holding Period: 1 days
+  Capital After Trade: $17634.67
+Trade 6:
+  Entry: 2021-05-14 at $9.88
+  Exit: 2021-07-07 at $3.59
+  Return: -63.69%
+  Holding Period: 54 days
+  Capital After Trade: $6403.27
+Trade 7:
+  Entry: 2021-07-08 at $3.31
+  Exit: 2021-07-30 at $3.33
+  Return: 0.50%
+  Holding Period: 22 days
+  Capital After Trade: $6435.16
+Trade 8:
+  Entry: 2021-09-14 at $13.30
+  Exit: 2021-10-21 at $10.20
+  Return: -23.29%
+  Holding Period: 37 days
+  Capital After Trade: $4936.41
+Trade 9:
+  Entry: 2021-11-14 at $11.20
+  Exit: 2021-11-30 at $10.88
+  Return: -2.84%
+  Holding Period: 16 days
+  Capital After Trade: $4796.01
+Trade 10:
+  Entry: 2021-12-06 at $8.87
+  Exit: 2022-02-07 at $4.18
+  Return: -52.90%
+  Holding Period: 63 days
+  Capital After Trade: $2259.15
+Trade 11:
+  Entry: 2022-02-14 at $3.56
+  Exit: 2022-03-18 at $2.67
+  Return: -25.03%
+  Holding Period: 32 days
+  Capital After Trade: $1693.78
+Trade 12:
+  Entry: 2022-04-08 at $2.84
+  Exit: 2022-07-09 at $0.81
+  Return: -71.67%
+  Holding Period: 92 days
+  Capital After Trade: $479.89
+Trade 13:
+  Entry: 2022-07-26 at $0.77
+  Exit: 2022-08-08 at $0.87
+  Return: 12.74%
+  Holding Period: 13 days
+  Capital After Trade: $541.03
+Trade 14:
+  Entry: 2022-08-18 at $0.74
+  Exit: 2022-08-20 at $0.69
+  Return: -6.29%
+  Holding Period: 2 days
+  Capital After Trade: $506.99
+Trade 15:
+  Entry: 2022-08-21 at $0.72
+  Exit: 2022-09-12 at $0.67
+  Return: -6.36%
+  Holding Period: 22 days
+  Capital After Trade: $474.73
+Trade 16:
+  Entry: 2022-09-19 at $0.57
+  Exit: 2022-10-01 at $0.56
+  Return: -1.46%
+  Holding Period: 12 days
+  Capital After Trade: $467.81
+Trade 17:
+  Entry: 2022-10-02 at $0.55
+  Exit: 2022-10-29 at $0.53
+  Return: -4.09%
+  Holding Period: 27 days
+  Capital After Trade: $448.68
+Trade 18:
+  Entry: 2022-11-09 at $0.22
+  Exit: 2022-11-21 at $0.25
+  Return: 13.82%
+  Holding Period: 12 days
+  Capital After Trade: $510.68
+Trade 19:
+  Entry: 2022-11-24 at $0.23
+  Exit: 2022-12-03 at $0.21
+  Return: -7.63%
+  Holding Period: 9 days
+  Capital After Trade: $471.72
+Trade 20:
+  Entry: 2022-12-05 at $0.19
+  Exit: 2022-12-30 at $0.15
+  Return: -23.35%
+  Holding Period: 25 days
+  Capital After Trade: $361.58
+Trade 21:
+  Entry: 2022-12-31 at $0.14
+  Exit: 2023-01-03 at $0.16
+  Return: 12.69%
+  Holding Period: 3 days
+  Capital After Trade: $407.48
+Trade 22:
+  Entry: 2023-01-07 at $0.15
+  Exit: 2023-01-09 at $0.16
+  Return: 10.46%
+  Holding Period: 2 days
+  Capital After Trade: $450.09
+Trade 23:
+  Entry: 2023-01-12 at $0.16
+  Exit: 2023-01-14 at $0.26
+  Return: 62.43%
+  Holding Period: 2 days
+  Capital After Trade: $731.06
+Trade 24:
+  Entry: 2023-01-22 at $0.23
+  Exit: 2023-01-29 at $0.25
+  Return: 8.86%
+  Holding Period: 7 days
+  Capital After Trade: $795.81
+Trade 25:
+  Entry: 2023-02-10 at $0.26
+  Exit: 2023-02-13 at $0.26
+  Return: 3.24%
+  Holding Period: 3 days
+  Capital After Trade: $821.59
+Trade 26:
+  Entry: 2023-02-26 at $0.29
+  Exit: 2023-02-28 at $0.30
+  Return: 3.71%
+  Holding Period: 2 days
+  Capital After Trade: $852.09
+Trade 27:
+  Entry: 2023-03-04 at $0.29
+  Exit: 2023-03-09 at $0.25
+  Return: -12.08%
+  Holding Period: 5 days
+  Capital After Trade: $749.18
+Trade 28:
+  Entry: 2023-03-11 at $0.24
+  Exit: 2023-04-02 at $0.25
+  Return: 4.09%
+  Holding Period: 22 days
+  Capital After Trade: $779.79
+Trade 29:
+  Entry: 2023-04-06 at $0.24
+  Exit: 2023-04-11 at $0.26
+  Return: 11.05%
+  Holding Period: 5 days
+  Capital After Trade: $865.93
+Trade 30:
+  Entry: 2023-04-15 at $0.27
+  Exit: 2023-05-05 at $0.23
+  Return: -15.18%
+  Holding Period: 20 days
+  Capital After Trade: $734.49
+Trade 31:
+  Entry: 2023-05-06 at $0.22
+  Exit: 2023-05-18 at $0.22
+  Return: 2.02%
+  Holding Period: 12 days
+  Capital After Trade: $749.31
+Trade 32:
+  Entry: 2023-05-20 at $0.21
+  Exit: 2023-05-24 at $0.20
+  Return: -1.76%
+  Holding Period: 4 days
+  Capital After Trade: $736.12
+Trade 33:
+  Entry: 2023-05-26 at $0.20
+  Exit: 2023-05-31 at $0.24
+  Return: 22.19%
+  Holding Period: 5 days
+  Capital After Trade: $899.49
+Trade 34:
+  Entry: 2023-06-02 at $0.21
+  Exit: 2023-06-22 at $0.19
+  Return: -8.11%
+  Holding Period: 20 days
+  Capital After Trade: $826.56
+Trade 35:
+  Entry: 2023-07-02 at $0.20
+  Exit: 2023-07-14 at $0.20
+  Return: 0.87%
+  Holding Period: 12 days
+  Capital After Trade: $833.77
+Trade 36:
+  Entry: 2023-07-24 at $0.20
+  Exit: 2023-08-06 at $0.21
+  Return: 4.17%
+  Holding Period: 13 days
+  Capital After Trade: $868.50
+Trade 37:
+  Entry: 2023-08-09 at $0.21
+  Exit: 2023-08-13 at $0.21
+  Return: -0.99%
+  Holding Period: 4 days
+  Capital After Trade: $859.92
+Trade 38:
+  Entry: 2023-08-17 at $0.18
+  Exit: 2023-09-02 at $0.18
+  Return: -1.23%
+  Holding Period: 16 days
+  Capital After Trade: $849.37
+Trade 39:
+  Entry: 2023-09-06 at $0.18
+  Exit: 2023-09-08 at $0.18
+  Return: 2.80%
+  Holding Period: 2 days
+  Capital After Trade: $873.14
+Trade 40:
+  Entry: 2023-09-11 at $0.16
+  Exit: 2023-09-24 at $0.17
+  Return: 5.71%
+  Holding Period: 13 days
+  Capital After Trade: $923.02
+Trade 41:
+  Entry: 2023-10-07 at $0.18
+  Exit: 2023-10-19 at $0.17
+  Return: -5.29%
+  Holding Period: 12 days
+  Capital After Trade: $874.23
+Trade 42:
+  Entry: 2023-10-28 at $0.19
+  Exit: 2023-10-30 at $0.20
+  Return: 3.63%
+  Holding Period: 2 days
+  Capital After Trade: $905.93
+Trade 43:
+  Entry: 2023-11-06 at $0.27
+  Exit: 2023-11-09 at $0.31
+  Return: 17.16%
+  Holding Period: 3 days
+  Capital After Trade: $1061.36
+Trade 44:
+  Entry: 2023-11-20 at $0.36
+  Exit: 2023-11-23 at $0.38
+  Return: 4.02%
+  Holding Period: 3 days
+  Capital After Trade: $1104.02
+Trade 45:
+  Entry: 2023-11-24 at $0.39
+  Exit: 2023-12-01 at $0.45
+  Return: 15.91%
+  Holding Period: 7 days
+  Capital After Trade: $1279.64
+Trade 46:
+  Entry: 2023-12-30 at $1.30
+  Exit: 2024-01-03 at $1.37
+  Return: 6.04%
+  Holding Period: 4 days
+  Capital After Trade: $1356.90
+Trade 47:
+  Entry: 2024-01-04 at $1.43
+  Exit: 2024-01-17 at $1.33
+  Return: -7.19%
+  Holding Period: 13 days
+  Capital After Trade: $1259.30
+Trade 48:
+  Entry: 2024-01-20 at $1.16
+  Exit: 2024-01-28 at $1.26
+  Return: 8.51%
+  Holding Period: 8 days
+  Capital After Trade: $1366.51
+Trade 49:
+  Entry: 2024-02-03 at $1.06
+  Exit: 2024-02-24 at $0.99
+  Return: -6.29%
+  Holding Period: 21 days
+  Capital After Trade: $1280.51
+Trade 50:
+  Entry: 2024-03-23 at $1.92
+  Exit: 2024-03-26 at $2.10
+  Return: 9.12%
+  Holding Period: 3 days
+  Capital After Trade: $1397.29
+Trade 51:
+  Entry: 2024-03-28 at $2.03
+  Exit: 2024-05-15 at $1.69
+  Return: -16.84%
+  Holding Period: 48 days
+  Capital After Trade: $1161.94
+Trade 52:
+  Entry: 2024-05-31 at $1.74
+  Exit: 2024-06-27 at $1.70
+  Return: -2.18%
+  Holding Period: 27 days
+  Capital After Trade: $1136.60
+Trade 53:
+  Entry: 2024-08-02 at $1.85
+  Exit: 2024-09-19 at $1.58
+  Return: -14.99%
+  Holding Period: 48 days
+  Capital After Trade: $966.22
+Trade 54:
+  Entry: 2024-10-10 at $1.63
+  Exit: 2024-10-14 at $2.06
+  Return: 26.78%
+  Holding Period: 4 days
+  Capital After Trade: $1225.00
+Trade 55:
+  Entry: 2024-12-01 at $5.27
+  Exit: 2024-12-10 at $4.91
+  Return: -6.83%
+  Holding Period: 9 days
+  Capital After Trade: $1141.34
+Trade 56:
+  Entry: 2024-12-21 at $4.38
+  Exit: 2025-01-01 at $4.99
+  Return: 13.86%
+  Holding Period: 11 days
+  Capital After Trade: $1299.54
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for TRX-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $5,952.52
+Total Return: -40.47%
+Buy & Hold Return: 1826.90%
+Strategy vs Buy & Hold: -1867.37%
+
+Trade Statistics:
+---------------
+Total Trades: 41
+Profitable Trades: 27
+Win Rate: 65.85%
+Average Trade Return: 0.20%
+Best Trade: 49.58%
+Worst Trade: -46.45%
+Trade Return Std Dev: 16.02%
+
+Holding Periods:
+--------------
+Average Hold: 18.0 days
+Longest Hold: 80 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2020-02-20 at $0.02
+  Exit: 2020-04-01 at $0.01
+  Return: -41.75%
+  Holding Period: 41 days
+  Capital After Trade: $5824.78
+Trade 2:
+  Entry: 2020-04-22 at $0.01
+  Exit: 2020-04-24 at $0.01
+  Return: 8.04%
+  Holding Period: 2 days
+  Capital After Trade: $6292.97
+Trade 3:
+  Entry: 2020-05-23 at $0.02
+  Exit: 2020-06-05 at $0.02
+  Return: 12.56%
+  Holding Period: 13 days
+  Capital After Trade: $7083.35
+Trade 4:
+  Entry: 2020-06-16 at $0.02
+  Exit: 2020-07-01 at $0.02
+  Return: 4.49%
+  Holding Period: 15 days
+  Capital After Trade: $7401.42
+Trade 5:
+  Entry: 2020-08-27 at $0.02
+  Exit: 2020-09-01 at $0.03
+  Return: 49.58%
+  Holding Period: 5 days
+  Capital After Trade: $11071.05
+Trade 6:
+  Entry: 2020-09-14 at $0.03
+  Exit: 2020-10-20 at $0.03
+  Return: -14.58%
+  Holding Period: 36 days
+  Capital After Trade: $9456.85
+Trade 7:
+  Entry: 2020-11-01 at $0.03
+  Exit: 2020-11-17 at $0.03
+  Return: 2.88%
+  Holding Period: 16 days
+  Capital After Trade: $9729.23
+Trade 8:
+  Entry: 2020-12-05 at $0.03
+  Exit: 2020-12-17 at $0.03
+  Return: 0.44%
+  Holding Period: 12 days
+  Capital After Trade: $9772.51
+Trade 9:
+  Entry: 2021-01-22 at $0.03
+  Exit: 2021-01-29 at $0.03
+  Return: 16.27%
+  Holding Period: 7 days
+  Capital After Trade: $11362.02
+Trade 10:
+  Entry: 2021-02-25 at $0.05
+  Exit: 2021-03-09 at $0.05
+  Return: 17.63%
+  Holding Period: 12 days
+  Capital After Trade: $13364.73
+Trade 11:
+  Entry: 2021-04-22 at $0.11
+  Exit: 2021-05-03 at $0.13
+  Return: 19.51%
+  Holding Period: 11 days
+  Capital After Trade: $15971.91
+Trade 12:
+  Entry: 2021-05-14 at $0.12
+  Exit: 2021-07-03 at $0.07
+  Return: -46.45%
+  Holding Period: 50 days
+  Capital After Trade: $8552.37
+Trade 13:
+  Entry: 2021-07-11 at $0.06
+  Exit: 2021-07-26 at $0.06
+  Return: -5.29%
+  Holding Period: 15 days
+  Capital After Trade: $8100.15
+Trade 14:
+  Entry: 2021-08-26 at $0.08
+  Exit: 2021-09-01 at $0.10
+  Return: 14.36%
+  Holding Period: 6 days
+  Capital After Trade: $9263.12
+Trade 15:
+  Entry: 2021-09-19 at $0.10
+  Exit: 2021-10-05 at $0.10
+  Return: -7.29%
+  Holding Period: 16 days
+  Capital After Trade: $8588.01
+Trade 16:
+  Entry: 2021-11-19 at $0.10
+  Exit: 2022-02-07 at $0.07
+  Return: -34.08%
+  Holding Period: 80 days
+  Capital After Trade: $5660.99
+Trade 17:
+  Entry: 2022-02-20 at $0.06
+  Exit: 2022-03-20 at $0.06
+  Return: -1.01%
+  Holding Period: 28 days
+  Capital After Trade: $5603.71
+Trade 18:
+  Entry: 2022-04-07 at $0.06
+  Exit: 2022-04-21 at $0.07
+  Return: 10.91%
+  Holding Period: 14 days
+  Capital After Trade: $6214.88
+Trade 19:
+  Entry: 2022-05-14 at $0.07
+  Exit: 2022-05-24 at $0.08
+  Return: 11.18%
+  Holding Period: 10 days
+  Capital After Trade: $6909.73
+Trade 20:
+  Entry: 2022-06-10 at $0.08
+  Exit: 2022-06-30 at $0.06
+  Return: -17.97%
+  Holding Period: 20 days
+  Capital After Trade: $5667.81
+Trade 21:
+  Entry: 2022-08-19 at $0.06
+  Exit: 2022-10-07 at $0.06
+  Return: -2.47%
+  Holding Period: 49 days
+  Capital After Trade: $5527.80
+Trade 22:
+  Entry: 2022-11-09 at $0.05
+  Exit: 2022-11-10 at $0.06
+  Return: 7.82%
+  Holding Period: 1 days
+  Capital After Trade: $5960.01
+Trade 23:
+  Entry: 2022-11-12 at $0.05
+  Exit: 2022-12-13 at $0.05
+  Return: -0.94%
+  Holding Period: 31 days
+  Capital After Trade: $5904.04
+Trade 24:
+  Entry: 2023-01-06 at $0.05
+  Exit: 2023-01-09 at $0.05
+  Return: 4.06%
+  Holding Period: 3 days
+  Capital After Trade: $6143.83
+Trade 25:
+  Entry: 2023-03-04 at $0.07
+  Exit: 2023-03-13 at $0.07
+  Return: 0.80%
+  Holding Period: 9 days
+  Capital After Trade: $6193.21
+Trade 26:
+  Entry: 2023-03-21 at $0.07
+  Exit: 2023-03-22 at $0.06
+  Return: -10.88%
+  Holding Period: 1 days
+  Capital After Trade: $5519.53
+Trade 27:
+  Entry: 2023-04-01 at $0.07
+  Exit: 2023-04-10 at $0.07
+  Return: 0.74%
+  Holding Period: 9 days
+  Capital After Trade: $5560.32
+Trade 28:
+  Entry: 2023-04-21 at $0.07
+  Exit: 2023-04-26 at $0.07
+  Return: 0.28%
+  Holding Period: 5 days
+  Capital After Trade: $5575.89
+Trade 29:
+  Entry: 2023-06-09 at $0.07
+  Exit: 2023-06-30 at $0.08
+  Return: 5.86%
+  Holding Period: 21 days
+  Capital After Trade: $5902.85
+Trade 30:
+  Entry: 2023-08-01 at $0.08
+  Exit: 2023-09-09 at $0.08
+  Return: 0.71%
+  Holding Period: 39 days
+  Capital After Trade: $5944.53
+Trade 31:
+  Entry: 2023-10-11 at $0.09
+  Exit: 2023-10-16 at $0.09
+  Return: 3.36%
+  Holding Period: 5 days
+  Capital After Trade: $6144.10
+Trade 32:
+  Entry: 2023-12-17 at $0.10
+  Exit: 2024-01-02 at $0.11
+  Return: 6.12%
+  Holding Period: 16 days
+  Capital After Trade: $6520.35
+Trade 33:
+  Entry: 2024-01-07 at $0.10
+  Exit: 2024-01-13 at $0.11
+  Return: 10.93%
+  Holding Period: 6 days
+  Capital After Trade: $7233.29
+Trade 34:
+  Entry: 2024-03-07 at $0.14
+  Exit: 2024-04-29 at $0.12
+  Return: -13.32%
+  Holding Period: 53 days
+  Capital After Trade: $6270.09
+Trade 35:
+  Entry: 2024-05-23 at $0.12
+  Exit: 2024-06-10 at $0.12
+  Return: 2.07%
+  Holding Period: 18 days
+  Capital After Trade: $6399.77
+Trade 36:
+  Entry: 2024-06-16 at $0.12
+  Exit: 2024-06-24 at $0.12
+  Return: 1.52%
+  Holding Period: 8 days
+  Capital After Trade: $6496.87
+Trade 37:
+  Entry: 2024-08-01 at $0.13
+  Exit: 2024-08-05 at $0.12
+  Return: -5.13%
+  Holding Period: 4 days
+  Capital After Trade: $6163.78
+Trade 38:
+  Entry: 2024-08-10 at $0.13
+  Exit: 2024-08-14 at $0.13
+  Return: 1.06%
+  Holding Period: 4 days
+  Capital After Trade: $6229.41
+Trade 39:
+  Entry: 2024-09-03 at $0.15
+  Exit: 2024-09-27 at $0.16
+  Return: 3.20%
+  Holding Period: 24 days
+  Capital After Trade: $6428.90
+Trade 40:
+  Entry: 2024-11-07 at $0.16
+  Exit: 2024-11-10 at $0.16
+  Return: 2.36%
+  Holding Period: 3 days
+  Capital After Trade: $6580.38
+Trade 41:
+  Entry: 2024-12-14 at $0.28
+  Exit: 2025-01-01 at $0.26
+  Return: -9.54%
+  Holding Period: 18 days
+  Capital After Trade: $5952.52
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for DOGE-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $18,194.30
+Total Return: 81.94%
+Buy & Hold Return: 15852.09%
+Strategy vs Buy & Hold: -15770.15%
+
+Trade Statistics:
+---------------
+Total Trades: 58
+Profitable Trades: 35
+Win Rate: 60.34%
+Average Trade Return: 5.18%
+Best Trade: 267.88%
+Worst Trade: -48.80%
+Trade Return Std Dev: 39.50%
+
+Holding Periods:
+--------------
+Average Hold: 16.6 days
+Longest Hold: 45 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2020-01-24 at $0.00
+  Exit: 2020-02-02 at $0.00
+  Return: 8.44%
+  Holding Period: 9 days
+  Capital After Trade: $10843.58
+Trade 2:
+  Entry: 2020-02-20 at $0.00
+  Exit: 2020-04-03 at $0.00
+  Return: -30.31%
+  Holding Period: 43 days
+  Capital After Trade: $7556.66
+Trade 3:
+  Entry: 2020-06-19 at $0.00
+  Exit: 2020-07-07 at $0.00
+  Return: 26.90%
+  Holding Period: 18 days
+  Capital After Trade: $9589.36
+Trade 4:
+  Entry: 2020-07-12 at $0.00
+  Exit: 2020-07-19 at $0.00
+  Return: -6.83%
+  Holding Period: 7 days
+  Capital After Trade: $8934.22
+Trade 5:
+  Entry: 2020-07-20 at $0.00
+  Exit: 2020-07-30 at $0.00
+  Return: -0.25%
+  Holding Period: 10 days
+  Capital After Trade: $8912.15
+Trade 6:
+  Entry: 2020-08-21 at $0.00
+  Exit: 2020-09-17 at $0.00
+  Return: -17.06%
+  Holding Period: 27 days
+  Capital After Trade: $7391.33
+Trade 7:
+  Entry: 2020-09-21 at $0.00
+  Exit: 2020-10-26 at $0.00
+  Return: 1.86%
+  Holding Period: 35 days
+  Capital After Trade: $7529.04
+Trade 8:
+  Entry: 2020-11-02 at $0.00
+  Exit: 2020-11-14 at $0.00
+  Return: 10.17%
+  Holding Period: 12 days
+  Capital After Trade: $8294.81
+Trade 9:
+  Entry: 2020-12-04 at $0.00
+  Exit: 2020-12-17 at $0.00
+  Return: 13.10%
+  Holding Period: 13 days
+  Capital After Trade: $9381.33
+Trade 10:
+  Entry: 2021-01-13 at $0.01
+  Exit: 2021-01-15 at $0.01
+  Return: 8.74%
+  Holding Period: 2 days
+  Capital After Trade: $10201.22
+Trade 11:
+  Entry: 2021-01-16 at $0.01
+  Exit: 2021-01-28 at $0.03
+  Return: 267.88%
+  Holding Period: 12 days
+  Capital After Trade: $37528.15
+Trade 12:
+  Entry: 2021-02-21 at $0.06
+  Exit: 2021-03-08 at $0.06
+  Return: 10.66%
+  Holding Period: 15 days
+  Capital After Trade: $41529.67
+Trade 13:
+  Entry: 2021-03-22 at $0.05
+  Exit: 2021-04-01 at $0.06
+  Return: 12.78%
+  Holding Period: 10 days
+  Capital After Trade: $46837.05
+Trade 14:
+  Entry: 2021-04-25 at $0.25
+  Exit: 2021-04-27 at $0.27
+  Return: 8.39%
+  Holding Period: 2 days
+  Capital After Trade: $50768.32
+Trade 15:
+  Entry: 2021-04-29 at $0.31
+  Exit: 2021-05-04 at $0.54
+  Return: 77.39%
+  Holding Period: 5 days
+  Capital After Trade: $90057.05
+Trade 16:
+  Entry: 2021-05-12 at $0.39
+  Exit: 2021-05-15 at $0.51
+  Return: 31.81%
+  Holding Period: 3 days
+  Capital After Trade: $118706.04
+Trade 17:
+  Entry: 2021-05-16 at $0.51
+  Exit: 2021-06-02 at $0.42
+  Return: -17.77%
+  Holding Period: 17 days
+  Capital After Trade: $97606.40
+Trade 18:
+  Entry: 2021-06-06 at $0.37
+  Exit: 2021-07-21 at $0.19
+  Return: -48.80%
+  Holding Period: 45 days
+  Capital After Trade: $49970.23
+Trade 19:
+  Entry: 2021-08-28 at $0.29
+  Exit: 2021-09-06 at $0.31
+  Return: 8.10%
+  Holding Period: 9 days
+  Capital After Trade: $54017.82
+Trade 20:
+  Entry: 2021-09-09 at $0.25
+  Exit: 2021-10-04 at $0.24
+  Return: -4.65%
+  Holding Period: 25 days
+  Capital After Trade: $51506.36
+Trade 21:
+  Entry: 2021-11-04 at $0.26
+  Exit: 2021-11-09 at $0.27
+  Return: 3.89%
+  Holding Period: 5 days
+  Capital After Trade: $53510.82
+Trade 22:
+  Entry: 2021-11-11 at $0.26
+  Exit: 2021-12-14 at $0.18
+  Return: -31.02%
+  Holding Period: 33 days
+  Capital After Trade: $36912.59
+Trade 23:
+  Entry: 2021-12-16 at $0.17
+  Exit: 2021-12-24 at $0.19
+  Return: 7.59%
+  Holding Period: 8 days
+  Capital After Trade: $39714.86
+Trade 24:
+  Entry: 2022-01-01 at $0.17
+  Exit: 2022-01-13 at $0.17
+  Return: -0.57%
+  Holding Period: 12 days
+  Capital After Trade: $39487.17
+Trade 25:
+  Entry: 2022-01-20 at $0.16
+  Exit: 2022-02-07 at $0.17
+  Return: 6.68%
+  Holding Period: 18 days
+  Capital After Trade: $42126.54
+Trade 26:
+  Entry: 2022-02-18 at $0.14
+  Exit: 2022-03-23 at $0.13
+  Return: -6.52%
+  Holding Period: 33 days
+  Capital After Trade: $39381.91
+Trade 27:
+  Entry: 2022-04-09 at $0.14
+  Exit: 2022-04-25 at $0.16
+  Return: 9.46%
+  Holding Period: 16 days
+  Capital After Trade: $43108.79
+Trade 28:
+  Entry: 2022-04-30 at $0.13
+  Exit: 2022-05-27 at $0.08
+  Return: -36.24%
+  Holding Period: 27 days
+  Capital After Trade: $27487.74
+Trade 29:
+  Entry: 2022-05-29 at $0.08
+  Exit: 2022-06-27 at $0.07
+  Return: -12.63%
+  Holding Period: 29 days
+  Capital After Trade: $24014.79
+Trade 30:
+  Entry: 2022-07-13 at $0.06
+  Exit: 2022-07-19 at $0.07
+  Return: 11.40%
+  Holding Period: 6 days
+  Capital After Trade: $26751.45
+Trade 31:
+  Entry: 2022-08-03 at $0.07
+  Exit: 2022-08-09 at $0.07
+  Return: 4.43%
+  Holding Period: 6 days
+  Capital After Trade: $27935.55
+Trade 32:
+  Entry: 2022-08-21 at $0.07
+  Exit: 2022-09-09 at $0.06
+  Return: -7.82%
+  Holding Period: 19 days
+  Capital After Trade: $25751.33
+Trade 33:
+  Entry: 2022-09-20 at $0.06
+  Exit: 2022-09-23 at $0.06
+  Return: 8.42%
+  Holding Period: 3 days
+  Capital After Trade: $27919.72
+Trade 34:
+  Entry: 2022-10-08 at $0.06
+  Exit: 2022-10-25 at $0.06
+  Return: 1.95%
+  Holding Period: 17 days
+  Capital After Trade: $28464.73
+Trade 35:
+  Entry: 2022-11-06 at $0.11
+  Exit: 2022-11-25 at $0.09
+  Return: -21.93%
+  Holding Period: 19 days
+  Capital After Trade: $22222.93
+Trade 36:
+  Entry: 2022-12-10 at $0.10
+  Exit: 2023-01-09 at $0.08
+  Return: -21.43%
+  Holding Period: 30 days
+  Capital After Trade: $17460.04
+Trade 37:
+  Entry: 2023-02-10 at $0.08
+  Exit: 2023-03-23 at $0.08
+  Return: -4.54%
+  Holding Period: 41 days
+  Capital After Trade: $16668.10
+Trade 38:
+  Entry: 2023-04-09 at $0.08
+  Exit: 2023-04-20 at $0.08
+  Return: 0.78%
+  Holding Period: 11 days
+  Capital After Trade: $16797.58
+Trade 39:
+  Entry: 2023-04-22 at $0.08
+  Exit: 2023-06-06 at $0.07
+  Return: -12.44%
+  Holding Period: 45 days
+  Capital After Trade: $14707.26
+Trade 40:
+  Entry: 2023-06-11 at $0.06
+  Exit: 2023-06-24 at $0.07
+  Return: 8.37%
+  Holding Period: 13 days
+  Capital After Trade: $15938.30
+Trade 41:
+  Entry: 2023-07-08 at $0.07
+  Exit: 2023-07-13 at $0.07
+  Return: 7.22%
+  Holding Period: 5 days
+  Capital After Trade: $17088.57
+Trade 42:
+  Entry: 2023-08-07 at $0.07
+  Exit: 2023-08-31 at $0.06
+  Return: -13.13%
+  Holding Period: 24 days
+  Capital After Trade: $14845.61
+Trade 43:
+  Entry: 2023-09-12 at $0.06
+  Exit: 2023-09-21 at $0.06
+  Return: 0.65%
+  Holding Period: 9 days
+  Capital After Trade: $14941.82
+Trade 44:
+  Entry: 2023-09-23 at $0.06
+  Exit: 2023-10-02 at $0.06
+  Return: 0.90%
+  Holding Period: 9 days
+  Capital After Trade: $15076.16
+Trade 45:
+  Entry: 2023-10-10 at $0.06
+  Exit: 2023-10-23 at $0.07
+  Return: 13.66%
+  Holding Period: 13 days
+  Capital After Trade: $17134.84
+Trade 46:
+  Entry: 2023-11-22 at $0.08
+  Exit: 2023-11-27 at $0.08
+  Return: 3.96%
+  Holding Period: 5 days
+  Capital After Trade: $17814.05
+Trade 47:
+  Entry: 2023-12-19 at $0.09
+  Exit: 2024-01-20 at $0.09
+  Return: -2.67%
+  Holding Period: 32 days
+  Capital After Trade: $17338.80
+Trade 48:
+  Entry: 2024-01-26 at $0.08
+  Exit: 2024-02-12 at $0.08
+  Return: 3.06%
+  Holding Period: 17 days
+  Capital After Trade: $17869.16
+Trade 49:
+  Entry: 2024-03-18 at $0.14
+  Exit: 2024-03-25 at $0.18
+  Return: 22.06%
+  Holding Period: 7 days
+  Capital After Trade: $21811.06
+Trade 50:
+  Entry: 2024-04-13 at $0.15
+  Exit: 2024-05-04 at $0.16
+  Return: 4.56%
+  Holding Period: 21 days
+  Capital After Trade: $22806.29
+Trade 51:
+  Entry: 2024-05-11 at $0.14
+  Exit: 2024-05-14 at $0.15
+  Return: 1.75%
+  Holding Period: 3 days
+  Capital After Trade: $23204.41
+Trade 52:
+  Entry: 2024-06-01 at $0.16
+  Exit: 2024-06-02 at $0.16
+  Return: -1.87%
+  Holding Period: 1 days
+  Capital After Trade: $22770.02
+Trade 53:
+  Entry: 2024-06-03 at $0.16
+  Exit: 2024-07-05 at $0.11
+  Return: -33.29%
+  Holding Period: 32 days
+  Capital After Trade: $15190.47
+Trade 54:
+  Entry: 2024-07-07 at $0.10
+  Exit: 2024-07-20 at $0.13
+  Return: 28.97%
+  Holding Period: 13 days
+  Capital After Trade: $19591.44
+Trade 55:
+  Entry: 2024-08-01 at $0.12
+  Exit: 2024-08-23 at $0.11
+  Return: -5.29%
+  Holding Period: 22 days
+  Capital After Trade: $18554.82
+Trade 56:
+  Entry: 2024-09-03 at $0.10
+  Exit: 2024-09-13 at $0.11
+  Return: 10.75%
+  Holding Period: 10 days
+  Capital After Trade: $20549.02
+Trade 57:
+  Entry: 2024-10-03 at $0.11
+  Exit: 2024-10-14 at $0.12
+  Return: 10.99%
+  Holding Period: 11 days
+  Capital After Trade: $22808.26
+Trade 58:
+  Entry: 2024-12-12 at $0.41
+  Exit: 2025-01-01 at $0.32
+  Return: -20.23%
+  Holding Period: 20 days
+  Capital After Trade: $18194.30
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for ADA-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $3,353.13
+Total Return: -66.47%
+Buy & Hold Return: 2642.52%
+Strategy vs Buy & Hold: -2708.99%
+
+Trade Statistics:
+---------------
+Total Trades: 51
+Profitable Trades: 29
+Win Rate: 56.86%
+Average Trade Return: -0.95%
+Best Trade: 29.29%
+Worst Trade: -44.48%
+Trade Return Std Dev: 14.59%
+
+Holding Periods:
+--------------
+Average Hold: 18.5 days
+Longest Hold: 61 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2020-02-19 at $0.06
+  Exit: 2020-04-05 at $0.03
+  Return: -44.48%
+  Holding Period: 46 days
+  Capital After Trade: $5551.74
+Trade 2:
+  Entry: 2020-06-13 at $0.08
+  Exit: 2020-06-24 at $0.08
+  Return: 4.50%
+  Holding Period: 11 days
+  Capital After Trade: $5801.48
+Trade 3:
+  Entry: 2020-07-19 at $0.12
+  Exit: 2020-07-25 at $0.14
+  Return: 16.06%
+  Holding Period: 6 days
+  Capital After Trade: $6733.10
+Trade 4:
+  Entry: 2020-08-18 at $0.14
+  Exit: 2020-09-10 at $0.10
+  Return: -29.30%
+  Holding Period: 23 days
+  Capital After Trade: $4760.06
+Trade 5:
+  Entry: 2020-09-14 at $0.10
+  Exit: 2020-10-01 at $0.10
+  Return: 1.13%
+  Holding Period: 17 days
+  Capital After Trade: $4813.97
+Trade 6:
+  Entry: 2020-10-27 at $0.10
+  Exit: 2020-11-21 at $0.13
+  Return: 29.29%
+  Holding Period: 25 days
+  Capital After Trade: $6223.98
+Trade 7:
+  Entry: 2020-12-07 at $0.15
+  Exit: 2020-12-17 at $0.16
+  Return: 6.07%
+  Holding Period: 10 days
+  Capital After Trade: $6601.67
+Trade 8:
+  Entry: 2021-03-07 at $1.13
+  Exit: 2021-03-10 at $1.14
+  Return: 0.14%
+  Holding Period: 3 days
+  Capital After Trade: $6611.20
+Trade 9:
+  Entry: 2021-03-11 at $1.12
+  Exit: 2021-03-16 at $1.24
+  Return: 10.51%
+  Holding Period: 5 days
+  Capital After Trade: $7305.73
+Trade 10:
+  Entry: 2021-03-24 at $1.08
+  Exit: 2021-03-28 at $1.19
+  Return: 10.80%
+  Holding Period: 4 days
+  Capital After Trade: $8094.89
+Trade 11:
+  Entry: 2021-03-30 at $1.21
+  Exit: 2021-04-04 at $1.19
+  Return: -1.80%
+  Holding Period: 5 days
+  Capital After Trade: $7948.80
+Trade 12:
+  Entry: 2021-04-21 at $1.21
+  Exit: 2021-05-02 at $1.33
+  Return: 9.95%
+  Holding Period: 11 days
+  Capital After Trade: $8739.75
+Trade 13:
+  Entry: 2021-05-21 at $1.55
+  Exit: 2021-06-03 at $1.84
+  Return: 18.57%
+  Holding Period: 13 days
+  Capital After Trade: $10362.37
+Trade 14:
+  Entry: 2021-06-06 at $1.68
+  Exit: 2021-07-05 at $1.40
+  Return: -16.29%
+  Holding Period: 29 days
+  Capital After Trade: $8674.56
+Trade 15:
+  Entry: 2021-07-11 at $1.35
+  Exit: 2021-07-26 at $1.26
+  Return: -6.65%
+  Holding Period: 15 days
+  Capital After Trade: $8097.70
+Trade 16:
+  Entry: 2021-09-09 at $2.52
+  Exit: 2021-10-12 at $2.12
+  Return: -15.83%
+  Holding Period: 33 days
+  Capital After Trade: $6816.06
+Trade 17:
+  Entry: 2021-10-23 at $2.17
+  Exit: 2021-11-09 at $2.27
+  Return: 4.92%
+  Holding Period: 17 days
+  Capital After Trade: $7151.60
+Trade 18:
+  Entry: 2021-11-15 at $2.02
+  Exit: 2021-12-02 at $1.72
+  Return: -14.89%
+  Holding Period: 17 days
+  Capital After Trade: $6086.37
+Trade 19:
+  Entry: 2021-12-04 at $1.42
+  Exit: 2021-12-23 at $1.47
+  Return: 3.80%
+  Holding Period: 19 days
+  Capital After Trade: $6317.65
+Trade 20:
+  Entry: 2022-01-06 at $1.28
+  Exit: 2022-01-16 at $1.41
+  Return: 9.96%
+  Holding Period: 10 days
+  Capital After Trade: $6946.90
+Trade 21:
+  Entry: 2022-01-22 at $1.07
+  Exit: 2022-02-07 at $1.20
+  Return: 12.24%
+  Holding Period: 16 days
+  Capital After Trade: $7797.36
+Trade 22:
+  Entry: 2022-02-18 at $1.00
+  Exit: 2022-03-21 at $0.92
+  Return: -8.06%
+  Holding Period: 31 days
+  Capital After Trade: $7169.18
+Trade 23:
+  Entry: 2022-04-08 at $1.03
+  Exit: 2022-05-04 at $0.90
+  Return: -12.61%
+  Holding Period: 26 days
+  Capital After Trade: $6265.40
+Trade 24:
+  Entry: 2022-05-08 at $0.74
+  Exit: 2022-05-30 at $0.57
+  Return: -22.92%
+  Holding Period: 22 days
+  Capital After Trade: $4829.52
+Trade 25:
+  Entry: 2022-06-14 at $0.48
+  Exit: 2022-06-15 at $0.53
+  Return: 10.10%
+  Holding Period: 1 days
+  Capital After Trade: $5317.17
+Trade 26:
+  Entry: 2022-06-16 at $0.48
+  Exit: 2022-07-18 at $0.49
+  Return: 3.69%
+  Holding Period: 32 days
+  Capital After Trade: $5513.29
+Trade 27:
+  Entry: 2022-08-06 at $0.51
+  Exit: 2022-08-13 at $0.56
+  Return: 9.50%
+  Holding Period: 7 days
+  Capital After Trade: $6036.92
+Trade 28:
+  Entry: 2022-08-19 at $0.45
+  Exit: 2022-09-03 at $0.48
+  Return: 6.52%
+  Holding Period: 15 days
+  Capital After Trade: $6430.57
+Trade 29:
+  Entry: 2022-09-17 at $0.49
+  Exit: 2022-10-25 at $0.40
+  Return: -17.48%
+  Holding Period: 38 days
+  Capital After Trade: $5306.33
+Trade 30:
+  Entry: 2022-11-12 at $0.34
+  Exit: 2022-12-13 at $0.31
+  Return: -7.75%
+  Holding Period: 31 days
+  Capital After Trade: $4895.17
+Trade 31:
+  Entry: 2022-12-17 at $0.27
+  Exit: 2023-01-04 at $0.27
+  Return: 0.29%
+  Holding Period: 18 days
+  Capital After Trade: $4909.42
+Trade 32:
+  Entry: 2023-02-12 at $0.36
+  Exit: 2023-03-13 at $0.34
+  Return: -5.41%
+  Holding Period: 29 days
+  Capital After Trade: $4643.78
+Trade 33:
+  Entry: 2023-04-22 at $0.40
+  Exit: 2023-05-28 at $0.38
+  Return: -3.32%
+  Holding Period: 36 days
+  Capital After Trade: $4489.59
+Trade 34:
+  Entry: 2023-06-03 at $0.38
+  Exit: 2023-06-05 at $0.35
+  Return: -6.39%
+  Holding Period: 2 days
+  Capital After Trade: $4202.89
+Trade 35:
+  Entry: 2023-06-07 at $0.32
+  Exit: 2023-06-10 at $0.28
+  Return: -14.30%
+  Holding Period: 3 days
+  Capital After Trade: $3601.90
+Trade 36:
+  Entry: 2023-06-11 at $0.27
+  Exit: 2023-06-30 at $0.29
+  Return: 5.25%
+  Holding Period: 19 days
+  Capital After Trade: $3791.17
+Trade 37:
+  Entry: 2023-07-07 at $0.28
+  Exit: 2023-07-13 at $0.36
+  Return: 25.70%
+  Holding Period: 6 days
+  Capital After Trade: $4765.63
+Trade 38:
+  Entry: 2023-07-26 at $0.31
+  Exit: 2023-09-21 at $0.25
+  Return: -19.95%
+  Holding Period: 57 days
+  Capital After Trade: $3814.71
+Trade 39:
+  Entry: 2023-09-23 at $0.25
+  Exit: 2023-10-01 at $0.27
+  Return: 8.03%
+  Holding Period: 8 days
+  Capital After Trade: $4121.00
+Trade 40:
+  Entry: 2023-10-11 at $0.25
+  Exit: 2023-10-23 at $0.28
+  Return: 12.88%
+  Holding Period: 12 days
+  Capital After Trade: $4651.96
+Trade 41:
+  Entry: 2024-01-04 at $0.57
+  Exit: 2024-01-11 at $0.58
+  Return: 2.04%
+  Holding Period: 7 days
+  Capital After Trade: $4746.63
+Trade 42:
+  Entry: 2024-01-13 at $0.55
+  Exit: 2024-02-07 at $0.50
+  Return: -8.66%
+  Holding Period: 25 days
+  Capital After Trade: $4335.65
+Trade 43:
+  Entry: 2024-03-17 at $0.68
+  Exit: 2024-05-17 at $0.48
+  Return: -29.23%
+  Holding Period: 61 days
+  Capital After Trade: $3068.26
+Trade 44:
+  Entry: 2024-05-30 at $0.45
+  Exit: 2024-06-07 at $0.45
+  Return: 0.69%
+  Holding Period: 8 days
+  Capital After Trade: $3089.29
+Trade 45:
+  Entry: 2024-06-10 at $0.44
+  Exit: 2024-07-03 at $0.41
+  Return: -7.66%
+  Holding Period: 23 days
+  Capital After Trade: $2852.77
+Trade 46:
+  Entry: 2024-07-07 at $0.35
+  Exit: 2024-07-16 at $0.44
+  Return: 26.42%
+  Holding Period: 9 days
+  Capital After Trade: $3606.42
+Trade 47:
+  Entry: 2024-07-25 at $0.39
+  Exit: 2024-08-21 at $0.37
+  Return: -6.49%
+  Holding Period: 27 days
+  Capital After Trade: $3372.39
+Trade 48:
+  Entry: 2024-08-31 at $0.35
+  Exit: 2024-09-14 at $0.35
+  Return: 2.64%
+  Holding Period: 14 days
+  Capital After Trade: $3461.52
+Trade 49:
+  Entry: 2024-10-03 at $0.35
+  Exit: 2024-10-15 at $0.36
+  Return: 3.85%
+  Holding Period: 12 days
+  Capital After Trade: $3594.77
+Trade 50:
+  Entry: 2024-10-25 at $0.32
+  Exit: 2024-11-06 at $0.36
+  Return: 11.99%
+  Holding Period: 12 days
+  Capital After Trade: $4025.94
+Trade 51:
+  Entry: 2024-12-15 at $1.10
+  Exit: 2025-01-01 at $0.92
+  Return: -16.71%
+  Holding Period: 17 days
+  Capital After Trade: $3353.13
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for DOT-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $3,075.63
+Total Return: -69.24%
+Buy & Hold Return: 142.35%
+Strategy vs Buy & Hold: -211.59%
+
+Trade Statistics:
+---------------
+Total Trades: 35
+Profitable Trades: 22
+Win Rate: 62.86%
+Average Trade Return: -1.30%
+Best Trade: 25.61%
+Worst Trade: -56.13%
+Trade Return Std Dev: 18.08%
+
+Holding Periods:
+--------------
+Average Hold: 25.7 days
+Longest Hold: 89 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2020-09-08 at $4.27
+  Exit: 2020-09-18 at $5.25
+  Return: 22.73%
+  Holding Period: 10 days
+  Capital After Trade: $12272.73
+Trade 2:
+  Entry: 2020-09-22 at $4.17
+  Exit: 2020-10-26 at $4.73
+  Return: 13.24%
+  Holding Period: 34 days
+  Capital After Trade: $13897.21
+Trade 3:
+  Entry: 2020-11-03 at $4.03
+  Exit: 2020-11-04 at $4.10
+  Return: 1.80%
+  Holding Period: 1 days
+  Capital After Trade: $14147.91
+Trade 4:
+  Entry: 2020-11-09 at $4.35
+  Exit: 2020-11-17 at $4.84
+  Return: 11.45%
+  Holding Period: 8 days
+  Capital After Trade: $15768.47
+Trade 5:
+  Entry: 2020-12-03 at $5.41
+  Exit: 2020-12-17 at $5.34
+  Return: -1.23%
+  Holding Period: 14 days
+  Capital After Trade: $15574.95
+Trade 6:
+  Entry: 2021-01-30 at $16.51
+  Exit: 2021-02-03 at $20.73
+  Return: 25.61%
+  Holding Period: 4 days
+  Capital After Trade: $19563.05
+Trade 7:
+  Entry: 2021-03-06 at $33.43
+  Exit: 2021-03-10 at $37.57
+  Return: 12.36%
+  Holding Period: 4 days
+  Capital After Trade: $21981.54
+Trade 8:
+  Entry: 2021-03-24 at $30.44
+  Exit: 2021-03-31 at $37.03
+  Return: 21.65%
+  Holding Period: 7 days
+  Capital After Trade: $26741.33
+Trade 9:
+  Entry: 2021-04-19 at $34.82
+  Exit: 2021-05-05 at $40.50
+  Return: 16.31%
+  Holding Period: 16 days
+  Capital After Trade: $31102.67
+Trade 10:
+  Entry: 2021-05-21 at $24.46
+  Exit: 2021-06-15 at $24.76
+  Return: 1.21%
+  Holding Period: 25 days
+  Capital After Trade: $31480.10
+Trade 11:
+  Entry: 2021-06-17 at $22.51
+  Exit: 2021-07-26 at $13.95
+  Return: -38.02%
+  Holding Period: 39 days
+  Capital After Trade: $19510.12
+Trade 12:
+  Entry: 2021-09-19 at $33.80
+  Exit: 2021-10-09 at $36.33
+  Return: 7.47%
+  Holding Period: 20 days
+  Capital After Trade: $20968.17
+Trade 13:
+  Entry: 2021-11-14 at $46.40
+  Exit: 2021-12-26 at $31.33
+  Return: -32.47%
+  Holding Period: 42 days
+  Capital After Trade: $14158.76
+Trade 14:
+  Entry: 2022-01-09 at $24.63
+  Exit: 2022-02-07 at $22.36
+  Return: -9.19%
+  Holding Period: 29 days
+  Capital After Trade: $12857.82
+Trade 15:
+  Entry: 2022-02-19 at $17.89
+  Exit: 2022-02-28 at $18.94
+  Return: 5.86%
+  Holding Period: 9 days
+  Capital After Trade: $13611.54
+Trade 16:
+  Entry: 2022-03-14 at $17.70
+  Exit: 2022-03-22 at $20.25
+  Return: 14.45%
+  Holding Period: 8 days
+  Capital After Trade: $15577.78
+Trade 17:
+  Entry: 2022-04-08 at $19.40
+  Exit: 2022-06-15 at $8.51
+  Return: -56.13%
+  Holding Period: 68 days
+  Capital After Trade: $6833.26
+Trade 18:
+  Entry: 2022-06-18 at $7.06
+  Exit: 2022-07-18 at $7.68
+  Return: 8.87%
+  Holding Period: 30 days
+  Capital After Trade: $7439.42
+Trade 19:
+  Entry: 2022-08-19 at $7.33
+  Exit: 2022-09-09 at $7.77
+  Return: 6.08%
+  Holding Period: 21 days
+  Capital After Trade: $7891.74
+Trade 20:
+  Entry: 2022-09-18 at $6.45
+  Exit: 2022-10-25 at $6.45
+  Return: 0.03%
+  Holding Period: 37 days
+  Capital After Trade: $7894.34
+Trade 21:
+  Entry: 2022-11-11 at $5.75
+  Exit: 2023-01-09 at $4.89
+  Return: -14.88%
+  Holding Period: 59 days
+  Capital After Trade: $6719.49
+Trade 22:
+  Entry: 2023-02-11 at $6.28
+  Exit: 2023-02-17 at $7.28
+  Return: 15.92%
+  Holding Period: 6 days
+  Capital After Trade: $7789.21
+Trade 23:
+  Entry: 2023-03-02 at $6.33
+  Exit: 2023-04-03 at $6.43
+  Return: 1.66%
+  Holding Period: 32 days
+  Capital After Trade: $7918.87
+Trade 24:
+  Entry: 2023-04-21 at $5.85
+  Exit: 2023-06-25 at $5.19
+  Return: -11.22%
+  Holding Period: 65 days
+  Capital After Trade: $7030.17
+Trade 25:
+  Entry: 2023-07-26 at $5.24
+  Exit: 2023-10-23 at $4.35
+  Return: -16.98%
+  Holding Period: 89 days
+  Capital After Trade: $5836.16
+Trade 26:
+  Entry: 2023-11-23 at $5.13
+  Exit: 2023-12-01 at $5.48
+  Return: 6.65%
+  Holding Period: 8 days
+  Capital After Trade: $6224.28
+Trade 27:
+  Entry: 2024-01-05 at $7.45
+  Exit: 2024-02-08 at $7.01
+  Return: -5.79%
+  Holding Period: 34 days
+  Capital After Trade: $5864.06
+Trade 28:
+  Entry: 2024-03-21 at $9.17
+  Exit: 2024-05-01 at $6.88
+  Return: -24.96%
+  Holding Period: 41 days
+  Capital After Trade: $4400.20
+Trade 29:
+  Entry: 2024-05-12 at $6.62
+  Exit: 2024-05-20 at $7.58
+  Return: 14.42%
+  Holding Period: 8 days
+  Capital After Trade: $5034.71
+Trade 30:
+  Entry: 2024-05-31 at $6.99
+  Exit: 2024-07-02 at $6.51
+  Return: -6.76%
+  Holding Period: 32 days
+  Capital After Trade: $4694.37
+Trade 31:
+  Entry: 2024-07-14 at $6.33
+  Exit: 2024-07-16 at $6.34
+  Return: 0.26%
+  Holding Period: 2 days
+  Capital After Trade: $4706.34
+Trade 32:
+  Entry: 2024-07-24 at $5.75
+  Exit: 2024-09-18 at $4.17
+  Return: -27.47%
+  Holding Period: 56 days
+  Capital After Trade: $3413.29
+Trade 33:
+  Entry: 2024-10-02 at $4.10
+  Exit: 2024-10-15 at $4.40
+  Return: 7.29%
+  Holding Period: 13 days
+  Capital After Trade: $3662.26
+Trade 34:
+  Entry: 2024-10-26 at $4.03
+  Exit: 2024-11-06 at $4.12
+  Return: 2.18%
+  Holding Period: 11 days
+  Capital After Trade: $3742.13
+Trade 35:
+  Entry: 2024-12-14 at $8.55
+  Exit: 2025-01-01 at $7.03
+  Return: -17.81%
+  Holding Period: 18 days
+  Capital After Trade: $3075.63
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for LTC-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $5,809.37
+Total Return: -41.91%
+Buy & Hold Return: 149.45%
+Strategy vs Buy & Hold: -191.35%
+
+Trade Statistics:
+---------------
+Total Trades: 47
+Profitable Trades: 30
+Win Rate: 63.83%
+Average Trade Return: 0.51%
+Best Trade: 26.45%
+Worst Trade: -49.43%
+Trade Return Std Dev: 16.31%
+
+Holding Periods:
+--------------
+Average Hold: 20.2 days
+Longest Hold: 81 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2020-02-20 at $69.62
+  Exit: 2020-04-04 at $40.68
+  Return: -41.58%
+  Holding Period: 44 days
+  Capital After Trade: $5842.10
+Trade 2:
+  Entry: 2020-04-22 at $41.89
+  Exit: 2020-04-27 at $44.71
+  Return: 6.74%
+  Holding Period: 5 days
+  Capital After Trade: $6235.78
+Trade 3:
+  Entry: 2020-05-11 at $41.70
+  Exit: 2020-06-05 at $47.05
+  Return: 12.84%
+  Holding Period: 25 days
+  Capital After Trade: $7036.29
+Trade 4:
+  Entry: 2020-06-15 at $43.91
+  Exit: 2020-07-08 at $45.20
+  Return: 2.93%
+  Holding Period: 23 days
+  Capital After Trade: $7242.42
+Trade 5:
+  Entry: 2020-07-19 at $42.55
+  Exit: 2020-07-25 at $48.80
+  Return: 14.69%
+  Holding Period: 6 days
+  Capital After Trade: $8306.51
+Trade 6:
+  Entry: 2020-08-12 at $54.97
+  Exit: 2020-08-16 at $63.83
+  Return: 16.11%
+  Holding Period: 4 days
+  Capital After Trade: $9645.07
+Trade 7:
+  Entry: 2020-08-27 at $56.04
+  Exit: 2020-10-05 at $46.36
+  Return: -17.27%
+  Holding Period: 39 days
+  Capital After Trade: $7979.45
+Trade 8:
+  Entry: 2021-01-17 at $142.43
+  Exit: 2021-02-07 at $151.14
+  Return: 6.11%
+  Holding Period: 21 days
+  Capital After Trade: $8467.37
+Trade 9:
+  Entry: 2021-02-24 at $181.38
+  Exit: 2021-03-09 at $203.64
+  Return: 12.27%
+  Holding Period: 13 days
+  Capital After Trade: $9506.51
+Trade 10:
+  Entry: 2021-03-22 at $187.08
+  Exit: 2021-04-01 at $204.11
+  Return: 9.11%
+  Holding Period: 10 days
+  Capital After Trade: $10372.15
+Trade 11:
+  Entry: 2021-04-24 at $224.84
+  Exit: 2021-05-02 at $269.10
+  Return: 19.69%
+  Holding Period: 8 days
+  Capital After Trade: $12414.35
+Trade 12:
+  Entry: 2021-05-17 at $281.77
+  Exit: 2021-07-30 at $145.78
+  Return: -48.26%
+  Holding Period: 74 days
+  Capital After Trade: $6422.64
+Trade 13:
+  Entry: 2021-09-10 at $174.30
+  Exit: 2021-09-13 at $179.48
+  Return: 2.98%
+  Holding Period: 3 days
+  Capital After Trade: $6613.81
+Trade 14:
+  Entry: 2021-09-17 at $179.68
+  Exit: 2021-10-06 at $178.71
+  Return: -0.54%
+  Holding Period: 19 days
+  Capital After Trade: $6577.79
+Trade 15:
+  Entry: 2021-11-22 at $209.16
+  Exit: 2022-01-17 at $151.67
+  Return: -27.49%
+  Holding Period: 56 days
+  Capital After Trade: $4769.77
+Trade 16:
+  Entry: 2022-01-22 at $108.43
+  Exit: 2022-02-07 at $137.11
+  Return: 26.45%
+  Holding Period: 16 days
+  Capital After Trade: $6031.36
+Trade 17:
+  Entry: 2022-02-19 at $115.71
+  Exit: 2022-03-20 at $114.83
+  Return: -0.76%
+  Holding Period: 29 days
+  Capital After Trade: $5985.49
+Trade 18:
+  Entry: 2022-04-06 at $112.46
+  Exit: 2022-06-26 at $56.88
+  Return: -49.43%
+  Holding Period: 81 days
+  Capital After Trade: $3027.10
+Trade 19:
+  Entry: 2022-07-07 at $52.14
+  Exit: 2022-07-18 at $58.63
+  Return: 12.43%
+  Holding Period: 11 days
+  Capital After Trade: $3403.49
+Trade 20:
+  Entry: 2022-08-19 at $54.03
+  Exit: 2022-09-02 at $61.04
+  Return: 12.97%
+  Holding Period: 14 days
+  Capital After Trade: $3845.01
+Trade 21:
+  Entry: 2022-09-18 at $52.84
+  Exit: 2022-10-25 at $56.03
+  Return: 6.02%
+  Holding Period: 37 days
+  Capital After Trade: $4076.46
+Trade 22:
+  Entry: 2022-11-13 at $57.49
+  Exit: 2022-11-22 at $70.44
+  Return: 22.54%
+  Holding Period: 9 days
+  Capital After Trade: $4995.15
+Trade 23:
+  Entry: 2022-12-10 at $76.37
+  Exit: 2022-12-12 at $76.22
+  Return: -0.20%
+  Holding Period: 2 days
+  Capital After Trade: $4985.37
+Trade 24:
+  Entry: 2022-12-14 at $75.48
+  Exit: 2023-01-02 at $74.86
+  Return: -0.81%
+  Holding Period: 19 days
+  Capital After Trade: $4944.88
+Trade 25:
+  Entry: 2023-02-13 at $91.12
+  Exit: 2023-03-23 at $93.70
+  Return: 2.83%
+  Holding Period: 38 days
+  Capital After Trade: $5084.85
+Trade 26:
+  Entry: 2023-04-21 at $85.52
+  Exit: 2023-05-15 at $87.07
+  Return: 1.81%
+  Holding Period: 24 days
+  Capital After Trade: $5176.97
+Trade 27:
+  Entry: 2023-06-09 at $89.23
+  Exit: 2023-06-10 at $77.35
+  Return: -13.31%
+  Holding Period: 1 days
+  Capital After Trade: $4487.71
+Trade 28:
+  Entry: 2023-06-11 at $77.70
+  Exit: 2023-06-21 at $85.15
+  Return: 9.59%
+  Holding Period: 10 days
+  Capital After Trade: $4917.93
+Trade 29:
+  Entry: 2023-07-08 at $97.87
+  Exit: 2023-07-09 at $95.18
+  Return: -2.75%
+  Holding Period: 1 days
+  Capital After Trade: $4782.51
+Trade 30:
+  Entry: 2023-07-15 at $94.75
+  Exit: 2023-07-30 at $94.09
+  Return: -0.70%
+  Holding Period: 15 days
+  Capital After Trade: $4749.16
+Trade 31:
+  Entry: 2023-08-04 at $82.08
+  Exit: 2023-09-18 at $65.89
+  Return: -19.72%
+  Holding Period: 45 days
+  Capital After Trade: $3812.72
+Trade 32:
+  Entry: 2023-09-30 at $66.07
+  Exit: 2023-10-23 at $68.99
+  Return: 4.42%
+  Holding Period: 23 days
+  Capital After Trade: $3981.31
+Trade 33:
+  Entry: 2023-11-18 at $69.89
+  Exit: 2023-12-02 at $72.27
+  Return: 3.40%
+  Holding Period: 14 days
+  Capital After Trade: $4116.79
+Trade 34:
+  Entry: 2023-12-16 at $72.13
+  Exit: 2023-12-27 at $75.85
+  Return: 5.15%
+  Holding Period: 11 days
+  Capital After Trade: $4328.94
+Trade 35:
+  Entry: 2024-01-04 at $66.49
+  Exit: 2024-01-12 at $72.90
+  Return: 9.64%
+  Holding Period: 8 days
+  Capital After Trade: $4746.19
+Trade 36:
+  Entry: 2024-01-16 at $69.47
+  Exit: 2024-02-08 at $70.56
+  Return: 1.57%
+  Holding Period: 23 days
+  Capital After Trade: $4820.53
+Trade 37:
+  Entry: 2024-02-22 at $68.76
+  Exit: 2024-02-27 at $74.03
+  Return: 7.66%
+  Holding Period: 5 days
+  Capital After Trade: $5189.91
+Trade 38:
+  Entry: 2024-03-19 at $78.59
+  Exit: 2024-03-27 at $93.68
+  Return: 19.20%
+  Holding Period: 8 days
+  Capital After Trade: $6186.41
+Trade 39:
+  Entry: 2024-04-11 at $98.69
+  Exit: 2024-05-20 at $88.60
+  Return: -10.22%
+  Holding Period: 39 days
+  Capital After Trade: $5554.03
+Trade 40:
+  Entry: 2024-06-01 at $83.43
+  Exit: 2024-06-07 at $80.09
+  Return: -4.01%
+  Holding Period: 6 days
+  Capital After Trade: $5331.33
+Trade 41:
+  Entry: 2024-06-08 at $79.99
+  Exit: 2024-07-17 at $71.42
+  Return: -10.72%
+  Holding Period: 39 days
+  Capital After Trade: $4759.93
+Trade 42:
+  Entry: 2024-08-02 at $64.99
+  Exit: 2024-08-19 at $66.37
+  Return: 2.12%
+  Holding Period: 17 days
+  Capital After Trade: $4860.78
+Trade 43:
+  Entry: 2024-08-28 at $61.80
+  Exit: 2024-09-05 at $66.08
+  Return: 6.93%
+  Holding Period: 8 days
+  Capital After Trade: $5197.45
+Trade 44:
+  Entry: 2024-09-09 at $61.42
+  Exit: 2024-09-22 at $68.60
+  Return: 11.69%
+  Holding Period: 13 days
+  Capital After Trade: $5804.93
+Trade 45:
+  Entry: 2024-10-02 at $62.95
+  Exit: 2024-10-15 at $70.87
+  Return: 12.58%
+  Holding Period: 13 days
+  Capital After Trade: $6535.16
+Trade 46:
+  Entry: 2024-11-02 at $69.13
+  Exit: 2024-11-06 at $71.02
+  Return: 2.74%
+  Holding Period: 4 days
+  Capital After Trade: $6714.32
+Trade 47:
+  Entry: 2024-12-15 at $121.14
+  Exit: 2025-01-01 at $104.81
+  Return: -13.48%
+  Holding Period: 17 days
+  Capital After Trade: $5809.37
+
+==================================================
+
+
+Overall Strategy Performance
+==========================
+Currencies Tested: 11
+Average Return: -11.80%
+Total Trades: 513
+Overall Win Rate: 61.99% if overall_stats['total_trades'] > 0 else 0:.2f}%
+Average Holding Period: 19.3 days
+Best Performer: SOL-USD (106.02%)
+Worst Performer: RAY-USD (-87.00%)
