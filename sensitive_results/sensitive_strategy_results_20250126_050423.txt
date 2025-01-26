@@ -1,0 +1,2373 @@
+Sensitive Strategy Analysis Results
+=================================
+
+Test Period: 2024-01-01 to 2025-01-01
+
+
+Sensitive Strategy Analysis Results for BTC-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $14,541.24
+Total Return: 45.41%
+Buy & Hold Return: 113.78%
+Strategy vs Buy & Hold: -68.36%
+
+Trade Statistics:
+---------------
+Total Trades: 27
+Profitable Trades: 17
+Win Rate: 62.96%
+Average Trade Return: 1.60%
+Best Trade: 16.15%
+Worst Trade: -18.24%
+Trade Return Std Dev: 6.24%
+
+Holding Periods:
+--------------
+Average Hold: 6.3 days
+Longest Hold: 27 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2024-01-14 at $41796.27
+  Exit: 2024-02-01 at $43075.77
+  Return: 3.06%
+  Holding Period: 18 days
+  Capital After Trade: $10306.13
+Trade 2:
+  Entry: 2024-02-03 at $42992.25
+  Exit: 2024-02-07 at $44318.22
+  Return: 3.08%
+  Holding Period: 4 days
+  Capital After Trade: $10623.99
+Trade 3:
+  Entry: 2024-02-24 at $51571.10
+  Exit: 2024-02-26 at $54522.40
+  Return: 5.72%
+  Holding Period: 2 days
+  Capital After Trade: $11231.98
+Trade 4:
+  Entry: 2024-03-09 at $68498.88
+  Exit: 2024-03-11 at $72123.91
+  Return: 5.29%
+  Holding Period: 2 days
+  Capital After Trade: $11826.39
+Trade 5:
+  Entry: 2024-03-21 at $65491.39
+  Exit: 2024-03-28 at $70744.95
+  Return: 8.02%
+  Holding Period: 7 days
+  Capital After Trade: $12775.07
+Trade 6:
+  Entry: 2024-03-29 at $69892.83
+  Exit: 2024-03-30 at $69645.30
+  Return: -0.35%
+  Holding Period: 1 days
+  Capital After Trade: $12729.83
+Trade 7:
+  Entry: 2024-03-31 at $71333.65
+  Exit: 2024-04-01 at $69702.15
+  Return: -2.29%
+  Holding Period: 1 days
+  Capital After Trade: $12438.68
+Trade 8:
+  Entry: 2024-04-06 at $68896.11
+  Exit: 2024-04-10 at $70587.88
+  Return: 2.46%
+  Holding Period: 4 days
+  Capital After Trade: $12744.12
+Trade 9:
+  Entry: 2024-04-20 at $64994.44
+  Exit: 2024-05-01 at $58254.01
+  Return: -10.37%
+  Holding Period: 11 days
+  Capital After Trade: $11422.45
+Trade 10:
+  Entry: 2024-05-07 at $62334.82
+  Exit: 2024-05-15 at $66267.49
+  Return: 6.31%
+  Holding Period: 8 days
+  Capital After Trade: $12143.09
+Trade 11:
+  Entry: 2024-05-18 at $66940.80
+  Exit: 2024-05-20 at $71448.20
+  Return: 6.73%
+  Holding Period: 2 days
+  Capital After Trade: $12960.73
+Trade 12:
+  Entry: 2024-05-25 at $69265.95
+  Exit: 2024-05-30 at $68364.99
+  Return: -1.30%
+  Holding Period: 5 days
+  Capital After Trade: $12792.15
+Trade 13:
+  Entry: 2024-06-01 at $67706.94
+  Exit: 2024-06-07 at $69342.59
+  Return: 2.42%
+  Holding Period: 6 days
+  Capital After Trade: $13101.18
+Trade 14:
+  Entry: 2024-06-08 at $69305.77
+  Exit: 2024-07-05 at $56662.38
+  Return: -18.24%
+  Holding Period: 27 days
+  Capital After Trade: $10711.14
+Trade 15:
+  Entry: 2024-07-07 at $55849.11
+  Exit: 2024-07-15 at $64870.15
+  Return: 16.15%
+  Holding Period: 8 days
+  Capital After Trade: $12441.26
+Trade 16:
+  Entry: 2024-08-04 at $58116.98
+  Exit: 2024-08-20 at $59012.79
+  Return: 1.54%
+  Holding Period: 16 days
+  Capital After Trade: $12633.03
+Trade 17:
+  Entry: 2024-08-31 at $58969.90
+  Exit: 2024-09-13 at $60571.30
+  Return: 2.72%
+  Holding Period: 13 days
+  Capital After Trade: $12976.10
+Trade 18:
+  Entry: 2024-09-21 at $63394.84
+  Exit: 2024-09-23 at $63329.80
+  Return: -0.10%
+  Holding Period: 2 days
+  Capital After Trade: $12962.78
+Trade 19:
+  Entry: 2024-09-28 at $65887.65
+  Exit: 2024-09-30 at $63329.50
+  Return: -3.88%
+  Holding Period: 2 days
+  Capital After Trade: $12459.49
+Trade 20:
+  Entry: 2024-10-05 at $62089.95
+  Exit: 2024-10-14 at $66046.12
+  Return: 6.37%
+  Holding Period: 9 days
+  Capital After Trade: $13253.37
+Trade 21:
+  Entry: 2024-10-19 at $68362.73
+  Exit: 2024-10-21 at $67367.85
+  Return: -1.46%
+  Holding Period: 2 days
+  Capital After Trade: $13060.50
+Trade 22:
+  Entry: 2024-10-26 at $67014.70
+  Exit: 2024-10-27 at $67929.30
+  Return: 1.36%
+  Holding Period: 1 days
+  Capital After Trade: $13238.74
+Trade 23:
+  Entry: 2024-11-02 at $69289.27
+  Exit: 2024-11-06 at $75639.08
+  Return: 9.16%
+  Holding Period: 4 days
+  Capital After Trade: $14451.97
+Trade 24:
+  Entry: 2024-11-30 at $96449.05
+  Exit: 2024-12-02 at $95865.30
+  Return: -0.61%
+  Holding Period: 2 days
+  Capital After Trade: $14364.50
+Trade 25:
+  Entry: 2024-12-07 at $99923.34
+  Exit: 2024-12-08 at $101236.02
+  Return: 1.31%
+  Holding Period: 1 days
+  Capital After Trade: $14553.20
+Trade 26:
+  Entry: 2024-12-14 at $101372.97
+  Exit: 2024-12-15 at $104298.70
+  Return: 2.89%
+  Holding Period: 1 days
+  Capital After Trade: $14973.22
+Trade 27:
+  Entry: 2024-12-21 at $97224.73
+  Exit: 2025-01-01 at $94419.76
+  Return: -2.89%
+  Holding Period: 11 days
+  Capital After Trade: $14541.24
+
+
+Individual Signal Strategy Analysis for BTC-USD
+==================================================
+
+Buy & Hold Return: 113.78%
+
+Performance by Signal Type:
+-------------------------
+
+EMA_Cross:
+---------
+Final Capital: $15,906.31
+Total Return: 59.06%
+vs Buy & Hold: -54.71%
+Total Trades: 9
+Win Rate: 44.44%
+Average Trade Return: 7.32%
+Best Trade: 49.84%
+Worst Trade: -11.02%
+Average Hold: 25.1 days
+
+RSI:
+---
+Final Capital: $12,350.44
+Total Return: 23.50%
+vs Buy & Hold: -90.27%
+Total Trades: 5
+Win Rate: 80.00%
+Average Trade Return: 4.42%
+Best Trade: 11.23%
+Worst Trade: -1.79%
+Average Hold: 19.8 days
+
+MACD:
+----
+Final Capital: $17,200.86
+Total Return: 72.01%
+vs Buy & Hold: -41.77%
+Total Trades: 14
+Win Rate: 50.00%
+Average Trade Return: 4.44%
+Best Trade: 21.61%
+Worst Trade: -8.79%
+Average Hold: 11.9 days
+
+Stochastic:
+----------
+Final Capital: $11,131.08
+Total Return: 11.31%
+vs Buy & Hold: -102.47%
+Total Trades: 10
+Win Rate: 50.00%
+Average Trade Return: 1.22%
+Best Trade: 14.27%
+Worst Trade: -5.33%
+Average Hold: 14.4 days
+
+Volume_RSI:
+----------
+Final Capital: $11,793.71
+Total Return: 17.94%
+vs Buy & Hold: -95.84%
+Total Trades: 12
+Win Rate: 75.00%
+Average Trade Return: 1.41%
+Best Trade: 6.37%
+Worst Trade: -2.00%
+Average Hold: 12.6 days
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for ETH-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $11,977.08
+Total Return: 19.77%
+Buy & Hold Return: 42.56%
+Strategy vs Buy & Hold: -22.79%
+
+Trade Statistics:
+---------------
+Total Trades: 13
+Profitable Trades: 8
+Win Rate: 61.54%
+Average Trade Return: 1.51%
+Best Trade: 9.36%
+Worst Trade: -8.47%
+Trade Return Std Dev: 4.84%
+
+Holding Periods:
+--------------
+Average Hold: 11.9 days
+Longest Hold: 41 days
+Shortest Hold: 2 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2024-01-14 at $2472.24
+  Exit: 2024-01-21 at $2453.91
+  Return: -0.74%
+  Holding Period: 7 days
+  Capital After Trade: $9925.86
+Trade 2:
+  Entry: 2024-01-24 at $2233.56
+  Exit: 2024-02-06 at $2372.20
+  Return: 6.21%
+  Holding Period: 13 days
+  Capital After Trade: $10541.98
+Trade 3:
+  Entry: 2024-03-18 at $3517.99
+  Exit: 2024-03-31 at $3647.86
+  Return: 3.69%
+  Holding Period: 13 days
+  Capital After Trade: $10931.15
+Trade 4:
+  Entry: 2024-04-20 at $3157.63
+  Exit: 2024-04-29 at $3215.43
+  Return: 1.83%
+  Holding Period: 9 days
+  Capital After Trade: $11131.25
+Trade 5:
+  Entry: 2024-05-11 at $2911.60
+  Exit: 2024-05-15 at $3037.06
+  Return: 4.31%
+  Holding Period: 4 days
+  Capital After Trade: $11610.87
+Trade 6:
+  Entry: 2024-06-01 at $3813.20
+  Exit: 2024-06-03 at $3766.39
+  Return: -1.23%
+  Holding Period: 2 days
+  Capital After Trade: $11468.34
+Trade 7:
+  Entry: 2024-06-04 at $3812.52
+  Exit: 2024-07-15 at $3489.55
+  Return: -8.47%
+  Holding Period: 41 days
+  Capital After Trade: $10496.84
+Trade 8:
+  Entry: 2024-08-03 at $2903.39
+  Exit: 2024-08-23 at $2764.45
+  Return: -4.79%
+  Holding Period: 20 days
+  Capital After Trade: $9994.52
+Trade 9:
+  Entry: 2024-08-31 at $2513.39
+  Exit: 2024-09-19 at $2464.75
+  Return: -1.94%
+  Holding Period: 19 days
+  Capital After Trade: $9801.10
+Trade 10:
+  Entry: 2024-10-05 at $2415.63
+  Exit: 2024-10-15 at $2606.02
+  Return: 7.88%
+  Holding Period: 10 days
+  Capital After Trade: $10573.58
+Trade 11:
+  Entry: 2024-11-02 at $2491.07
+  Exit: 2024-11-06 at $2724.17
+  Return: 9.36%
+  Holding Period: 4 days
+  Capital After Trade: $11563.00
+Trade 12:
+  Entry: 2024-12-14 at $3868.41
+  Exit: 2024-12-16 at $3987.48
+  Return: 3.08%
+  Holding Period: 2 days
+  Capital After Trade: $11918.93
+Trade 13:
+  Entry: 2024-12-21 at $3337.22
+  Exit: 2025-01-01 at $3353.50
+  Return: 0.49%
+  Holding Period: 11 days
+  Capital After Trade: $11977.08
+
+
+Individual Signal Strategy Analysis for ETH-USD
+==================================================
+
+Buy & Hold Return: 42.56%
+
+Performance by Signal Type:
+-------------------------
+
+EMA_Cross:
+---------
+Final Capital: $7,799.99
+Total Return: -22.00%
+vs Buy & Hold: -64.56%
+Total Trades: 11
+Win Rate: 18.18%
+Average Trade Return: -1.36%
+Best Trade: 37.76%
+Worst Trade: -13.22%
+Average Hold: 15.3 days
+
+RSI:
+---
+Final Capital: $12,638.99
+Total Return: 26.39%
+vs Buy & Hold: -16.17%
+Total Trades: 6
+Win Rate: 83.33%
+Average Trade Return: 4.66%
+Best Trade: 25.84%
+Worst Trade: -14.23%
+Average Hold: 21.0 days
+
+MACD:
+----
+Final Capital: $12,750.72
+Total Return: 27.51%
+vs Buy & Hold: -15.05%
+Total Trades: 15
+Win Rate: 40.00%
+Average Trade Return: 2.78%
+Best Trade: 57.46%
+Worst Trade: -12.24%
+Average Hold: 12.1 days
+
+Stochastic:
+----------
+Final Capital: $12,814.70
+Total Return: 28.15%
+vs Buy & Hold: -14.41%
+Total Trades: 12
+Win Rate: 75.00%
+Average Trade Return: 2.38%
+Best Trade: 12.76%
+Worst Trade: -12.92%
+Average Hold: 16.8 days
+
+Volume_RSI:
+----------
+Final Capital: $8,417.30
+Total Return: -15.83%
+vs Buy & Hold: -58.39%
+Total Trades: 9
+Win Rate: 44.44%
+Average Trade Return: -1.57%
+Best Trade: 9.36%
+Worst Trade: -15.50%
+Average Hold: 18.9 days
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for BNB-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $11,831.14
+Total Return: 18.31%
+Buy & Hold Return: 124.71%
+Strategy vs Buy & Hold: -106.40%
+
+Trade Statistics:
+---------------
+Total Trades: 13
+Profitable Trades: 6
+Win Rate: 46.15%
+Average Trade Return: 1.45%
+Best Trade: 12.78%
+Worst Trade: -9.26%
+Trade Return Std Dev: 5.58%
+
+Holding Periods:
+--------------
+Average Hold: 12.5 days
+Longest Hold: 36 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2024-01-18 at $313.29
+  Exit: 2024-02-07 at $307.63
+  Return: -1.81%
+  Holding Period: 20 days
+  Capital After Trade: $9819.39
+Trade 2:
+  Entry: 2024-03-21 at $553.25
+  Exit: 2024-03-22 at $551.78
+  Return: -0.27%
+  Holding Period: 1 days
+  Capital After Trade: $9793.31
+Trade 3:
+  Entry: 2024-03-23 at $551.88
+  Exit: 2024-03-30 at $601.02
+  Return: 8.90%
+  Holding Period: 7 days
+  Capital After Trade: $10665.26
+Trade 4:
+  Entry: 2024-03-31 at $606.91
+  Exit: 2024-04-02 at $550.68
+  Return: -9.26%
+  Holding Period: 2 days
+  Capital After Trade: $9677.17
+Trade 5:
+  Entry: 2024-04-06 at $585.97
+  Exit: 2024-04-30 at $578.49
+  Return: -1.28%
+  Holding Period: 24 days
+  Capital After Trade: $9553.66
+Trade 6:
+  Entry: 2024-05-04 at $585.85
+  Exit: 2024-05-13 at $591.61
+  Return: 0.98%
+  Holding Period: 9 days
+  Capital After Trade: $9647.60
+Trade 7:
+  Entry: 2024-05-25 at $602.19
+  Exit: 2024-05-30 at $595.03
+  Return: -1.19%
+  Holding Period: 5 days
+  Capital After Trade: $9532.77
+Trade 8:
+  Entry: 2024-06-13 at $599.52
+  Exit: 2024-07-19 at $593.70
+  Return: -0.97%
+  Holding Period: 36 days
+  Capital After Trade: $9440.34
+Trade 9:
+  Entry: 2024-08-02 at $542.92
+  Exit: 2024-08-19 at $559.82
+  Return: 3.11%
+  Holding Period: 17 days
+  Capital After Trade: $9734.26
+Trade 10:
+  Entry: 2024-09-05 at $502.07
+  Exit: 2024-09-19 at $566.22
+  Return: 12.78%
+  Holding Period: 14 days
+  Capital After Trade: $10978.10
+Trade 11:
+  Entry: 2024-10-03 at $544.42
+  Exit: 2024-10-15 at $594.19
+  Return: 9.14%
+  Holding Period: 12 days
+  Capital After Trade: $11981.58
+Trade 12:
+  Entry: 2024-12-15 at $719.13
+  Exit: 2024-12-16 at $720.33
+  Return: 0.17%
+  Holding Period: 1 days
+  Capital After Trade: $12001.44
+Trade 13:
+  Entry: 2024-12-17 at $716.68
+  Exit: 2025-01-01 at $706.51
+  Return: -1.42%
+  Holding Period: 15 days
+  Capital After Trade: $11831.14
+
+
+Individual Signal Strategy Analysis for BNB-USD
+==================================================
+
+Buy & Hold Return: 124.71%
+
+Performance by Signal Type:
+-------------------------
+
+EMA_Cross:
+---------
+Final Capital: $12,839.17
+Total Return: 28.39%
+vs Buy & Hold: -96.32%
+Total Trades: 12
+Win Rate: 33.33%
+Average Trade Return: 3.57%
+Best Trade: 68.67%
+Worst Trade: -7.44%
+Average Hold: 20.8 days
+
+RSI:
+---
+Final Capital: $11,594.88
+Total Return: 15.95%
+vs Buy & Hold: -108.76%
+Total Trades: 3
+Win Rate: 100.00%
+Average Trade Return: 5.15%
+Best Trade: 11.50%
+Worst Trade: 0.85%
+Average Hold: 21.0 days
+
+MACD:
+----
+Final Capital: $14,074.32
+Total Return: 40.74%
+vs Buy & Hold: -83.97%
+Total Trades: 15
+Win Rate: 40.00%
+Average Trade Return: 3.40%
+Best Trade: 67.51%
+Worst Trade: -5.78%
+Average Hold: 11.5 days
+
+Stochastic:
+----------
+Final Capital: $17,212.22
+Total Return: 72.12%
+vs Buy & Hold: -52.59%
+Total Trades: 14
+Win Rate: 78.57%
+Average Trade Return: 4.09%
+Best Trade: 10.79%
+Worst Trade: -9.51%
+Average Hold: 10.8 days
+
+Volume_RSI:
+----------
+Final Capital: $13,260.14
+Total Return: 32.60%
+vs Buy & Hold: -92.11%
+Total Trades: 7
+Win Rate: 85.71%
+Average Trade Return: 4.17%
+Best Trade: 7.78%
+Worst Trade: -2.68%
+Average Hold: 17.4 days
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for SOL-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $11,535.45
+Total Return: 15.35%
+Buy & Hold Return: 77.04%
+Strategy vs Buy & Hold: -61.69%
+
+Trade Statistics:
+---------------
+Total Trades: 20
+Profitable Trades: 11
+Win Rate: 55.00%
+Average Trade Return: 1.37%
+Best Trade: 19.21%
+Worst Trade: -25.06%
+Trade Return Std Dev: 11.22%
+
+Holding Periods:
+--------------
+Average Hold: 8.9 days
+Longest Hold: 31 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2024-01-15 at $94.49
+  Exit: 2024-01-29 at $101.57
+  Return: 7.49%
+  Holding Period: 14 days
+  Capital After Trade: $10748.91
+Trade 2:
+  Entry: 2024-02-03 at $97.88
+  Exit: 2024-02-08 at $102.79
+  Return: 5.01%
+  Holding Period: 5 days
+  Capital After Trade: $11287.63
+Trade 3:
+  Entry: 2024-02-23 at $99.95
+  Exit: 2024-02-28 at $118.05
+  Return: 18.11%
+  Holding Period: 5 days
+  Capital After Trade: $13331.34
+Trade 4:
+  Entry: 2024-03-22 at $174.36
+  Exit: 2024-03-23 at $172.90
+  Return: -0.84%
+  Holding Period: 1 days
+  Capital After Trade: $13219.60
+Trade 5:
+  Entry: 2024-03-24 at $183.57
+  Exit: 2024-03-27 at $186.36
+  Return: 1.52%
+  Holding Period: 3 days
+  Capital After Trade: $13420.37
+Trade 6:
+  Entry: 2024-03-28 at $189.62
+  Exit: 2024-03-31 at $202.87
+  Return: 6.99%
+  Holding Period: 3 days
+  Capital After Trade: $14358.31
+Trade 7:
+  Entry: 2024-04-07 at $179.65
+  Exit: 2024-05-01 at $134.63
+  Return: -25.06%
+  Holding Period: 24 days
+  Capital After Trade: $10759.99
+Trade 8:
+  Entry: 2024-05-07 at $148.13
+  Exit: 2024-05-14 at $142.03
+  Return: -4.12%
+  Holding Period: 7 days
+  Capital After Trade: $10316.62
+Trade 9:
+  Entry: 2024-05-25 at $168.44
+  Exit: 2024-05-28 at $168.65
+  Return: 0.13%
+  Holding Period: 3 days
+  Capital After Trade: $10329.68
+Trade 10:
+  Entry: 2024-05-31 at $165.64
+  Exit: 2024-06-27 at $149.45
+  Return: -9.77%
+  Holding Period: 27 days
+  Capital After Trade: $9320.06
+Trade 11:
+  Entry: 2024-06-29 at $140.01
+  Exit: 2024-07-02 at $153.70
+  Return: 9.78%
+  Holding Period: 3 days
+  Capital After Trade: $10231.39
+Trade 12:
+  Entry: 2024-07-13 at $141.92
+  Exit: 2024-07-19 at $169.19
+  Return: 19.21%
+  Holding Period: 6 days
+  Capital After Trade: $12196.63
+Trade 13:
+  Entry: 2024-08-03 at $142.92
+  Exit: 2024-08-05 at $129.86
+  Return: -9.14%
+  Holding Period: 2 days
+  Capital After Trade: $11082.31
+Trade 14:
+  Entry: 2024-08-09 at $156.46
+  Exit: 2024-08-19 at $144.34
+  Return: -7.74%
+  Holding Period: 10 days
+  Capital After Trade: $10224.28
+Trade 15:
+  Entry: 2024-08-22 at $143.26
+  Exit: 2024-08-24 at $160.73
+  Return: 12.20%
+  Holding Period: 2 days
+  Capital After Trade: $11471.38
+Trade 16:
+  Entry: 2024-08-31 at $135.37
+  Exit: 2024-09-18 at $133.99
+  Return: -1.02%
+  Holding Period: 18 days
+  Capital After Trade: $11354.24
+Trade 17:
+  Entry: 2024-10-05 at $142.71
+  Exit: 2024-10-14 at $157.45
+  Return: 10.32%
+  Holding Period: 9 days
+  Capital After Trade: $12526.43
+Trade 18:
+  Entry: 2024-11-02 at $166.01
+  Exit: 2024-11-06 at $186.95
+  Return: 12.62%
+  Holding Period: 4 days
+  Capital After Trade: $14106.81
+Trade 19:
+  Entry: 2024-11-28 at $237.76
+  Exit: 2024-11-30 at $237.74
+  Return: -0.01%
+  Holding Period: 2 days
+  Capital After Trade: $14105.61
+Trade 20:
+  Entry: 2024-12-01 at $237.07
+  Exit: 2025-01-01 at $193.87
+  Return: -18.22%
+  Holding Period: 31 days
+  Capital After Trade: $11535.45
+
+
+Individual Signal Strategy Analysis for SOL-USD
+==================================================
+
+Buy & Hold Return: 77.04%
+
+Performance by Signal Type:
+-------------------------
+
+EMA_Cross:
+---------
+Final Capital: $19,618.41
+Total Return: 96.18%
+vs Buy & Hold: 19.14%
+Total Trades: 6
+Win Rate: 50.00%
+Average Trade Return: 16.19%
+Best Trade: 77.86%
+Worst Trade: -13.68%
+Average Hold: 32.7 days
+
+RSI:
+---
+Final Capital: $13,945.71
+Total Return: 39.46%
+vs Buy & Hold: -37.58%
+Total Trades: 4
+Win Rate: 75.00%
+Average Trade Return: 8.92%
+Best Trade: 17.26%
+Worst Trade: -0.21%
+Average Hold: 36.2 days
+
+MACD:
+----
+Final Capital: $20,859.06
+Total Return: 108.59%
+vs Buy & Hold: 31.55%
+Total Trades: 11
+Win Rate: 63.64%
+Average Trade Return: 7.99%
+Best Trade: 46.46%
+Worst Trade: -10.08%
+Average Hold: 16.4 days
+
+Stochastic:
+----------
+Final Capital: $12,680.25
+Total Return: 26.80%
+vs Buy & Hold: -50.24%
+Total Trades: 11
+Win Rate: 54.55%
+Average Trade Return: 2.92%
+Best Trade: 25.39%
+Worst Trade: -14.12%
+Average Hold: 15.0 days
+
+Volume_RSI:
+----------
+Final Capital: $11,470.89
+Total Return: 14.71%
+vs Buy & Hold: -62.33%
+Total Trades: 12
+Win Rate: 66.67%
+Average Trade Return: 1.89%
+Best Trade: 19.21%
+Worst Trade: -18.73%
+Average Hold: 15.3 days
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for XRP-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $12,570.47
+Total Return: 25.70%
+Buy & Hold Return: 268.58%
+Strategy vs Buy & Hold: -242.87%
+
+Trade Statistics:
+---------------
+Total Trades: 20
+Profitable Trades: 12
+Win Rate: 60.00%
+Average Trade Return: 1.34%
+Best Trade: 18.01%
+Worst Trade: -8.92%
+Trade Return Std Dev: 6.25%
+
+Holding Periods:
+--------------
+Average Hold: 9.9 days
+Longest Hold: 30 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2024-01-14 at $0.58
+  Exit: 2024-02-13 at $0.52
+  Return: -8.92%
+  Holding Period: 30 days
+  Capital After Trade: $9108.03
+Trade 2:
+  Entry: 2024-02-24 at $0.55
+  Exit: 2024-02-27 at $0.59
+  Return: 7.55%
+  Holding Period: 3 days
+  Capital After Trade: $9795.42
+Trade 3:
+  Entry: 2024-03-10 at $0.61
+  Exit: 2024-03-11 at $0.72
+  Return: 18.01%
+  Holding Period: 1 days
+  Capital After Trade: $11559.98
+Trade 4:
+  Entry: 2024-03-16 at $0.60
+  Exit: 2024-04-02 at $0.59
+  Return: -2.92%
+  Holding Period: 17 days
+  Capital After Trade: $11222.72
+Trade 5:
+  Entry: 2024-04-06 at $0.59
+  Exit: 2024-04-09 at $0.61
+  Return: 3.45%
+  Holding Period: 3 days
+  Capital After Trade: $11610.04
+Trade 6:
+  Entry: 2024-04-18 at $0.50
+  Exit: 2024-05-01 at $0.52
+  Return: 2.79%
+  Holding Period: 13 days
+  Capital After Trade: $11933.58
+Trade 7:
+  Entry: 2024-05-05 at $0.53
+  Exit: 2024-05-06 at $0.54
+  Return: 2.03%
+  Holding Period: 1 days
+  Capital After Trade: $12176.02
+Trade 8:
+  Entry: 2024-05-11 at $0.51
+  Exit: 2024-05-20 at $0.54
+  Return: 6.20%
+  Holding Period: 9 days
+  Capital After Trade: $12930.64
+Trade 9:
+  Entry: 2024-05-25 at $0.54
+  Exit: 2024-06-07 at $0.50
+  Return: -7.91%
+  Holding Period: 13 days
+  Capital After Trade: $11907.80
+Trade 10:
+  Entry: 2024-06-08 at $0.49
+  Exit: 2024-06-17 at $0.51
+  Return: 2.44%
+  Holding Period: 9 days
+  Capital After Trade: $12197.92
+Trade 11:
+  Entry: 2024-06-20 at $0.49
+  Exit: 2024-07-12 at $0.47
+  Return: -2.86%
+  Holding Period: 22 days
+  Capital After Trade: $11848.84
+Trade 12:
+  Entry: 2024-07-27 at $0.60
+  Exit: 2024-08-01 at $0.60
+  Return: -0.06%
+  Holding Period: 5 days
+  Capital After Trade: $11842.27
+Trade 13:
+  Entry: 2024-08-03 at $0.56
+  Exit: 2024-08-07 at $0.60
+  Return: 7.98%
+  Holding Period: 4 days
+  Capital After Trade: $12787.69
+Trade 14:
+  Entry: 2024-08-10 at $0.59
+  Exit: 2024-08-18 at $0.56
+  Return: -3.71%
+  Holding Period: 8 days
+  Capital After Trade: $12313.72
+Trade 15:
+  Entry: 2024-08-22 at $0.60
+  Exit: 2024-09-12 at $0.56
+  Return: -5.86%
+  Holding Period: 21 days
+  Capital After Trade: $11592.03
+Trade 16:
+  Entry: 2024-10-05 at $0.53
+  Exit: 2024-10-17 at $0.54
+  Return: 2.67%
+  Holding Period: 12 days
+  Capital After Trade: $11902.07
+Trade 17:
+  Entry: 2024-10-27 at $0.52
+  Exit: 2024-11-06 at $0.54
+  Return: 5.04%
+  Holding Period: 10 days
+  Capital After Trade: $12502.40
+Trade 18:
+  Entry: 2024-12-12 at $2.34
+  Exit: 2024-12-13 at $2.42
+  Return: 3.35%
+  Holding Period: 1 days
+  Capital After Trade: $12921.58
+Trade 19:
+  Entry: 2024-12-14 at $2.40
+  Exit: 2024-12-19 at $2.25
+  Return: -6.25%
+  Holding Period: 5 days
+  Capital After Trade: $12114.55
+Trade 20:
+  Entry: 2024-12-21 at $2.24
+  Exit: 2025-01-01 at $2.32
+  Return: 3.76%
+  Holding Period: 11 days
+  Capital After Trade: $12570.47
+
+
+Individual Signal Strategy Analysis for XRP-USD
+==================================================
+
+Buy & Hold Return: 268.58%
+
+Performance by Signal Type:
+-------------------------
+
+EMA_Cross:
+---------
+Final Capital: $28,109.21
+Total Return: 181.09%
+vs Buy & Hold: -87.49%
+Total Trades: 7
+Win Rate: 28.57%
+Average Trade Return: 35.64%
+Best Trade: 277.78%
+Worst Trade: -8.59%
+Average Hold: 24.0 days
+
+RSI:
+---
+Final Capital: $16,701.53
+Total Return: 67.02%
+vs Buy & Hold: -201.56%
+Total Trades: 5
+Win Rate: 100.00%
+Average Trade Return: 10.97%
+Best Trade: 19.55%
+Worst Trade: 3.94%
+Average Hold: 38.2 days
+
+MACD:
+----
+Final Capital: $34,835.21
+Total Return: 248.35%
+vs Buy & Hold: -20.23%
+Total Trades: 12
+Win Rate: 25.00%
+Average Trade Return: 26.72%
+Best Trade: 336.77%
+Worst Trade: -11.20%
+Average Hold: 14.8 days
+
+Stochastic:
+----------
+Final Capital: $9,823.19
+Total Return: -1.77%
+vs Buy & Hold: -270.35%
+Total Trades: 9
+Win Rate: 55.56%
+Average Trade Return: -0.03%
+Best Trade: 7.14%
+Worst Trade: -10.37%
+Average Hold: 20.9 days
+
+Volume_RSI:
+----------
+Final Capital: $9,808.10
+Total Return: -1.92%
+vs Buy & Hold: -270.50%
+Total Trades: 12
+Win Rate: 41.67%
+Average Trade Return: -0.08%
+Best Trade: 5.79%
+Worst Trade: -7.12%
+Average Hold: 16.8 days
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for RAY-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $15,323.51
+Total Return: 53.24%
+Buy & Hold Return: 259.63%
+Strategy vs Buy & Hold: -206.40%
+
+Trade Statistics:
+---------------
+Total Trades: 26
+Profitable Trades: 15
+Win Rate: 57.69%
+Average Trade Return: 2.24%
+Best Trade: 26.78%
+Worst Trade: -25.52%
+Trade Return Std Dev: 10.88%
+
+Holding Periods:
+--------------
+Average Hold: 7.0 days
+Longest Hold: 29 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2024-01-15 at $1.15
+  Exit: 2024-01-17 at $1.33
+  Return: 15.52%
+  Holding Period: 2 days
+  Capital After Trade: $11551.51
+Trade 2:
+  Entry: 2024-01-18 at $1.21
+  Exit: 2024-01-28 at $1.26
+  Return: 4.01%
+  Holding Period: 10 days
+  Capital After Trade: $12014.98
+Trade 3:
+  Entry: 2024-01-31 at $1.17
+  Exit: 2024-02-06 at $1.08
+  Return: -8.06%
+  Holding Period: 6 days
+  Capital After Trade: $11046.33
+Trade 4:
+  Entry: 2024-02-11 at $1.09
+  Exit: 2024-02-19 at $1.09
+  Return: 0.42%
+  Holding Period: 8 days
+  Capital After Trade: $11092.45
+Trade 5:
+  Entry: 2024-03-22 at $2.03
+  Exit: 2024-03-26 at $2.10
+  Return: 3.48%
+  Holding Period: 4 days
+  Capital After Trade: $11478.39
+Trade 6:
+  Entry: 2024-03-27 at $2.05
+  Exit: 2024-03-28 at $2.03
+  Return: -1.03%
+  Holding Period: 1 days
+  Capital After Trade: $11359.83
+Trade 7:
+  Entry: 2024-03-29 at $2.12
+  Exit: 2024-04-27 at $1.58
+  Return: -25.52%
+  Holding Period: 29 days
+  Capital After Trade: $8460.62
+Trade 8:
+  Entry: 2024-04-28 at $1.57
+  Exit: 2024-05-01 at $1.50
+  Return: -4.44%
+  Holding Period: 3 days
+  Capital After Trade: $8085.23
+Trade 9:
+  Entry: 2024-05-06 at $1.72
+  Exit: 2024-05-15 at $1.69
+  Return: -2.11%
+  Holding Period: 9 days
+  Capital After Trade: $7914.90
+Trade 10:
+  Entry: 2024-05-24 at $1.80
+  Exit: 2024-06-04 at $1.81
+  Return: 0.54%
+  Holding Period: 11 days
+  Capital After Trade: $7957.25
+Trade 11:
+  Entry: 2024-06-10 at $1.59
+  Exit: 2024-06-15 at $1.73
+  Return: 9.21%
+  Holding Period: 5 days
+  Capital After Trade: $8689.97
+Trade 12:
+  Entry: 2024-06-22 at $1.51
+  Exit: 2024-06-27 at $1.70
+  Return: 12.93%
+  Holding Period: 5 days
+  Capital After Trade: $9813.89
+Trade 13:
+  Entry: 2024-07-13 at $1.87
+  Exit: 2024-07-19 at $2.25
+  Return: 20.26%
+  Holding Period: 6 days
+  Capital After Trade: $11802.02
+Trade 14:
+  Entry: 2024-07-28 at $2.41
+  Exit: 2024-07-29 at $2.45
+  Return: 1.43%
+  Holding Period: 1 days
+  Capital After Trade: $11970.54
+Trade 15:
+  Entry: 2024-07-30 at $2.33
+  Exit: 2024-07-31 at $2.22
+  Return: -4.74%
+  Holding Period: 1 days
+  Capital After Trade: $11403.72
+Trade 16:
+  Entry: 2024-08-02 at $1.85
+  Exit: 2024-08-19 at $1.70
+  Return: -8.17%
+  Holding Period: 17 days
+  Capital After Trade: $10471.76
+Trade 17:
+  Entry: 2024-08-22 at $1.70
+  Exit: 2024-08-23 at $1.83
+  Return: 7.57%
+  Holding Period: 1 days
+  Capital After Trade: $11264.56
+Trade 18:
+  Entry: 2024-08-31 at $1.51
+  Exit: 2024-09-19 at $1.58
+  Return: 3.97%
+  Holding Period: 19 days
+  Capital After Trade: $11712.18
+Trade 19:
+  Entry: 2024-10-03 at $1.60
+  Exit: 2024-10-08 at $1.69
+  Return: 5.56%
+  Holding Period: 5 days
+  Capital After Trade: $12363.10
+Trade 20:
+  Entry: 2024-10-10 at $1.63
+  Exit: 2024-10-14 at $2.06
+  Return: 26.78%
+  Holding Period: 4 days
+  Capital After Trade: $15674.26
+Trade 21:
+  Entry: 2024-11-15 at $4.83
+  Exit: 2024-11-17 at $5.89
+  Return: 21.99%
+  Holding Period: 2 days
+  Capital After Trade: $19120.36
+Trade 22:
+  Entry: 2024-11-20 at $5.70
+  Exit: 2024-11-26 at $5.48
+  Return: -3.85%
+  Holding Period: 6 days
+  Capital After Trade: $18384.18
+Trade 23:
+  Entry: 2024-11-27 at $5.53
+  Exit: 2024-11-28 at $5.59
+  Return: 1.10%
+  Holding Period: 1 days
+  Capital After Trade: $18586.02
+Trade 24:
+  Entry: 2024-11-29 at $5.69
+  Exit: 2024-11-30 at $5.46
+  Return: -4.05%
+  Holding Period: 1 days
+  Capital After Trade: $17832.90
+Trade 25:
+  Entry: 2024-12-01 at $5.27
+  Exit: 2024-12-10 at $4.91
+  Return: -6.83%
+  Holding Period: 9 days
+  Capital After Trade: $16614.99
+Trade 26:
+  Entry: 2024-12-15 at $5.41
+  Exit: 2025-01-01 at $4.99
+  Return: -7.77%
+  Holding Period: 17 days
+  Capital After Trade: $15323.51
+
+
+Individual Signal Strategy Analysis for RAY-USD
+==================================================
+
+Buy & Hold Return: 259.63%
+
+Performance by Signal Type:
+-------------------------
+
+EMA_Cross:
+---------
+Final Capital: $24,917.71
+Total Return: 149.18%
+vs Buy & Hold: -110.45%
+Total Trades: 9
+Win Rate: 22.22%
+Average Trade Return: 22.18%
+Best Trade: 204.91%
+Worst Trade: -13.56%
+Average Hold: 19.7 days
+
+RSI:
+---
+Final Capital: $27,496.81
+Total Return: 174.97%
+vs Buy & Hold: -84.66%
+Total Trades: 4
+Win Rate: 100.00%
+Average Trade Return: 30.65%
+Best Trade: 61.33%
+Worst Trade: 3.01%
+Average Hold: 44.0 days
+
+MACD:
+----
+Final Capital: $15,516.45
+Total Return: 55.16%
+vs Buy & Hold: -204.47%
+Total Trades: 18
+Win Rate: 33.33%
+Average Trade Return: 5.53%
+Best Trade: 89.18%
+Worst Trade: -17.14%
+Average Hold: 11.1 days
+
+Stochastic:
+----------
+Final Capital: $21,741.19
+Total Return: 117.41%
+vs Buy & Hold: -142.22%
+Total Trades: 13
+Win Rate: 69.23%
+Average Trade Return: 7.07%
+Best Trade: 32.29%
+Worst Trade: -13.90%
+Average Hold: 13.0 days
+
+Volume_RSI:
+----------
+Final Capital: $17,939.36
+Total Return: 79.39%
+vs Buy & Hold: -180.24%
+Total Trades: 14
+Win Rate: 57.14%
+Average Trade Return: 5.01%
+Best Trade: 22.88%
+Worst Trade: -16.91%
+Average Hold: 13.6 days
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for TRX-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $10,828.78
+Total Return: 8.29%
+Buy & Hold Return: 136.81%
+Strategy vs Buy & Hold: -128.53%
+
+Trade Statistics:
+---------------
+Total Trades: 17
+Profitable Trades: 12
+Win Rate: 70.59%
+Average Trade Return: 0.70%
+Best Trade: 10.87%
+Worst Trade: -14.26%
+Trade Return Std Dev: 6.68%
+
+Holding Periods:
+--------------
+Average Hold: 8.8 days
+Longest Hold: 25 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2024-01-17 at $0.11
+  Exit: 2024-02-01 at $0.12
+  Return: 6.71%
+  Holding Period: 15 days
+  Capital After Trade: $10670.51
+Trade 2:
+  Entry: 2024-03-09 at $0.14
+  Exit: 2024-04-02 at $0.12
+  Return: -14.26%
+  Holding Period: 24 days
+  Capital After Trade: $9149.32
+Trade 3:
+  Entry: 2024-04-20 at $0.11
+  Exit: 2024-04-30 at $0.12
+  Return: 7.51%
+  Holding Period: 10 days
+  Capital After Trade: $9836.59
+Trade 4:
+  Entry: 2024-05-12 at $0.13
+  Exit: 2024-05-21 at $0.12
+  Return: -2.89%
+  Holding Period: 9 days
+  Capital After Trade: $9552.74
+Trade 5:
+  Entry: 2024-05-25 at $0.11
+  Exit: 2024-06-08 at $0.11
+  Return: 0.86%
+  Holding Period: 14 days
+  Capital After Trade: $9634.43
+Trade 6:
+  Entry: 2024-06-16 at $0.12
+  Exit: 2024-06-26 at $0.12
+  Return: 4.48%
+  Holding Period: 10 days
+  Capital After Trade: $10066.00
+Trade 7:
+  Entry: 2024-07-27 at $0.14
+  Exit: 2024-07-28 at $0.14
+  Return: 1.03%
+  Holding Period: 1 days
+  Capital After Trade: $10169.55
+Trade 8:
+  Entry: 2024-08-10 at $0.13
+  Exit: 2024-08-19 at $0.14
+  Return: 10.87%
+  Holding Period: 9 days
+  Capital After Trade: $11274.62
+Trade 9:
+  Entry: 2024-08-31 at $0.16
+  Exit: 2024-09-01 at $0.16
+  Return: -1.27%
+  Holding Period: 1 days
+  Capital After Trade: $11131.67
+Trade 10:
+  Entry: 2024-09-02 at $0.15
+  Exit: 2024-09-27 at $0.16
+  Return: 0.66%
+  Holding Period: 25 days
+  Capital After Trade: $11205.11
+Trade 11:
+  Entry: 2024-10-05 at $0.15
+  Exit: 2024-10-06 at $0.15
+  Return: 0.44%
+  Holding Period: 1 days
+  Capital After Trade: $11254.13
+Trade 12:
+  Entry: 2024-10-20 at $0.16
+  Exit: 2024-10-24 at $0.16
+  Return: 5.01%
+  Holding Period: 4 days
+  Capital After Trade: $11817.97
+Trade 13:
+  Entry: 2024-11-09 at $0.16
+  Exit: 2024-11-10 at $0.16
+  Return: 1.20%
+  Holding Period: 1 days
+  Capital After Trade: $11959.67
+Trade 14:
+  Entry: 2024-11-29 at $0.20
+  Exit: 2024-12-02 at $0.22
+  Return: 7.75%
+  Holding Period: 3 days
+  Capital After Trade: $12886.58
+Trade 15:
+  Entry: 2024-12-07 at $0.32
+  Exit: 2024-12-14 at $0.28
+  Return: -11.61%
+  Holding Period: 7 days
+  Capital After Trade: $11390.61
+Trade 16:
+  Entry: 2024-12-15 at $0.29
+  Exit: 2024-12-16 at $0.30
+  Return: 4.00%
+  Holding Period: 1 days
+  Capital After Trade: $11846.28
+Trade 17:
+  Entry: 2024-12-17 at $0.28
+  Exit: 2025-01-01 at $0.26
+  Return: -8.59%
+  Holding Period: 15 days
+  Capital After Trade: $10828.78
+
+
+Individual Signal Strategy Analysis for TRX-USD
+==================================================
+
+Buy & Hold Return: 136.81%
+
+Performance by Signal Type:
+-------------------------
+
+EMA_Cross:
+---------
+Final Capital: $20,527.07
+Total Return: 105.27%
+vs Buy & Hold: -31.54%
+Total Trades: 6
+Win Rate: 66.67%
+Average Trade Return: 14.51%
+Best Trade: 60.91%
+Worst Trade: -3.80%
+Average Hold: 42.3 days
+
+RSI:
+---
+Final Capital: $9,749.01
+Total Return: -2.51%
+vs Buy & Hold: -139.32%
+Total Trades: 5
+Win Rate: 60.00%
+Average Trade Return: -0.23%
+Best Trade: 8.77%
+Worst Trade: -8.88%
+Average Hold: 25.8 days
+
+MACD:
+----
+Final Capital: $23,540.60
+Total Return: 135.41%
+vs Buy & Hold: -1.41%
+Total Trades: 12
+Win Rate: 50.00%
+Average Trade Return: 8.10%
+Best Trade: 30.86%
+Worst Trade: -10.03%
+Average Hold: 16.8 days
+
+Stochastic:
+----------
+Final Capital: $9,683.24
+Total Return: -3.17%
+vs Buy & Hold: -139.98%
+Total Trades: 9
+Win Rate: 44.44%
+Average Trade Return: -0.24%
+Best Trade: 5.43%
+Worst Trade: -9.62%
+Average Hold: 13.1 days
+
+Volume_RSI:
+----------
+Final Capital: $8,159.32
+Total Return: -18.41%
+vs Buy & Hold: -155.22%
+Total Trades: 6
+Win Rate: 50.00%
+Average Trade Return: -2.87%
+Best Trade: 7.12%
+Worst Trade: -19.92%
+Average Hold: 18.8 days
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for DOGE-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $9,451.78
+Total Return: -5.48%
+Buy & Hold Return: 252.41%
+Strategy vs Buy & Hold: -257.90%
+
+Trade Statistics:
+---------------
+Total Trades: 18
+Profitable Trades: 12
+Win Rate: 66.67%
+Average Trade Return: 0.76%
+Best Trade: 23.18%
+Worst Trade: -33.73%
+Trade Return Std Dev: 13.90%
+
+Holding Periods:
+--------------
+Average Hold: 9.4 days
+Longest Hold: 31 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2024-01-15 at $0.08
+  Exit: 2024-01-20 at $0.09
+  Return: 8.34%
+  Holding Period: 5 days
+  Capital After Trade: $10833.65
+Trade 2:
+  Entry: 2024-01-24 at $0.08
+  Exit: 2024-01-29 at $0.08
+  Return: 2.88%
+  Holding Period: 5 days
+  Capital After Trade: $11145.30
+Trade 3:
+  Entry: 2024-02-01 at $0.08
+  Exit: 2024-02-09 at $0.08
+  Return: 2.84%
+  Holding Period: 8 days
+  Capital After Trade: $11461.70
+Trade 4:
+  Entry: 2024-02-25 at $0.09
+  Exit: 2024-02-27 at $0.10
+  Return: 13.44%
+  Holding Period: 2 days
+  Capital After Trade: $13002.19
+Trade 5:
+  Entry: 2024-03-13 at $0.17
+  Exit: 2024-03-14 at $0.18
+  Return: 4.83%
+  Holding Period: 1 days
+  Capital After Trade: $13630.32
+Trade 6:
+  Entry: 2024-03-16 at $0.14
+  Exit: 2024-03-25 at $0.18
+  Return: 23.18%
+  Holding Period: 9 days
+  Capital After Trade: $16789.65
+Trade 7:
+  Entry: 2024-04-04 at $0.18
+  Exit: 2024-04-05 at $0.18
+  Return: -1.34%
+  Holding Period: 1 days
+  Capital After Trade: $16564.95
+Trade 8:
+  Entry: 2024-04-06 at $0.19
+  Exit: 2024-05-04 at $0.16
+  Return: -13.87%
+  Holding Period: 28 days
+  Capital After Trade: $14267.16
+Trade 9:
+  Entry: 2024-05-11 at $0.14
+  Exit: 2024-05-13 at $0.15
+  Return: 3.86%
+  Holding Period: 2 days
+  Capital After Trade: $14817.19
+Trade 10:
+  Entry: 2024-05-31 at $0.16
+  Exit: 2024-06-02 at $0.16
+  Return: -1.22%
+  Holding Period: 2 days
+  Capital After Trade: $14637.02
+Trade 11:
+  Entry: 2024-06-03 at $0.16
+  Exit: 2024-07-04 at $0.10
+  Return: -33.73%
+  Holding Period: 31 days
+  Capital After Trade: $9699.35
+Trade 12:
+  Entry: 2024-07-11 at $0.11
+  Exit: 2024-07-16 at $0.12
+  Return: 17.12%
+  Holding Period: 5 days
+  Capital After Trade: $11360.12
+Trade 13:
+  Entry: 2024-07-30 at $0.13
+  Exit: 2024-08-20 at $0.10
+  Return: -17.99%
+  Holding Period: 21 days
+  Capital After Trade: $9316.48
+Trade 14:
+  Entry: 2024-08-28 at $0.10
+  Exit: 2024-09-09 at $0.10
+  Return: 4.22%
+  Holding Period: 12 days
+  Capital After Trade: $9709.43
+Trade 15:
+  Entry: 2024-10-04 at $0.11
+  Exit: 2024-10-14 at $0.12
+  Return: 6.76%
+  Holding Period: 10 days
+  Capital After Trade: $10366.12
+Trade 16:
+  Entry: 2024-11-25 at $0.39
+  Exit: 2024-12-01 at $0.44
+  Return: 11.87%
+  Holding Period: 6 days
+  Capital After Trade: $11596.41
+Trade 17:
+  Entry: 2024-12-06 at $0.44
+  Exit: 2024-12-07 at $0.45
+  Return: 4.17%
+  Holding Period: 1 days
+  Capital After Trade: $12080.21
+Trade 18:
+  Entry: 2024-12-11 at $0.41
+  Exit: 2025-01-01 at $0.32
+  Return: -21.76%
+  Holding Period: 21 days
+  Capital After Trade: $9451.78
+
+
+Individual Signal Strategy Analysis for DOGE-USD
+==================================================
+
+Buy & Hold Return: 252.41%
+
+Performance by Signal Type:
+-------------------------
+
+EMA_Cross:
+---------
+Final Capital: $49,841.60
+Total Return: 398.42%
+vs Buy & Hold: 146.00%
+Total Trades: 5
+Win Rate: 40.00%
+Average Trade Return: 59.15%
+Best Trade: 221.35%
+Worst Trade: -11.13%
+Average Hold: 37.6 days
+
+RSI:
+---
+Final Capital: $10,548.12
+Total Return: 5.48%
+vs Buy & Hold: -246.93%
+Total Trades: 4
+Win Rate: 75.00%
+Average Trade Return: 1.51%
+Best Trade: 8.76%
+Worst Trade: -7.39%
+Average Hold: 40.2 days
+
+MACD:
+----
+Final Capital: $47,305.47
+Total Return: 373.05%
+vs Buy & Hold: 120.64%
+Total Trades: 10
+Win Rate: 50.00%
+Average Trade Return: 23.47%
+Best Trade: 131.13%
+Worst Trade: -17.35%
+Average Hold: 19.6 days
+
+Stochastic:
+----------
+Final Capital: $9,258.91
+Total Return: -7.41%
+vs Buy & Hold: -259.83%
+Total Trades: 9
+Win Rate: 55.56%
+Average Trade Return: 0.11%
+Best Trade: 23.94%
+Worst Trade: -20.34%
+Average Hold: 18.1 days
+
+Volume_RSI:
+----------
+Final Capital: $13,319.25
+Total Return: 33.19%
+vs Buy & Hold: -219.22%
+Total Trades: 12
+Win Rate: 83.33%
+Average Trade Return: 3.87%
+Best Trade: 33.69%
+Worst Trade: -34.09%
+Average Hold: 13.2 days
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for ADA-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $6,605.14
+Total Return: -33.95%
+Buy & Hold Return: 47.26%
+Strategy vs Buy & Hold: -81.21%
+
+Trade Statistics:
+---------------
+Total Trades: 15
+Profitable Trades: 6
+Win Rate: 40.00%
+Average Trade Return: -2.05%
+Best Trade: 16.28%
+Worst Trade: -31.79%
+Trade Return Std Dev: 10.90%
+
+Holding Periods:
+--------------
+Average Hold: 12.3 days
+Longest Hold: 46 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2024-01-14 at $0.53
+  Exit: 2024-01-29 at $0.53
+  Return: -0.13%
+  Holding Period: 15 days
+  Capital After Trade: $9986.58
+Trade 2:
+  Entry: 2024-01-30 at $0.51
+  Exit: 2024-02-07 at $0.50
+  Return: -2.41%
+  Holding Period: 8 days
+  Capital After Trade: $9745.89
+Trade 3:
+  Entry: 2024-02-25 at $0.59
+  Exit: 2024-02-27 at $0.62
+  Return: 5.55%
+  Holding Period: 2 days
+  Capital After Trade: $10287.04
+Trade 4:
+  Entry: 2024-03-09 at $0.74
+  Exit: 2024-03-11 at $0.77
+  Return: 4.10%
+  Holding Period: 2 days
+  Capital After Trade: $10708.60
+Trade 5:
+  Entry: 2024-03-16 at $0.66
+  Exit: 2024-05-01 at $0.45
+  Return: -31.79%
+  Holding Period: 46 days
+  Capital After Trade: $7304.29
+Trade 6:
+  Entry: 2024-05-04 at $0.46
+  Exit: 2024-05-17 at $0.48
+  Return: 3.97%
+  Holding Period: 13 days
+  Capital After Trade: $7594.57
+Trade 7:
+  Entry: 2024-05-25 at $0.46
+  Exit: 2024-05-28 at $0.46
+  Return: -1.10%
+  Holding Period: 3 days
+  Capital After Trade: $7511.04
+Trade 8:
+  Entry: 2024-06-01 at $0.45
+  Exit: 2024-06-07 at $0.45
+  Return: -0.07%
+  Holding Period: 6 days
+  Capital After Trade: $7505.50
+Trade 9:
+  Entry: 2024-06-15 at $0.41
+  Exit: 2024-07-02 at $0.42
+  Return: 0.99%
+  Holding Period: 17 days
+  Capital After Trade: $7579.52
+Trade 10:
+  Entry: 2024-07-26 at $0.42
+  Exit: 2024-08-21 at $0.37
+  Return: -11.65%
+  Holding Period: 26 days
+  Capital After Trade: $6696.14
+Trade 11:
+  Entry: 2024-08-31 at $0.35
+  Exit: 2024-09-18 at $0.34
+  Return: -0.70%
+  Holding Period: 18 days
+  Capital After Trade: $6649.29
+Trade 12:
+  Entry: 2024-10-10 at $0.34
+  Exit: 2024-10-15 at $0.36
+  Return: 5.79%
+  Holding Period: 5 days
+  Capital After Trade: $7034.59
+Trade 13:
+  Entry: 2024-11-28 at $1.03
+  Exit: 2024-12-02 at $1.20
+  Return: 16.28%
+  Holding Period: 4 days
+  Capital After Trade: $8179.90
+Trade 14:
+  Entry: 2024-12-07 at $1.21
+  Exit: 2024-12-08 at $1.20
+  Return: -1.47%
+  Holding Period: 1 days
+  Capital After Trade: $8059.28
+Trade 15:
+  Entry: 2024-12-13 at $1.12
+  Exit: 2025-01-01 at $0.92
+  Return: -18.04%
+  Holding Period: 19 days
+  Capital After Trade: $6605.14
+
+
+Individual Signal Strategy Analysis for ADA-USD
+==================================================
+
+Buy & Hold Return: 47.26%
+
+Performance by Signal Type:
+-------------------------
+
+EMA_Cross:
+---------
+Final Capital: $15,338.91
+Total Return: 53.39%
+vs Buy & Hold: 6.13%
+Total Trades: 8
+Win Rate: 25.00%
+Average Trade Return: 10.69%
+Best Trade: 118.64%
+Worst Trade: -11.34%
+Average Hold: 16.6 days
+
+RSI:
+---
+Final Capital: $18,143.80
+Total Return: 81.44%
+vs Buy & Hold: 34.18%
+Total Trades: 6
+Win Rate: 83.33%
+Average Trade Return: 11.36%
+Best Trade: 30.96%
+Worst Trade: -12.82%
+Average Hold: 33.8 days
+
+MACD:
+----
+Final Capital: $33,825.06
+Total Return: 238.25%
+vs Buy & Hold: 190.99%
+Total Trades: 12
+Win Rate: 50.00%
+Average Trade Return: 19.80%
+Best Trade: 229.26%
+Worst Trade: -10.45%
+Average Hold: 15.6 days
+
+Stochastic:
+----------
+Final Capital: $9,795.70
+Total Return: -2.04%
+vs Buy & Hold: -49.30%
+Total Trades: 13
+Win Rate: 69.23%
+Average Trade Return: 0.30%
+Best Trade: 14.79%
+Worst Trade: -20.22%
+Average Hold: 15.0 days
+
+Volume_RSI:
+----------
+Final Capital: $5,820.32
+Total Return: -41.80%
+vs Buy & Hold: -89.06%
+Total Trades: 9
+Win Rate: 44.44%
+Average Trade Return: -5.23%
+Best Trade: 5.07%
+Worst Trade: -27.11%
+Average Hold: 19.9 days
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for DOT-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $3,801.03
+Total Return: -61.99%
+Buy & Hold Return: -18.26%
+Strategy vs Buy & Hold: -43.72%
+
+Trade Statistics:
+---------------
+Total Trades: 13
+Profitable Trades: 5
+Win Rate: 38.46%
+Average Trade Return: -6.08%
+Best Trade: 6.43%
+Worst Trade: -36.51%
+Trade Return Std Dev: 13.22%
+
+Holding Periods:
+--------------
+Average Hold: 14.5 days
+Longest Hold: 44 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2024-01-14 at $7.33
+  Exit: 2024-01-29 at $7.03
+  Return: -4.04%
+  Holding Period: 15 days
+  Capital After Trade: $9595.72
+Trade 2:
+  Entry: 2024-02-01 at $6.79
+  Exit: 2024-02-07 at $6.94
+  Return: 2.19%
+  Holding Period: 6 days
+  Capital After Trade: $9806.05
+Trade 3:
+  Entry: 2024-03-17 at $10.12
+  Exit: 2024-04-30 at $6.42
+  Return: -36.51%
+  Holding Period: 44 days
+  Capital After Trade: $6225.70
+Trade 4:
+  Entry: 2024-05-06 at $7.12
+  Exit: 2024-05-15 at $6.96
+  Return: -2.23%
+  Holding Period: 9 days
+  Capital After Trade: $6086.91
+Trade 5:
+  Entry: 2024-05-16 at $7.03
+  Exit: 2024-05-17 at $7.20
+  Return: 2.38%
+  Holding Period: 1 days
+  Capital After Trade: $6232.07
+Trade 6:
+  Entry: 2024-05-31 at $6.99
+  Exit: 2024-06-07 at $6.66
+  Return: -4.71%
+  Holding Period: 7 days
+  Capital After Trade: $5938.29
+Trade 7:
+  Entry: 2024-06-08 at $6.39
+  Exit: 2024-06-27 at $6.28
+  Return: -1.67%
+  Holding Period: 19 days
+  Capital After Trade: $5838.84
+Trade 8:
+  Entry: 2024-07-14 at $6.33
+  Exit: 2024-07-22 at $6.11
+  Return: -3.49%
+  Holding Period: 8 days
+  Capital After Trade: $5634.98
+Trade 9:
+  Entry: 2024-07-28 at $5.72
+  Exit: 2024-08-23 at $4.90
+  Return: -14.38%
+  Holding Period: 26 days
+  Capital After Trade: $4824.65
+Trade 10:
+  Entry: 2024-08-28 at $4.26
+  Exit: 2024-09-13 at $4.43
+  Return: 3.91%
+  Holding Period: 16 days
+  Capital After Trade: $5013.53
+Trade 11:
+  Entry: 2024-10-05 at $4.14
+  Exit: 2024-10-15 at $4.40
+  Return: 6.43%
+  Holding Period: 10 days
+  Capital After Trade: $5335.79
+Trade 12:
+  Entry: 2024-11-02 at $3.90
+  Exit: 2024-11-06 at $4.12
+  Return: 5.54%
+  Holding Period: 4 days
+  Capital After Trade: $5631.45
+Trade 13:
+  Entry: 2024-12-08 at $10.41
+  Exit: 2025-01-01 at $7.03
+  Return: -32.50%
+  Holding Period: 24 days
+  Capital After Trade: $3801.03
+
+
+Individual Signal Strategy Analysis for DOT-USD
+==================================================
+
+Buy & Hold Return: -18.26%
+
+Performance by Signal Type:
+-------------------------
+
+EMA_Cross:
+---------
+Final Capital: $14,144.60
+Total Return: 41.45%
+vs Buy & Hold: 59.71%
+Total Trades: 6
+Win Rate: 33.33%
+Average Trade Return: 7.95%
+Best Trade: 50.35%
+Worst Trade: -9.16%
+Average Hold: 20.0 days
+
+RSI:
+---
+Final Capital: $7,988.14
+Total Return: -20.12%
+vs Buy & Hold: -1.85%
+Total Trades: 4
+Win Rate: 25.00%
+Average Trade Return: -4.53%
+Best Trade: 18.55%
+Worst Trade: -18.07%
+Average Hold: 54.8 days
+
+MACD:
+----
+Final Capital: $21,148.17
+Total Return: 111.48%
+vs Buy & Hold: 129.75%
+Total Trades: 8
+Win Rate: 25.00%
+Average Trade Return: 14.48%
+Best Trade: 104.50%
+Worst Trade: -8.82%
+Average Hold: 24.1 days
+
+Stochastic:
+----------
+Final Capital: $5,527.94
+Total Return: -44.72%
+vs Buy & Hold: -26.46%
+Total Trades: 10
+Win Rate: 30.00%
+Average Trade Return: -4.91%
+Best Trade: 13.83%
+Worst Trade: -24.87%
+Average Hold: 19.6 days
+
+Volume_RSI:
+----------
+Final Capital: $6,121.11
+Total Return: -38.79%
+vs Buy & Hold: -20.52%
+Total Trades: 11
+Win Rate: 54.55%
+Average Trade Return: -3.51%
+Best Trade: 13.75%
+Worst Trade: -24.96%
+Average Hold: 17.0 days
+
+==================================================
+
+
+Sensitive Strategy Analysis Results for LTC-USD
+==================================================
+
+Performance Summary:
+------------------
+Initial Capital: $10,000.00
+Final Capital: $11,675.11
+Total Return: 16.75%
+Buy & Hold Return: 40.25%
+Strategy vs Buy & Hold: -23.50%
+
+Trade Statistics:
+---------------
+Total Trades: 18
+Profitable Trades: 9
+Win Rate: 50.00%
+Average Trade Return: 1.68%
+Best Trade: 29.86%
+Worst Trade: -21.57%
+Trade Return Std Dev: 13.05%
+
+Holding Periods:
+--------------
+Average Hold: 9.8 days
+Longest Hold: 36 days
+Shortest Hold: 1 days
+
+Detailed Trade History:
+--------------------
+Trade 1:
+  Entry: 2024-01-16 at $69.47
+  Exit: 2024-02-07 at $68.56
+  Return: -1.32%
+  Holding Period: 22 days
+  Capital After Trade: $9867.78
+Trade 2:
+  Entry: 2024-02-22 at $68.76
+  Exit: 2024-02-27 at $74.03
+  Return: 7.66%
+  Holding Period: 5 days
+  Capital After Trade: $10623.92
+Trade 3:
+  Entry: 2024-03-16 at $84.14
+  Exit: 2024-03-29 at $109.26
+  Return: 29.86%
+  Holding Period: 13 days
+  Capital After Trade: $13795.81
+Trade 4:
+  Entry: 2024-04-06 at $101.50
+  Exit: 2024-04-07 at $101.18
+  Return: -0.32%
+  Holding Period: 1 days
+  Capital After Trade: $13751.49
+Trade 5:
+  Entry: 2024-04-09 at $97.50
+  Exit: 2024-05-15 at $82.53
+  Return: -15.35%
+  Holding Period: 36 days
+  Capital After Trade: $11640.97
+Trade 6:
+  Entry: 2024-05-25 at $84.98
+  Exit: 2024-06-07 at $80.09
+  Return: -5.76%
+  Holding Period: 13 days
+  Capital After Trade: $10970.82
+Trade 7:
+  Entry: 2024-06-16 at $78.91
+  Exit: 2024-07-05 at $61.89
+  Return: -21.57%
+  Holding Period: 19 days
+  Capital After Trade: $8604.60
+Trade 8:
+  Entry: 2024-07-07 at $62.06
+  Exit: 2024-07-19 at $73.46
+  Return: 18.36%
+  Holding Period: 12 days
+  Capital After Trade: $10184.38
+Trade 9:
+  Entry: 2024-07-28 at $71.13
+  Exit: 2024-07-29 at $73.75
+  Return: 3.68%
+  Holding Period: 1 days
+  Capital After Trade: $10559.67
+Trade 10:
+  Entry: 2024-08-04 at $62.40
+  Exit: 2024-08-05 at $56.21
+  Return: -9.91%
+  Holding Period: 1 days
+  Capital After Trade: $9513.33
+Trade 11:
+  Entry: 2024-08-06 at $58.26
+  Exit: 2024-08-20 at $64.48
+  Return: 10.67%
+  Holding Period: 14 days
+  Capital After Trade: $10528.39
+Trade 12:
+  Entry: 2024-08-31 at $65.06
+  Exit: 2024-09-05 at $66.08
+  Return: 1.57%
+  Holding Period: 5 days
+  Capital After Trade: $10694.06
+Trade 13:
+  Entry: 2024-10-06 at $67.07
+  Exit: 2024-10-14 at $66.81
+  Return: -0.39%
+  Holding Period: 8 days
+  Capital After Trade: $10652.22
+Trade 14:
+  Entry: 2024-10-26 at $68.40
+  Exit: 2024-10-28 at $70.72
+  Return: 3.39%
+  Holding Period: 2 days
+  Capital After Trade: $11013.39
+Trade 15:
+  Entry: 2024-11-02 at $69.13
+  Exit: 2024-11-06 at $71.02
+  Return: 2.74%
+  Holding Period: 4 days
+  Capital After Trade: $11315.31
+Trade 16:
+  Entry: 2024-11-28 at $95.66
+  Exit: 2024-12-01 at $119.87
+  Return: 25.30%
+  Holding Period: 3 days
+  Capital After Trade: $14178.41
+Trade 17:
+  Entry: 2024-12-13 at $124.18
+  Exit: 2024-12-14 at $118.18
+  Return: -4.83%
+  Holding Period: 1 days
+  Capital After Trade: $13493.78
+Trade 18:
+  Entry: 2024-12-15 at $121.14
+  Exit: 2025-01-01 at $104.81
+  Return: -13.48%
+  Holding Period: 17 days
+  Capital After Trade: $11675.11
+
+
+Individual Signal Strategy Analysis for LTC-USD
+==================================================
+
+Buy & Hold Return: 40.25%
+
+Performance by Signal Type:
+-------------------------
+
+EMA_Cross:
+---------
+Final Capital: $9,805.87
+Total Return: -1.94%
+vs Buy & Hold: -42.19%
+Total Trades: 11
+Win Rate: 18.18%
+Average Trade Return: 0.53%
+Best Trade: 39.22%
+Worst Trade: -7.59%
+Average Hold: 16.2 days
+
+RSI:
+---
+Final Capital: $10,585.54
+Total Return: 5.86%
+vs Buy & Hold: -34.40%
+Total Trades: 3
+Win Rate: 66.67%
+Average Trade Return: 2.05%
+Best Trade: 6.37%
+Worst Trade: -5.35%
+Average Hold: 41.7 days
+
+MACD:
+----
+Final Capital: $10,249.36
+Total Return: 2.49%
+vs Buy & Hold: -37.76%
+Total Trades: 15
+Win Rate: 40.00%
+Average Trade Return: 1.08%
+Best Trade: 50.90%
+Worst Trade: -12.82%
+Average Hold: 13.7 days
+
+Stochastic:
+----------
+Final Capital: $14,841.06
+Total Return: 48.41%
+vs Buy & Hold: 8.16%
+Total Trades: 15
+Win Rate: 73.33%
+Average Trade Return: 2.87%
+Best Trade: 13.94%
+Worst Trade: -9.00%
+Average Hold: 11.5 days
+
+Volume_RSI:
+----------
+Final Capital: $16,271.67
+Total Return: 62.72%
+vs Buy & Hold: 22.47%
+Total Trades: 10
+Win Rate: 70.00%
+Average Trade Return: 5.82%
+Best Trade: 27.26%
+Worst Trade: -11.96%
+Average Hold: 15.6 days
+
+==================================================
+
+
+Overall Strategy Performance
+==========================
+Currencies Tested: 11
+
+Combined Strategy:
+---------------
+Average Return: 9.22%
+Total Trades: 200
+Overall Win Rate: 56.50%
+Average Holding Period: 10.1 days
+Best Performer: RAY-USD (53.24%)
+Worst Performer: DOT-USD (-61.99%)
+
+Individual Strategies Performance:
+------------------------------
+EMA_Cross:
+  Average Return: 98.95%
+  Total Trades: 90
+  Win Rate: 32.22%
+  Best: DOGE-USD (398.42%)
+  Worst: ETH-USD (-22.00%)
+RSI:
+  Average Return: 37.95%
+  Total Trades: 49
+  Win Rate: 77.55%
+  Best: RAY-USD (174.97%)
+  Worst: DOT-USD (-20.12%)
+MACD:
+  Average Return: 128.46%
+  Total Trades: 142
+  Win Rate: 42.25%
+  Best: DOGE-USD (373.05%)
+  Worst: LTC-USD (2.49%)
+Stochastic:
+  Average Return: 22.28%
+  Total Trades: 125
+  Win Rate: 61.60%
+  Best: RAY-USD (117.41%)
+  Worst: DOT-USD (-44.72%)
+Volume_RSI:
+  Average Return: 11.26%
+  Total Trades: 114
+  Win Rate: 61.40%
+  Best: RAY-USD (79.39%)
+  Worst: ADA-USD (-41.80%)
